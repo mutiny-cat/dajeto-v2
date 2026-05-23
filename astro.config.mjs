@@ -28,5 +28,10 @@ export default defineConfig({
     },
   },
 
-  integrations: [icon(), sitemap()],
+  integrations: [
+    icon({
+      iconDir: "src/assets/icons",
+    }),
+    sitemap(),
+  ],
 });

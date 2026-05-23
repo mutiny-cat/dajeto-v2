@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
+import { Icon } from "astro-icon/components"
 import { libros } from "@data/libros"
 import { trayectoria } from "@data/linea-temporal"
 
@@ -27,9 +28,10 @@ const destacados = libros.slice(0, 3)
         <h2 class="hero__latest-title">{ultimaNovela.titulo}</h2>
         <p class="hero__latest-year">{ultimaNovela.ano}</p>
         <p class="hero__latest-desc">{ultimaNovela.sinopsis}</p>
-        {ultimaNovela.amazon && (
-          <a href={ultimaNovela.amazon} target="_blank" rel="noopener" class="btn">
-            Comprar en Amazon
+        {ultimaNovela.enlaces.length > 0 && (
+          <a href={ultimaNovela.enlaces[0].url} target="_blank" rel="noopener" class="btn btn--icon">
+            <Icon name={ultimaNovela.enlaces[0].logo} />
+            {ultimaNovela.enlaces[0].tienda}
           </a>
         )}
       </div>
@@ -50,8 +52,11 @@ const destacados = libros.slice(0, 3)
             <p class="book-card__desc">{libro.sinopsis}</p>
             <div class="book-card__footer">
               <span class="book-card__cat">{libro.categoria === "novela" ? "Novela" : libro.categoria === "novelacorta" ? "Novela corta" : "Cuento"}</span>
-              {libro.amazon && (
-                <a href={libro.amazon} target="_blank" rel="noopener" class="btn btn--sm">Amazon</a>
+              {libro.enlaces.length > 0 && (
+                <a href={libro.enlaces[0].url} target="_blank" rel="noopener" class="btn btn--sm btn--icon">
+                  <Icon name={libro.enlaces[0].logo} />
+                  {libro.enlaces[0].tienda}
+                </a>
               )}
             </div>
           </article>
@@ -142,6 +147,18 @@ const destacados = libros.slice(0, 3)
   .btn--sm {
     padding: 0.4rem 1rem;
     font-size: 0.8rem;
+  }
+
+  .btn--icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .btn--icon :global(svg) {
+    width: 1.1em;
+    height: 1.1em;
+    fill: currentColor;
   }
 
   .hero__latest {
