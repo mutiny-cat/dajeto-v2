@@ -1,9 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
-import { books, timeline } from "../data/books"
+import { libros } from "@data/libros"
+import { trayectoria } from "@data/linea-temporal"
 
-const latestNovel = books.filter((b) => b.category === "novela").sort((a, b) => b.year - a.year)[0]
-const featured = books.slice(0, 3)
+const ultimaNovela = libros.filter((l) => l.categoria === "novela").sort((a, b) => b.ano - a.ano)[0]
+const destacados = libros.slice(0, 3)
 ---
 
 <BaseLayout title="Inicio" description="Daniel Jerez Torns — Escritor de novela negra, misterio e intriga">
@@ -23,11 +24,11 @@ const featured = books.slice(0, 3)
       </div>
       <div class="hero__latest">
         <span class="hero__latest-label">Última novela</span>
-        <h2 class="hero__latest-title">{latestNovel.title}</h2>
-        <p class="hero__latest-year">{latestNovel.year}</p>
-        <p class="hero__latest-desc">{latestNovel.sinopsis}</p>
-        {latestNovel.amazon && (
-          <a href={latestNovel.amazon} target="_blank" rel="noopener" class="btn">
+        <h2 class="hero__latest-title">{ultimaNovela.titulo}</h2>
+        <p class="hero__latest-year">{ultimaNovela.ano}</p>
+        <p class="hero__latest-desc">{ultimaNovela.sinopsis}</p>
+        {ultimaNovela.amazon && (
+          <a href={ultimaNovela.amazon} target="_blank" rel="noopener" class="btn">
             Comprar en Amazon
           </a>
         )}
@@ -39,18 +40,18 @@ const featured = books.slice(0, 3)
     <div class="container">
       <h2 class="section__title">Obras destacadas</h2>
       <div class="grid">
-        {featured.map((book) => (
+        {destacados.map((libro) => (
           <article class="book-card">
             <div class="book-card__header">
-              <h3 class="book-card__title">{book.title}</h3>
-              {book.titleSub && <p class="book-card__sub">{book.titleSub}</p>}
-              <span class="book-card__year">{book.year}</span>
+              <h3 class="book-card__title">{libro.titulo}</h3>
+              {libro.subtitulo && <p class="book-card__sub">{libro.subtitulo}</p>}
+              <span class="book-card__year">{libro.ano}</span>
             </div>
-            <p class="book-card__desc">{book.sinopsis}</p>
+            <p class="book-card__desc">{libro.sinopsis}</p>
             <div class="book-card__footer">
-              <span class="book-card__cat">{book.category === "novela" ? "Novela" : book.category === "novela-corta" ? "Novela corta" : "Cuento"}</span>
-              {book.amazon && (
-                <a href={book.amazon} target="_blank" rel="noopener" class="btn btn--sm">Amazon</a>
+              <span class="book-card__cat">{libro.categoria === "novela" ? "Novela" : libro.categoria === "novelacorta" ? "Novela corta" : "Cuento"}</span>
+              {libro.amazon && (
+                <a href={libro.amazon} target="_blank" rel="noopener" class="btn btn--sm">Amazon</a>
               )}
             </div>
           </article>
@@ -66,12 +67,12 @@ const featured = books.slice(0, 3)
     <div class="container">
       <h2 class="section__title">Trayectoria literaria</h2>
       <div class="timeline-preview">
-        {timeline.slice(-4).map((event) => (
+        {trayectoria.slice(-4).map((evento) => (
           <div class="timeline-preview__item">
-            <span class="timeline-preview__year">{event.year}</span>
+            <span class="timeline-preview__year">{evento.ano}</span>
             <div>
-              <h3>{event.title}</h3>
-              <p>{event.description}</p>
+              <h3>{evento.titulo}</h3>
+              <p>{evento.descripcion}</p>
             </div>
           </div>
         ))}
