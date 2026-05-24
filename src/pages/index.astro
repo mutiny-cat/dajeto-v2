@@ -1,9 +1,110 @@
 ---
 import IndexLayout from "@layouts/index-layout.astro"
 import CardHero from "@components/card-hero.astro"
+import CardNovedades from "@components/card-novedades.astro"
+import type { ImageMetadata } from "astro"
+import { libros } from "@data/libros"
+import type { Libro } from "@data/libros"
+
+const portadas = import.meta.glob('/src/assets/images/portadas/*.png', { eager: true })
+
+function getPortada(libro: Libro): ImageMetadata | undefined {
+  if (!libro.portadaMini) return
+  const key = `/src/assets/images/portadas/${libro.portadaMini}`
+  return (portadas[key] as { default: ImageMetadata })?.default
+}
+
+const novedades = [...libros].sort((a, b) => b.ano - a.ano).slice(0, 4)
+
+const novelas = libros.filter((l) => l.categoria === "novela")
+const novelasCortas = libros.filter((l) => l.categoria === "novelacorta")
+const cuentosAdol = libros.filter((l) => l.categoria === "cuento-adolescente")
+const cuentosInf = libros.filter((l) => l.categoria === "cuento-infantil")
 ---
 
-<IndexLayout title="Inicio">
+<IndexLayout title="Daniel Jerez Torns — Escritor de novela negra, misterio y ciencia ficción">
   <CardHero />
+
+  <!-- Novedades -->
+  <section class="seccion">
+    <h2 class="seccion-titulo">Novedades</h2>
+    <div class="grid-novedades">
+      {novedades.map((libro) => (
+        <CardNovedades libro={libro} portada={getPortada(libro)} />
+      ))}
+    </div>
+  </section>
+
+  <!-- Novela -->
+  <section class="seccion">
+    <h2 class="seccion-titulo">Novela</h2>
+    <div class="grid-2cols">
+      {novelas.map((libro) => (
+        <CardNovedades libro={libro} portada={getPortada(libro)} />
+      ))}
+    </div>
+  </section>
+
+  <!-- Novela corta -->
+  <section class="seccion">
+    <h2 class="seccion-titulo">Novela corta</h2>
+    <div class="grid-2cols">
+      {novelasCortas.map((libro) => (
+        <CardNovedades libro={libro} portada={getPortada(libro)} />
+      ))}
+    </div>
+  </section>
+
+  <!-- Cuentos adolescentes -->
+  <section class="seccion">
+    <h2 class="seccion-titulo">Cuentos — Adolescentes y adultos</h2>
+    <div class="grid-2cols">
+      {cuentosAdol.map((libro) => (
+        <CardNovedades libro={libro} portada={getPortada(libro)} />
+      ))}
+    </div>
+  </section>
+
+  <!-- Cuentos infantiles -->
+  <section class="seccion">
+    <h2 class="seccion-titulo">Cuentos — Infantiles</h2>
+    <div class="grid-2cols">
+      {cuentosInf.map((libro) => (
+        <CardNovedades libro={libro} portada={getPortada(libro)} />
+      ))}
+    </div>
+  </section>
 </IndexLayout>
 
+<style>
+  .seccion {
+    margin-block-start: 3em;
+  }
+
+  .seccion-titulo {
+    font-size: var(--text-h2);
+    margin-block-end: 1em;
+  }
+
+  .grid-novedades {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1em;
+  }
+
+  .grid-2cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+  }
+
+  @media (width <= 768px) {
+    .grid-novedades {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-2cols {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
