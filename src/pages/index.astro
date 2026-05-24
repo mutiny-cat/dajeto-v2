@@ -1,35 +1,13 @@
 ---
 import IndexLayout from "@layouts/index-layout.astro"
+import CardHero from "@components/card-hero.astro"
 ---
 
 <IndexLayout title="Inicio">
-  <section id="hero">
-    <h1>Daniel Jerez Torns</h1>
-    <p>Escritor de novela negra, misterio e intriga</p>
+  <section>
+    
+    <CardHero />
   </section>
 
-  <section id="novedades" class="section-page">
-    <h2>Novedades</h2>
-  </section>
-
-  <section id="novela" class="section-page">
-    <h2>Novela</h2>
-  </section>
-
-  <section id="novelacorta" class="section-page">
-    <h2>Novela corta</h2>
-  </section>
-
-  <section id="cuentos" class="section-page">
-    <h2>Cuentos</h2>
-  </section>
-
-  <section id="cuentos-infantiles" class="section-page">
-    <h2>Cuentos infantiles</h2>
-  </section>
 </IndexLayout>
 
-<style>
-  .section-page {
-  }
-</style>
