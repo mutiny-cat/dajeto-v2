@@ -274,6 +274,10 @@ function getPortadaMini(ruta?: string) {
   }
 
   @media (width <= 1366px) {
+    header {
+      padding: 1.2em;
+    }
+
     nav {
       display: none;
     }
@@ -292,20 +296,22 @@ function getPortadaMini(ruta?: string) {
 </style>
 
 <script>
-  const toggle = document.querySelector(".menu-toggle")
-  const modal = document.querySelector("#menu-modal")
+  document.addEventListener("astro:page-load", () => {
+    const toggle = document.querySelector(".menu-toggle")
+    const modal = document.querySelector("#menu-modal")
 
-  if (toggle && modal) {
-    toggle.addEventListener("click", () => {
-      if (!modal.open) {
-        modal.querySelectorAll(".expanded").forEach((el) => {
-          el.classList.remove("expanded")
-          el.querySelector("button")?.setAttribute("aria-expanded", "false")
-        })
-        document.documentElement.style.overflow = "hidden"
-        document.body.style.overflow = "hidden"
-        modal.showModal()
-      }
-    })
-  }
+    if (toggle && modal) {
+      toggle.addEventListener("click", () => {
+        if (!modal.open) {
+          modal.querySelectorAll(".expanded").forEach((el) => {
+            el.classList.remove("expanded")
+            el.querySelector("button")?.setAttribute("aria-expanded", "false")
+          })
+          document.documentElement.style.overflow = "hidden"
+          document.body.style.overflow = "hidden"
+          modal.showModal()
+        }
+      })
+    }
+  })
 </script>

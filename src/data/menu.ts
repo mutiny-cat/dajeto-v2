@@ -45,5 +45,5 @@ export const menu: ItemMenu[] = [
     ],
   },
   { ruta: "/cronologia/cronologia", texto: "Cronología" },
-  { ruta: "/biografia", texto: "Biografía" },
+  { ruta: "/biografia/biografia", texto: "Biografía" },
 ]

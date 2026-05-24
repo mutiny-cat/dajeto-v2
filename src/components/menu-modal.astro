@@ -278,31 +278,33 @@ function getPortadaMini(ruta?: string) {
 </style>
 
 <script>
-  const modal = document.querySelector("#menu-modal")
-  const closeBtn = document.querySelector(".modal-close")
+  document.addEventListener("astro:page-load", () => {
+    const modal = document.querySelector("#menu-modal")
+    const closeBtn = document.querySelector(".modal-close")
 
-  if (modal && closeBtn) {
-    closeBtn.addEventListener("click", () => modal.close())
+    if (modal && closeBtn) {
+      closeBtn.addEventListener("click", () => modal.close())
 
-    modal.addEventListener("close", () => {
-      document.documentElement.style.overflow = ""
-      document.body.style.overflow = ""
-    })
+      modal.addEventListener("close", () => {
+        document.documentElement.style.overflow = ""
+        document.body.style.overflow = ""
+      })
 
-    modal.addEventListener("click", (e) => {
-      const btn = e.target.closest("li > button")
-      if (btn && btn.parentElement.querySelector(":scope > ul")) {
-        const parent = btn.parentElement
-        const siblings = [...parent.parentElement.children]
-        siblings.forEach((s) => s !== parent && s.classList.remove("expanded"))
-        const isExpanded = parent.classList.toggle("expanded")
-        btn.setAttribute("aria-expanded", isExpanded)
-      }
-    })
+      modal.addEventListener("click", (e) => {
+        const btn = e.target.closest("li > button")
+        if (btn && btn.parentElement.querySelector(":scope > ul")) {
+          const parent = btn.parentElement
+          const siblings = [...parent.parentElement.children]
+          siblings.forEach((s) => s !== parent && s.classList.remove("expanded"))
+          const isExpanded = parent.classList.toggle("expanded")
+          btn.setAttribute("aria-expanded", isExpanded)
+        }
+      })
 
-    modal.addEventListener("click", (e) => {
-      const link = e.target.closest("a[href]")
-      if (link) modal.close()
-    })
-  }
+      modal.addEventListener("click", (e) => {
+        const link = e.target.closest("a[href]")
+        if (link) modal.close()
+      })
+    }
+  })
 </script>

@@ -1,0 +1,33 @@
+---
+import Seo from "@seo/seo.astro"
+import Header from "@components/header.astro"
+import Footer from "@components/footer.astro"
+import ButtonUp from "@components/button-up.astro"
+import "@styles/global.css"
+
+export interface Props {
+  title: string
+  description?: string
+  image?: string
+  url?: string
+  type?: "website" | "article"
+  keywords?: string
+}
+
+const { title, description, image, url, type, keywords } = Astro.props
+---
+
+<!doctype html>
+<html lang="es" data-astro-transition>
+  <head>
+    <Seo {title} {description} {image} {url} {type} {keywords} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <ButtonUp />
+  </body>
+</html>
