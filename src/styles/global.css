@@ -115,5 +115,7 @@ button {
 main {
 	max-width: var(--max-width);
 	margin-inline: auto;
-	padding-inline: 1rem;
+	padding-inline: 1em;
+	padding-block-start: 7.5em;
+	min-height: 100dvh;
 }
