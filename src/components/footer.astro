@@ -1,0 +1,99 @@
+---
+import { Icon } from "astro-icon/components"
+
+const anoActual = new Date().getFullYear()
+---
+
+<footer>
+  <div class="social">
+    <a href="https://www.instagram.com/jerez_dani/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <Icon name="instagram" />
+    </a>
+    <a href="https://x.com/jerez_dani" target="_blank" rel="noopener noreferrer" aria-label="X">
+      <Icon name="x" />
+    </a>
+    <a href="https://www.facebook.com/danieljerez.escritor/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+      <Icon name="facebook" />
+    </a>
+    <a href="https://www.linkedin.com/in/danieljereztorns/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+      <Icon name="linkedin" />
+    </a>
+  </div>
+
+  <nav class="legal">
+    <a href="/aviso-legal">Aviso legal</a>
+    <a href="/privacidad">Política de privacidad</a>
+    <a href="/cookies">Política de cookies</a>
+  </nav>
+
+  <div class="copy">
+    <Icon name="cc" />
+    <span>Daniel Jerez (2005 - {anoActual})</span>
+  </div>
+</footer>
+
+<style>
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+    padding-block: 2em;
+    padding-inline: 1em;
+    border-block-start: 1px solid var(--color-border);
+  }
+
+  .social {
+    display: flex;
+    gap: 1.5em;
+
+    a {
+      color: var(--color-text-soft);
+      transition: color 0.2s;
+      display: flex;
+
+      &:hover {
+        color: var(--color-accent);
+      }
+    }
+
+    :global(svg) {
+      inline-size: 1.5em;
+      block-size: 1.5em;
+      fill: currentColor;
+    }
+  }
+
+  .legal {
+    display: flex;
+    gap: 1.5em;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    a {
+      color: var(--color-text-soft);
+      font-size: 0.875em;
+      transition: color 0.2s;
+
+      &:hover {
+        color: var(--color-accent);
+      }
+    }
+  }
+
+  .copy {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding-block-start: 1.5em;
+    border-block-start: 1px solid var(--color-border);
+    color: var(--color-text-soft);
+    font-size: 0.875em;
+
+    :global(svg) {
+      inline-size: 1em;
+      block-size: 1em;
+      fill: currentColor;
+    }
+  }
+</style>

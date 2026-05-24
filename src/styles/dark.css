@@ -1,0 +1,20 @@
+:root {
+  --color-bg: var(--color-black);
+  --color-bg-soft: var(--color-black-soft);
+  --color-bg-card: var(--color-gray-dark);
+  --color-bg-elevated: var(--color-gray);
+  --color-text: var(--color-white);
+  --color-text-soft: var(--color-white-soft);
+  --color-border: #292929;
+  --color-border-soft: #999999;
+  --color-accent: var(--color-primary-500);
+  --color-accent-hover: var(--color-primary-400);
+  --color-accent-active: var(--color-primary-600);
+  --color-accent-secondary: var(--color-secondary-500);
+  --color-accent-secondary-hover: var(--color-secondary-600);
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
