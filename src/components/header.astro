@@ -37,12 +37,12 @@ function getPortadaMini(ruta?: string) {
                       <h4>{hijo.texto}</h4>
                       <div class="sub-links">
                         {hijo.hijos.map((sub) => (
-                          <a href={sub.ruta!}>{getPortadaMini(sub.ruta) && <Picture src={getPortadaMini(sub.ruta)!} formats={['avif', 'webp']} alt="" class="portada-mini" />}<span>{sub.texto}</span></a>
+                          <a href={sub.ruta!}>{getPortadaMini(sub.ruta) && <Picture src={getPortadaMini(sub.ruta)!} formats={['avif', 'webp']} alt="" class="portada-mini" width={30} height={45} />}<span>{sub.texto}</span></a>
                         ))}
                       </div>
                     </li>
                   ) : (
-                    <li><a href={hijo.ruta!}>{getPortadaMini(hijo.ruta) && <Picture src={getPortadaMini(hijo.ruta)!} formats={['avif', 'webp']} alt="" class="portada-mini" />}<span>{hijo.texto}</span></a></li>
+                    <li><a href={hijo.ruta!}>{getPortadaMini(hijo.ruta) && <Picture src={getPortadaMini(hijo.ruta)!} formats={['avif', 'webp']} alt="" class="portada-mini" width={30} height={45} />}<span>{hijo.texto}</span></a></li>
                   )
                 ))}
               </ul>
@@ -79,6 +79,11 @@ function getPortadaMini(ruta?: string) {
     font-weight: 700;
     font-size: 1em;
     text-decoration: none;
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   .logo :global(svg) {
@@ -108,10 +113,16 @@ function getPortadaMini(ruta?: string) {
     border-radius: 0.2em;
   }
 
+  li ul li a picture,
+  .sub-links a picture {
+    flex: none;
+    inline-size: 1.5em;
+  }
+
   nav {
     border: 1px solid var(--color-border);
     border-radius: 2em;
-    padding: 0.5em 1.25em;
+    padding: 0.75em 1.5em;
 
     ul {
       display: flex;
@@ -131,7 +142,7 @@ function getPortadaMini(ruta?: string) {
         position: absolute;
         inset-block-start: 100%;
         inset-inline: 0;
-        block-size: 0.8em;
+        block-size: 1em;
       }
     }
 
@@ -146,7 +157,7 @@ function getPortadaMini(ruta?: string) {
     li ul {
       display: flex;
       position: absolute;
-      inset-block-start: calc(100% + 0.8em);
+      inset-block-start: calc(100% + 1em);
       inset-inline-start: 0;
       flex-direction: column;
       gap: 0;
@@ -174,11 +185,18 @@ function getPortadaMini(ruta?: string) {
       white-space: nowrap;
 
       a {
-        display: inline-flex;
+        display: flex;
         align-items: center;
-        gap: 0.5em;
+        gap: 0.75em;
         font-weight: 400;
         font-size: 0.9em;
+        padding: 0.25em 0.5em;
+        border-radius: 0.4em;
+        transition: 0.2s;
+
+        &:hover {
+          background-color: var(--color-gray-dark);
+        }
       }
     }
 
@@ -187,12 +205,19 @@ function getPortadaMini(ruta?: string) {
       flex-direction: column;
 
       a {
-        display: inline-flex;
+        display: flex;
         align-items: center;
-        gap: 0.5em;
-        padding-block: 0.5em;
+        gap: 0.75em;
+        padding: 0.25em 0.5em;
+        margin-block: 0.25em;
+        border-radius: 0.4em;
         font-weight: 400;
         font-size: 0.9em;
+        transition: 0.2s;
+
+        &:hover {
+          background-color: var(--color-gray-dark);
+        }
       }
     }
 
@@ -217,11 +242,23 @@ function getPortadaMini(ruta?: string) {
       cursor: default;
     }
 
+    li:hover > span {
+      color: var(--color-green-500);
+    }
+
+    a span {
+      cursor: pointer;
+    }
+
     a {
       cursor: pointer;
 
       &:hover {
-        color: var(--color-primary-500);
+        color: var(--color-green-500);
+
+        > span {
+          color: inherit;
+        }
       }
     }
   }

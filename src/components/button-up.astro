@@ -1,0 +1,70 @@
+---
+import { Icon } from "astro-icon/components"
+---
+
+<button class="button-up" aria-label="Volver al inicio">
+  <Icon name="chevron" />
+</button>
+
+<style>
+  .button-up {
+    position: fixed;
+    inset-block-end: 2em;
+    inset-inline-end: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: 3em;
+    block-size: 3em;
+    border-radius: 50%;
+    background-color: var(--color-gray-dark);
+    color: var(--color-white-soft);
+    border: 1px solid var(--color-border);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s, background-color 0.2s;
+    z-index: 100;
+  }
+
+  .button-up.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .button-up:hover {
+    background-color: var(--color-green-500);
+    color: var(--color-black);
+    transform: translateY(-0.2em);
+  }
+
+  .button-up :global(svg) {
+    inline-size: 1.25em;
+    block-size: 1.25em;
+    fill: currentColor;
+  }
+</style>
+
+<script>
+  const button = document.querySelector(".button-up")
+
+  if (button) {
+    let ticking = false
+
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          button.classList.toggle("is-visible", window.scrollY > 300)
+          ticking = false
+        })
+        ticking = true
+      }
+    })
+
+    button.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    })
+  }
+</script>

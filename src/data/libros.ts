@@ -72,6 +72,8 @@ export const libros: Libro[] = [
     sinopsis:
       "Un hombre entra en un bar y descubre que el tiempo puede detenerse. Un experimento con ratas revela quién observa realmente a quién. Un príncipe rompe el destino del mundo por un detalle insignificante. En Relatos tendidos, Daniel Jerez despliega una colección de historias breves donde lo aparentemente trivial se transforma en algo inquietante, irónico o profundamente revelador.",
     categoria: "novelacorta",
+    portadaMini: "portada-relatos-tendidos.png",
+    portada: "portada-relatos-tendidos.png",
     enlaces: [
       { tienda: "Amazon", url: "https://www.amazon.es/Relatos-tendidos-cotidiano-absurdo-inesperado-ebook/dp/B0GXVY44X8", formato: "ebook", logo: "simple-icons:amazon" },
     ],
@@ -85,6 +87,8 @@ export const libros: Libro[] = [
     sinopsis:
       "En una ciudad cubierta por una extraña niebla, Víctor, un barrendero desencantado, descubre pequeños escarabajos que empujan bolas formadas por palabras como \"esperanza\", \"amor\" o \"futuro\". Junto a Clara, iniciará una lucha absurda y simbólica contra el Señor Muro, una fuerza que manipula la mente colectiva. Una novela fantástica y distópica sobre la lucha por no dejar de sentir, pensar y soñar.",
     categoria: "novelacorta",
+    portadaMini: "portada-grietas-en-el-muro.png",
+    portada: "portada-grietas-en-el-muro.png",
     enlaces: [
       { tienda: "Amazon", url: "https://www.amazon.es/Grietas-en-el-Muro-Suspenso-Psicol%C3%B3gica-ebook/dp/B0H1YHB8CX", formato: "ebook", logo: "simple-icons:amazon" },
     ],

@@ -2,6 +2,7 @@
 import Seo from "@seo/seo.astro"
 import Header from "@components/header.astro"
 import Footer from "@components/footer.astro"
+import ButtonUp from "@components/button-up.astro"
 import "@styles/global.css"
 
 export interface Props {
@@ -27,5 +28,6 @@ const { title, description, image, url, type, keywords } = Astro.props
       <slot />
     </main>
     <Footer />
+    <ButtonUp />
   </body>
 </html>
