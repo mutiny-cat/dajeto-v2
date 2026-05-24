@@ -61,6 +61,7 @@
 
 html {
 	scroll-behavior: smooth;
+	background-color: var(--color-black);
 }
 
 body {
@@ -68,6 +69,8 @@ body {
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 1.6;
+	background-color: var(--color-black);
+	color: var(--color-white);
 }
 
 h1, h2 {
@@ -118,4 +121,5 @@ main {
 	padding-inline: 1em;
 	padding-block-start: 7.5em;
 	min-height: 100dvh;
+	background-color: var(--color-black);
 }

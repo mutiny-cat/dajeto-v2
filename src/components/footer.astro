@@ -24,6 +24,7 @@ const anoActual = new Date().getFullYear()
     <a href="/aviso-legal">Aviso legal</a>
     <a href="/privacidad">Política de privacidad</a>
     <a href="/cookies">Política de cookies</a>
+    <a href="/accesibilidad">Accesibilidad</a>
   </nav>
 
   <div class="copy">
@@ -47,12 +48,12 @@ const anoActual = new Date().getFullYear()
     gap: 1.5em;
 
     a {
-      color: var(--color-text-soft);
+      color: var(--color-white-soft);
       transition: color 0.2s;
       display: flex;
 
       &:hover {
-        color: var(--color-accent);
+        color: var(--color-primary-500);
       }
     }
 
@@ -70,12 +71,12 @@ const anoActual = new Date().getFullYear()
     justify-content: center;
 
     a {
-      color: var(--color-text-soft);
+      color: var(--color-white-soft);
       font-size: 0.875em;
       transition: color 0.2s;
 
       &:hover {
-        color: var(--color-accent);
+        color: var(--color-primary-500);
       }
     }
   }
@@ -86,7 +87,7 @@ const anoActual = new Date().getFullYear()
     gap: 0.5em;
     padding-block-start: 1.5em;
     border-block-start: 1px solid var(--color-border);
-    color: var(--color-text-soft);
+    color: var(--color-white-soft);
     font-size: 0.875em;
 
     :global(svg) {

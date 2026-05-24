@@ -28,7 +28,7 @@ export const menu: ItemMenu[] = [
     texto: "Cuentos",
     hijos: [
       {
-        texto: "Adolescentes",
+        texto: "Adolescentes y adultos",
         hijos: [
           { ruta: "/cuentos/adolescentes/el-secreto-del-tesoro-guardado", texto: "El secreto del tesoro guardado" },
           { ruta: "/cuentos/adolescentes/el-faraon-y-el-prevencionista", texto: "El Faraón y el prevencionista" },
