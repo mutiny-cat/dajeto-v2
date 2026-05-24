@@ -10,6 +10,19 @@ const portadas = import.meta.glob('/src/assets/images/portadas/*.png', { eager: 
 
 const libroPorSlug = new Map(libros.map((l) => [l.id, l]))
 
+const rutaActual = Astro.url.pathname
+
+function rutasHijo(item: typeof menu[number]): string[] {
+  const rutas: string[] = []
+  if (item.ruta) rutas.push(item.ruta)
+  if (item.hijos) item.hijos.forEach((h) => rutas.push(...rutasHijo(h)))
+  return rutas
+}
+
+function esActivo(item: typeof menu[number]): boolean {
+  return rutasHijo(item).some((r) => r === rutaActual)
+}
+
 function getPortadaMini(ruta?: string) {
   if (!ruta) return
   const slug = ruta.split('/').at(-1)
@@ -27,7 +40,7 @@ function getPortadaMini(ruta?: string) {
   <nav>
     <ul>
       {menu.map((item) => (
-        <li>
+        <li class:list={{ active: esActivo(item) }}>
           {item.hijos ? (
             <>
               <span>{item.texto}</span>
@@ -38,18 +51,18 @@ function getPortadaMini(ruta?: string) {
                       <h4>{hijo.texto}</h4>
                       <div class="sub-links">
                         {hijo.hijos.map((sub) => (
-                          <a href={sub.ruta!}>{getPortadaMini(sub.ruta) && <Picture src={getPortadaMini(sub.ruta)!} formats={['avif', 'webp']} alt="" class="portada-mini" width={30} height={45} />}<span>{sub.texto}</span></a>
+                          <a href={sub.ruta!} class:list={{ active: esActivo(sub) }}>{getPortadaMini(sub.ruta) && <Picture src={getPortadaMini(sub.ruta)!} formats={['avif', 'webp']} alt="" class="portada-mini" width={30} height={45} />}<span>{sub.texto}</span></a>
                         ))}
                       </div>
                     </li>
                   ) : (
-                    <li><a href={hijo.ruta!}>{getPortadaMini(hijo.ruta) && <Picture src={getPortadaMini(hijo.ruta)!} formats={['avif', 'webp']} alt="" class="portada-mini" width={30} height={45} />}<span>{hijo.texto}</span></a></li>
+                    <li><a href={hijo.ruta!} class:list={{ active: esActivo(hijo) }}>{getPortadaMini(hijo.ruta) && <Picture src={getPortadaMini(hijo.ruta)!} formats={['avif', 'webp']} alt="" class="portada-mini" width={30} height={45} />}<span>{hijo.texto}</span></a></li>
                   )
                 ))}
               </ul>
             </>
           ) : (
-            <a href={item.ruta!}>{item.texto}</a>
+            <a href={item.ruta!} class:list={{ active: esActivo(item) }}>{item.texto}</a>
           )}
         </li>
       ))}
@@ -261,6 +274,18 @@ function getPortadaMini(ruta?: string) {
         > span {
           color: inherit;
         }
+      }
+    }
+
+    li.active > span {
+      color: var(--color-green-500);
+    }
+
+    a.active {
+      color: var(--color-green-500);
+
+      > span {
+        color: inherit;
       }
     }
   }
