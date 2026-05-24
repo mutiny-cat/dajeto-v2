@@ -4,6 +4,7 @@ import { Picture } from "astro:assets"
 import type { ImageMetadata } from "astro"
 import { menu } from "@data/menu"
 import { libros } from "@data/libros"
+import MenuModal from "./menu-modal.astro"
 
 const portadas = import.meta.glob('/src/assets/images/portadas/*.png', { eager: true })
 
@@ -57,6 +58,7 @@ function getPortadaMini(ruta?: string) {
   <button class="menu-toggle" aria-label="Abrir menú">
     <Icon name="menu" />
   </button>
+  <MenuModal />
 </header>
 
 <style>
@@ -69,7 +71,7 @@ function getPortadaMini(ruta?: string) {
     inset-block-start: 0;
 		inset-inline: 0;
 		background: linear-gradient(to bottom, var(--color-black), transparent);
-    z-index: 10;
+    z-index: var(--z-index-header, 10);
   }
 
   .logo {
@@ -170,7 +172,7 @@ function getPortadaMini(ruta?: string) {
       border-radius: 0.75em;
       padding: 0.5em 0;
       min-inline-size: max-content;
-      z-index: 20;
+      z-index: var(--z-index-submenu, 20);
     }
 
     li:hover > ul,
@@ -263,7 +265,7 @@ function getPortadaMini(ruta?: string) {
     }
   }
 
-  @media (width > 768px) {
+  @media (width > 1366px) {
     nav > ul > li:nth-child(3) > ul {
       flex-direction: row;
       gap: 2em;
@@ -271,61 +273,34 @@ function getPortadaMini(ruta?: string) {
     }
   }
 
-  @media (width <= 768px) {
+  @media (width <= 1366px) {
+    nav {
+      display: none;
+    }
+
     .menu-toggle {
       display: flex;
       align-items: center;
       justify-content: center;
+      inline-size: 2.5em;
+      block-size: 2.5em;
       opacity: 1;
       pointer-events: auto;
-    }
-
-    nav {
-      display: none;
-      position: fixed;
-      inset: 4em 0 0;
-      background-color: var(--color-black);
-      border-block-start: 1px solid var(--color-border);
-      overflow-y: auto;
-      z-index: 10;
-
-      &.is-open {
-        display: block;
-      }
-
-      ul {
-        flex-direction: column;
-        gap: 0;
-        padding: 1em;
-      }
-
-      > ul > li + li::before {
-        display: none;
-      }
-
-      li ul {
-        position: static;
-        display: flex;
-        border: none;
-        padding: 0;
-        padding-inline-start: 1em;
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-      }
-
-      > ul > li:nth-child(3) > ul {
-        flex-direction: column;
-        gap: 0;
-        padding: 0;
-        padding-inline-start: 1em;
-      }
+      z-index: var(--z-index-modal, 101);
     }
   }
 </style>
 
 <script>
-  document.querySelector(".menu-toggle")?.addEventListener("click", () => {
-    document.querySelector("nav")?.classList.toggle("is-open")
-  })
+  const toggle = document.querySelector(".menu-toggle")
+  const modal = document.querySelector("#menu-modal")
+
+  if (toggle && modal) {
+    toggle.addEventListener("click", () => {
+      if (!modal.open) {
+        document.body.style.overflow = "hidden"
+        modal.showModal()
+      }
+    })
+  }
 </script>

@@ -25,7 +25,13 @@ import { Icon } from "astro-icon/components"
     visibility: hidden;
     pointer-events: none;
     transition: opacity 0.3s, visibility 0.3s, transform 0.3s, background-color 0.2s;
-    z-index: 100;
+		z-index: var(--z-index-button-up, 100);
+  }
+
+  .menu-open .button-up {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
   }
 
   .button-up.is-visible {
