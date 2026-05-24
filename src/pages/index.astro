@@ -17,7 +17,7 @@ function getPortada(libro: Libro): ImageMetadata | undefined {
 const novedades = [...libros].sort((a, b) => b.ano - a.ano).slice(0, 4)
 
 const novelas = libros.filter((l) => l.categoria === "novela")
-const novelasCortas = libros.filter((l) => l.categoria === "novelacorta")
+const novelasCortas = libros.filter((l) => l.categoria === "novela-corta")
 const cuentosAdol = libros.filter((l) => l.categoria === "cuento-adolescente")
 const cuentosInf = libros.filter((l) => l.categoria === "cuento-infantil")
 ---
@@ -88,8 +88,35 @@ const cuentosInf = libros.filter((l) => l.categoria === "cuento-infantil")
 
   .grid-novedades {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1em;
+  }
+
+  .grid-novedades :global(.card) {
+    background: none;
+    border-radius: 0.4em;
+  }
+
+  .grid-novedades :global(.card-img) {
+    block-size: 6em;
+    object-fit: contain;
+    aspect-ratio: auto;
+    padding: 0.4em;
+    background: var(--color-black);
+  }
+
+  .grid-novedades :global(.card-body) {
+    text-align: center;
+    padding: 0.3em 0.4em 0.4em;
+    gap: 0.1em;
+  }
+
+  .grid-novedades :global(.card-titulo) {
+    font-size: 0.7em;
+  }
+
+  .grid-novedades :global(.card-meta) {
+    font-size: 0.6em;
   }
 
   .grid-2cols {

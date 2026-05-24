@@ -5,8 +5,8 @@ function rutaLibro(libro: (typeof libros)[number]): string {
   switch (libro.categoria) {
     case 'novela':
       return `/novela/${libro.id}`
-    case 'novelacorta':
-      return `/novelacorta/${libro.id}`
+    case 'novela-corta':
+      return `/novela-corta/${libro.id}`
     case 'cuento-adolescente':
       return `/cuentos/adolescentes/${libro.id}`
     case 'cuento-infantil':

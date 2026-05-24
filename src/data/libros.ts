@@ -13,7 +13,8 @@ export interface Libro {
   paginas?: number
   editorial?: string
   sinopsis: string
-  categoria: "novela" | "novelacorta" | "cuento-adolescente" | "cuento-infantil"
+  categoria: "novela" | "novela-corta" | "cuento-adolescente" | "cuento-infantil"
+  categoriaColor: "novela" | "novela-corta" | "cuento-adolescente" | "cuento-infantil"
   portadaMini?: string
   portada?: string
   enlaces: EnlaceCompra[]
@@ -29,6 +30,7 @@ export const libros: Libro[] = [
     sinopsis:
       "La agente Lorena Escudero encuentra el cuerpo de Nadia Lozano en el estanque de La Ricarda. Una joven periodista. Una mente inquieta. Alguien que hacía demasiadas preguntas. Poco después, una cadena de muertes sacude familias importantes. Las víctimas no parecen tener relación entre sí… hasta que un detalle comienza a repetirse. Una venganza que no distingue entre inocentes y culpables.",
     categoria: "novela",
+    categoriaColor: "novela",
     portadaMini: "portada-el-canto-del-gallo.png",
     portada: "portada-el-canto-del-gallo.png",
     enlaces: [
@@ -46,6 +48,7 @@ export const libros: Libro[] = [
     sinopsis:
       "En El Prat de Llobregat siempre se ha dicho que no pasa nada. Pero hay silencios que duran demasiado… y cuando se rompen, lo hacen con violencia. Una novela negra donde los crímenes del pasado regresan para cobrarse lo que se les debe.",
     categoria: "novela",
+    categoriaColor: "novela",
     portadaMini: "portada-el-pasado-nunca-nos-olvida.png",
     portada: "portada-el-pasado-nunca-nos-olvida.png",
     enlaces: [
@@ -71,7 +74,8 @@ export const libros: Libro[] = [
     editorial: "Autoedición",
     sinopsis:
       "Un hombre entra en un bar y descubre que el tiempo puede detenerse. Un experimento con ratas revela quién observa realmente a quién. Un príncipe rompe el destino del mundo por un detalle insignificante. En Relatos tendidos, Daniel Jerez despliega una colección de historias breves donde lo aparentemente trivial se transforma en algo inquietante, irónico o profundamente revelador.",
-    categoria: "novelacorta",
+    categoria: "novela-corta",
+    categoriaColor: "novela-corta",
     portadaMini: "portada-relatos-tendidos.png",
     portada: "portada-relatos-tendidos.png",
     enlaces: [
@@ -86,7 +90,8 @@ export const libros: Libro[] = [
     editorial: "Autoedición",
     sinopsis:
       "En una ciudad cubierta por una extraña niebla, Víctor, un barrendero desencantado, descubre pequeños escarabajos que empujan bolas formadas por palabras como \"esperanza\", \"amor\" o \"futuro\". Junto a Clara, iniciará una lucha absurda y simbólica contra el Señor Muro, una fuerza que manipula la mente colectiva. Una novela fantástica y distópica sobre la lucha por no dejar de sentir, pensar y soñar.",
-    categoria: "novelacorta",
+    categoria: "novela-corta",
+    categoriaColor: "novela-corta",
     portadaMini: "portada-grietas-en-el-muro.png",
     portada: "portada-grietas-en-el-muro.png",
     enlaces: [
@@ -101,7 +106,8 @@ export const libros: Libro[] = [
     editorial: "Autoedición",
     sinopsis:
       "Agosto de 2010, las obras del AVE provocan la caída de la Sagrada Familia. El caos se adueña de Barcelona. 25 años después, un grupo terrorista intenta sumergir de nuevo la ciudad en la oscuridad. Salva intentará evitar el ataque y defender el turismo, la principal fuente de ingresos. Una distopía que pone en tela de juicio el modelo turístico de las ciudades.",
-    categoria: "novelacorta",
+    categoria: "novela-corta",
+    categoriaColor: "novela-corta",
     portadaMini: "portada-el-silencio-de-las-ruinas.png",
     portada: "portada-el-silencio-de-las-ruinas.png",
     enlaces: [
@@ -117,6 +123,7 @@ export const libros: Libro[] = [
     sinopsis:
       "Un extraño descubrimiento en el Polo Sur desencadena una serie de acontecimientos que arrastrarán a Blanca Serrano, periodista de ocultismo, y a Rosa Vidal, inspectora de policía, a una oscura trama. Deberán descifrar unos misteriosos escritos de Jacinto Verdaguer y enfrentarse a la CIA y a una peligrosa organización terrorista para evitar que se apoderen de un arma que cambiaría la historia de la Humanidad.",
     categoria: "novela",
+    categoriaColor: "novela",
     portadaMini: "portada-el-beso-de-la-muerte.png",
     portada: "portada-el-beso-de-la-muerte.png",
     enlaces: [
@@ -131,7 +138,8 @@ export const libros: Libro[] = [
     editorial: "Autoedición",
     sinopsis:
       "El hallazgo de cinco esqueletos y unas escrituras en unos extraños cilindros durante unas excavaciones en Barcelona reúne a seis antiguos compañeros de instituto en una cena de amigos. Durante la velada se destapa el verdadero motivo de la reunión: ¿es posible la vida eterna? Daniel emprende la búsqueda del secreto como escritor, sin saber que las historias y personajes que hallará en un extraño pueblo formarán su propio proceso alquímico.",
-    categoria: "novelacorta",
+    categoria: "novela-corta",
+    categoriaColor: "novela-corta",
     portadaMini: "portada-al-iksir.png",
     portada: "portada-al-iksir.png",
     enlaces: [
@@ -147,6 +155,7 @@ export const libros: Libro[] = [
     sinopsis:
       "En febrero de 1923 Albert Einstein visitó Barcelona para explicar la Teoría de la Relatividad, gracias a la intermediación del físico catalán Esteban Terradas. Pero el objetivo principal de su visita era otro e implicaba un gran peligro. Noventa años después, el inspector Ponce investiga el asesinato de un anticuario que guardaba el diario de Héctor Jubany, ayudante de Terradas. El caso lleva al inspector a sumergirse en edificios históricos y a descubrir la conexión entre los dos científicos y un legado que, en las manos equivocadas, desataría graves delitos.",
     categoria: "novela",
+    categoriaColor: "novela",
     portadaMini: "portada-la-formula-terradas.png",
     portada: "portada-la-formula-terradas.png",
     enlaces: [
@@ -163,6 +172,7 @@ export const libros: Libro[] = [
     sinopsis:
       "El 17 de julio de 1642, 61 arcabuceros de Yecla fueron enviados a Vinaroz para detener el avance francés. Uno de ellos tenía una misión secreta: custodiar un artefacto de Galileo Galilei capaz de cambiar el curso de la humanidad. Siglos después, Valeria Soto, profesora de física, investiga la leyenda del arcabucero nº 61 y su relación con Galileo, Pascal y Yecla. Lo que empieza como una investigación inocente la convertirá en el blanco de un asesino sin escrúpulos.",
     categoria: "novela",
+    categoriaColor: "novela",
     portadaMini: "portada-el-arcabucero-numero-61.png",
     portada: "portada-el-arcabucero-numero-61.png",
     enlaces: [
@@ -178,6 +188,7 @@ export const libros: Libro[] = [
     sinopsis:
       "En el pequeño pueblo de Pesimismo, nadie sonríe. Pero Félix, un niño curioso, descubre que existe un tesoro capaz de transformar la vida de todos. Para encontrarlo deberá enfrentarse al dragón Envidia y a la araña Crítica, y descubrir que el verdadero tesoro no siempre está donde uno espera. Una historia de aventuras, magia y enseñanzas sobre el poder de la sonrisa, el optimismo y la valentía.",
     categoria: "cuento-adolescente",
+    categoriaColor: "cuento-adolescente",
     portadaMini: "portada-el-secreto-del-tesoro-guardado.png",
     portada: "portada-el-secreto-del-tesoro-guardado.png",
     enlaces: [
@@ -193,6 +204,7 @@ export const libros: Libro[] = [
     sinopsis:
       "Cuando el Faraón Empresarioteth I decide construir la pirámide más grandiosa de Egipto, no imagina que el mayor obstáculo será la llegada de Jahi, un humilde prevencionista. Con normas bajo el brazo y entusiasmo por la seguridad laboral, Jahi revolucionará el Imperio. Un relato ingenioso que demuestra que garantizar el bienestar de las personas siempre ha sido una obra faraónica.",
     categoria: "cuento-adolescente",
+    categoriaColor: "cuento-adolescente",
     portadaMini: "portada-el-faraon-y-el-prevencionista.png",
     portada: "portada-el-faraon-y-el-prevencionista.png",
     enlaces: [
@@ -208,6 +220,7 @@ export const libros: Libro[] = [
     sinopsis:
       "Alma, coordinadora de proyectos y madre exigente consigo misma, recorre paisajes que son metáforas del estrés: el Volcán de la Reactividad, el Desierto de la Desconexión, el Pantano de los Pensamientos sin Parar. Cada escenario refleja las trampas del estrés y ofrece claves para afrontarlas. Una novela corta divulgativa que transforma el estrés en un mapa para volver a ti.",
     categoria: "cuento-adolescente",
+    categoriaColor: "cuento-adolescente",
     portadaMini: "portada-el-mapa-de-la-isla-del-estres.png",
     portada: "portada-el-mapa-de-la-isla-del-estres.png",
     enlaces: [
@@ -223,6 +236,7 @@ export const libros: Libro[] = [
     sinopsis:
       "Tres en raya reúne tres relatos independientes unidos por una mirada crítica sobre la identidad, el poder y las trampas del bienestar moderno. Un hombre se somete a un trasplante de felicidad, una frontera invisible convierte a un ciudadano en extranjero sin moverse de casa. Una colección que plantea preguntas incómodas: ¿somos quienes creemos ser? ¿Hasta qué punto decidimos lo que nos hace felices?",
     categoria: "cuento-adolescente",
+    categoriaColor: "cuento-adolescente",
     portadaMini: "portada-tres-en-raya.png",
     portada: "portada-tres-en-raya.png",
     enlaces: [
@@ -239,6 +253,7 @@ export const libros: Libro[] = [
     sinopsis:
       "Cada etapa, su camino reúne tres cuentos infantiles protagonizados por una tortuga de mar, un canguro y un águila, que acompañan a los niños en distintas etapas de su crecimiento. A través de sus historias descubrirán valores como la confianza, la diversidad, el esfuerzo, la ayuda mutua y la valentía de atreverse. Incluye dibujos para colorear.",
     categoria: "cuento-infantil",
+    categoriaColor: "cuento-infantil",
     portadaMini: "portada-cada-etapa-su-camino.png",
     portada: "portada-cada-etapa-su-camino.png",
     enlaces: [

@@ -12,7 +12,7 @@ const { libro, portada } = Astro.props
 
 const categoriaTexto: Record<string, string> = {
   novela: "Novela",
-  novelacorta: "Novela corta",
+  "novela-corta": "Novela corta",
   "cuento-adolescente": "Cuento",
   "cuento-infantil": "Cuento infantil",
 }
@@ -20,7 +20,7 @@ const categoriaTexto: Record<string, string> = {
 function ruta(libro: Libro): string {
   const mapa: Record<string, string> = {
     novela: "novela",
-    novelacorta: "novelacorta",
+    "novela-corta": "novela-corta",
     "cuento-adolescente": "cuentos/adolescentes",
     "cuento-infantil": "cuentos/infantiles",
   }
@@ -28,7 +28,7 @@ function ruta(libro: Libro): string {
 }
 ---
 
-<a href={ruta(libro)} class="card">
+<a href={ruta(libro)} class:list={["card", libro.categoriaColor]}>
   {portada && <Picture src={portada} formats={['avif', 'webp']} alt={libro.titulo} class="card-img" width={150} height={225} />}
   <div class="card-body">
     <h3 class="card-titulo">{libro.titulo}</h3>
@@ -40,18 +40,34 @@ function ruta(libro: Libro): string {
   .card {
     display: flex;
     flex-direction: column;
-    background: var(--color-gray);
     border: 1px solid var(--color-border);
     border-radius: 0.5em;
     overflow: hidden;
     text-decoration: none;
     color: inherit;
+    background: var(--color-gray);
     transition: border-color 0.3s, box-shadow 0.3s;
   }
 
   .card:hover {
     border-color: var(--color-green-500);
     box-shadow: 0 0 1em var(--color-green-500);
+  }
+
+  .novela {
+    background: var(--color-novela);
+  }
+
+  .novela-corta {
+    background: var(--color-novela-corta);
+  }
+
+  .cuento-adolescente {
+    background: var(--color-cuento-adolescente);
+  }
+
+  .cuento-infantil {
+    background: var(--color-cuento-infantil);
   }
 
   .card-img {

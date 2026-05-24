@@ -18,10 +18,10 @@ export const menu: ItemMenu[] = [
   {
     texto: "Novela corta",
     hijos: [
-      { ruta: "/novelacorta/relatos-tendidos", texto: "Relatos tendidos" },
-      { ruta: "/novelacorta/grietas-en-el-muro", texto: "Grietas en el muro" },
-      { ruta: "/novelacorta/el-silencio-de-las-ruinas", texto: "El silencio de las ruinas" },
-      { ruta: "/novelacorta/al-iksir", texto: "Al-iksir" },
+      { ruta: "/novela-corta/relatos-tendidos", texto: "Relatos tendidos" },
+      { ruta: "/novela-corta/grietas-en-el-muro", texto: "Grietas en el muro" },
+      { ruta: "/novela-corta/el-silencio-de-las-ruinas", texto: "El silencio de las ruinas" },
+      { ruta: "/novela-corta/al-iksir", texto: "Al-iksir" },
     ],
   },
   {
