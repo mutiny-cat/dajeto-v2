@@ -298,6 +298,11 @@ function getPortadaMini(ruta?: string) {
   if (toggle && modal) {
     toggle.addEventListener("click", () => {
       if (!modal.open) {
+        modal.querySelectorAll(".expanded").forEach((el) => {
+          el.classList.remove("expanded")
+          el.querySelector("button")?.setAttribute("aria-expanded", "false")
+        })
+        document.documentElement.style.overflow = "hidden"
         document.body.style.overflow = "hidden"
         modal.showModal()
       }

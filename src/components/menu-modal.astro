@@ -115,12 +115,13 @@ function getPortadaMini(ruta?: string) {
   .modal-logo {
     display: flex;
     justify-content: center;
+    padding-block-end: 2em;
     color: var(--color-white);
   }
 
   .modal-logo :global(svg) {
-    inline-size: 3.5em;
-    block-size: 3.5em;
+    inline-size: 5em;
+    block-size: 5em;
   }
 
   #menu-modal nav > ul {
@@ -138,8 +139,12 @@ function getPortadaMini(ruta?: string) {
   }
 
   #menu-modal nav > ul > li > a {
+    display: flex;
+    align-items: center;
     font-size: 1.2em;
     padding-block: 0.75em;
+    padding-inline: 0;
+    inline-size: 100%;
     border-block-end: 1px solid var(--color-border);
     color: var(--color-white-soft);
     text-decoration: none;
@@ -151,10 +156,11 @@ function getPortadaMini(ruta?: string) {
     align-items: center;
     font-size: 1.2em;
     padding-block: 0.75em;
+    padding-inline: 0;
+    inline-size: 100%;
     border-block-end: 1px solid var(--color-border);
     color: var(--color-white-soft);
     font-weight: 600;
-    inline-size: 100%;
     text-align: start;
     background: none;
     border-inline: none;
@@ -172,11 +178,16 @@ function getPortadaMini(ruta?: string) {
     border-inline-end: 2px solid var(--color-white-soft);
     border-block-end: 2px solid var(--color-white-soft);
     transform: rotate(-45deg);
-    transition: transform 0.2s;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+
+  #menu-modal nav > ul > li.expanded:has(> ul) > button {
+    color: var(--color-green-500);
   }
 
   #menu-modal nav > ul > li.expanded:has(> ul) > button::after {
     transform: rotate(45deg);
+    border-color: var(--color-green-500);
   }
 
   #menu-modal li ul {
@@ -274,6 +285,7 @@ function getPortadaMini(ruta?: string) {
     closeBtn.addEventListener("click", () => modal.close())
 
     modal.addEventListener("close", () => {
+      document.documentElement.style.overflow = ""
       document.body.style.overflow = ""
     })
 
