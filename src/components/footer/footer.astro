@@ -18,17 +18,26 @@ const anoActual = new Date().getFullYear()
     <a href="https://www.linkedin.com/in/danieljereztorns/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
       <Icon name="linkedin" />
     </a>
+    <a href="https://bsky.app/profile/danijerez.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="Bluesky">
+      <Icon name="bluesky" />
+    </a>
+    <a href="https://www.goodreads.com/author/show/14073624.Daniel_Jerez_Torns" target="_blank" rel="noopener noreferrer" aria-label="Goodreads">
+      <Icon name="goodreads" />
+    </a>
+    <a href="https://www.xing.com/profile/Daniel_JerezTorns" target="_blank" rel="noopener noreferrer" aria-label="Xing">
+      <Icon name="xing" />
+    </a>
   </div>
 
-  <nav class="legal">
-    <a href="/aviso-legal">Aviso legal</a>
-    <a href="/privacidad">Política de privacidad</a>
-    <a href="/cookies">Política de cookies</a>
-    <a href="/accesibilidad">Accesibilidad</a>
+  <nav class="legal" aria-label="Enlaces legales">
+    <a href="/legalidad/aviso-legal">Aviso legal</a>
+    <a href="/legalidad/privacidad">Política de privacidad</a>
+    <a href="/legalidad/cookies">Política de cookies</a>
+    <a href="/legalidad/accesibilidad">Accesibilidad</a>
   </nav>
 
   <div class="copy">
-    <Icon name="cc" />
+    <Icon name="cc" aria-hidden="true" />
     <span>Daniel Jerez (2005 - {anoActual})</span>
   </div>
 </footer>
@@ -38,45 +47,50 @@ const anoActual = new Date().getFullYear()
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5em;
+    gap: 3em;
     padding-block: 2em;
     padding-inline: 1em;
+
+    @media (width >= 768px) {
+      padding-block-start: 6em;
+    }
   }
 
   .social {
     display: flex;
-    gap: 1.5em;
+    gap: 2.5em;
+    margin-block-end: 2em;
 
     a {
       color: var(--color-white-soft);
-      transition: color 0.2s;
+      transition: color 0.3s ease;
       display: flex;
 
       &:hover {
-        color: var(--color-primary-500);
+        color: var(--color-green-500);
       }
     }
 
     :global(svg) {
-      inline-size: 1.5em;
-      block-size: 1.5em;
+      inline-size: 2em;
+      block-size: 2em;
       fill: currentColor;
     }
   }
 
   .legal {
     display: flex;
-    gap: 1.5em;
+    gap: 2em;
     flex-wrap: wrap;
     justify-content: center;
 
     a {
       color: var(--color-white-soft);
       font-size: 0.875em;
-      transition: color 0.2s;
+      transition: color 0.3s ease;
 
       &:hover {
-        color: var(--color-primary-500);
+        color: var(--color-green-500);
       }
     }
   }

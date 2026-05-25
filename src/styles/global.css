@@ -137,7 +137,11 @@ main {
 	max-inline-size: var(--max-width);
 	margin-inline: auto;
 	padding-inline: 1em;
-	padding-block-start: 7.5em;
+	padding-block-start: 8em;
+
+	@media (width >= 768px) {
+		padding-block-start: 10em;
+	}
 	min-block-size: 100dvh;
 	background-color: var(--color-black);
 	display: flex;
