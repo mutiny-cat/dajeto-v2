@@ -44,15 +44,16 @@ const { titulo, ano, fondo, libroImg } = Astro.props
   .content {
     position: relative;
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: space-evenly;
     block-size: 100%;
+    background: linear-gradient(transparent, rgb(0 0 0 / 0.85));
   }
 
   .overlay {
-    padding: 2em;
-    background: linear-gradient(transparent, rgb(0 0 0 / 0.85));
+    padding: 3em 4em;
     flex: 1;
+    align-self: center;
   }
 
   .overlay h1 {
@@ -67,15 +68,15 @@ const { titulo, ano, fondo, libroImg } = Astro.props
   }
 
   .libro-wrap {
-    align-self: flex-end;
-    margin-inline-end: 2em;
-    block-size: 100%;
+    align-self: center;
+    margin-inline-end: 4em;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    block-size: 60%;
   }
 
   .libro {
-    max-block-size: 80%;
+    block-size: 100%;
     object-fit: contain;
   }
 </style>
