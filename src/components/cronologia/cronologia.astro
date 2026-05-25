@@ -55,10 +55,16 @@ const { trayectoria } = Astro.props
       cards[0].classList.add("is-visible")
       highestVisible = 0
       orb?.style.setProperty("--orb-scale", "1")
+      orb?.style.setProperty("--orb-color", "var(--color-green-500)")
+      orb?.style.setProperty("--orb-svg-color", "var(--color-green-500)")
+      container?.style.setProperty("--line-color", "var(--color-green-500)")
     } else {
       cards[0].style.setProperty("--dot-opacity", "0")
       cards[0].classList.remove("is-visible")
       orb?.style.setProperty("--orb-scale", "1.5")
+      orb?.style.setProperty("--orb-color", "var(--color-green-600)")
+      orb?.style.removeProperty("--orb-svg-color")
+      container?.style.setProperty("--line-color", "var(--color-green-600)")
     }
 
     for (let i = 1; i < cards.length; i++) {
@@ -125,6 +131,7 @@ const { trayectoria } = Astro.props
   }
 
   .timeline-orb {
+    --orb-color: var(--color-green-600);
     position: absolute;
     inset-inline-start: 0;
     inset-block-start: calc(var(--top, 0px) - 4.25em);
@@ -132,20 +139,21 @@ const { trayectoria } = Astro.props
     inline-size: 2.5em;
     block-size: 2.5em;
     border-radius: 50%;
-    border: 2px solid var(--color-green-500);
+    border: 2px solid var(--orb-color);
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--color-black);
-    box-shadow: 0 0 1.5em color-mix(in srgb, var(--color-green-500) 30%, transparent);
-    transition: transform 0.5s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 1.5em color-mix(in srgb, var(--orb-color) 30%, transparent);
+    transition: transform 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
     transform: scale(var(--orb-scale, 1.5));
   }
 
   .timeline-orb :global(svg) {
     inline-size: 1.8em;
     block-size: 1.8em;
-    fill: var(--color-green-500);
+    fill: var(--orb-svg-color, var(--color-black));
+    transition: fill 0.5s ease;
   }
 
   .timeline-line {
@@ -156,8 +164,8 @@ const { trayectoria } = Astro.props
     inline-size: 2px;
     background: linear-gradient(
       180deg,
-      var(--color-green-500) 0%,
-      var(--color-green-500) 0%,
+      var(--line-color) 0%,
+      var(--line-color) 0%,
       transparent 100%
     );
     translate: -50% 0;
