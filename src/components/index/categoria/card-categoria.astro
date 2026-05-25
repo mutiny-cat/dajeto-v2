@@ -29,7 +29,7 @@ const { libro, fondo, libroImg } = Astro.props
     border: 1px solid var(--color-border);
     border-radius: 0.75em;
     padding: 1.5em;
-    transition: border-color 0.3s, box-shadow 0.3s;
+    transition: border-color 0.3s;
     overflow: hidden;
   }
 
@@ -40,8 +40,32 @@ const { libro, fondo, libroImg } = Astro.props
     background-image: var(--fondo);
     background-size: cover;
     background-position: center;
-    filter: brightness(0.4) blur(4px);
+    filter: brightness(0.4);
     z-index: 0;
+  }
+
+  article::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: 0 0 1.2em var(--categoria-hover-glow, var(--color-border-soft));
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  article:hover {
+    border-color: var(--categoria-hover-glow, var(--color-border-soft));
+  }
+
+  article:hover::after {
+    opacity: 1;
+  }
+
+  article:hover h4 {
+    text-shadow: 0 0 0.5em var(--categoria-hover-glow, var(--color-border-soft));
   }
 
   a {
@@ -55,15 +79,6 @@ const { libro, fondo, libroImg } = Astro.props
     justify-content: var(--card-justify, flex-start);
     text-align: var(--card-text-align, center);
     gap: 1em;
-  }
-
-  article:hover {
-    border-color: var(--categoria-hover-glow, var(--color-border-soft));
-    box-shadow: 0 0 1em var(--categoria-hover-glow, var(--color-border-soft));
-  }
-
-  article:hover h4 {
-    text-shadow: 0 0 0.5em var(--categoria-hover-glow, var(--color-border-soft));
   }
 
   picture {
@@ -96,11 +111,6 @@ const { libro, fondo, libroImg } = Astro.props
     background: rgb(0 0 0 / 0.5);
     padding: 0.6em 0.8em;
     border-radius: 0.4em;
-    transition: box-shadow 0.3s;
-  }
-
-  article:hover div {
-    box-shadow: 0 0 0.6em var(--categoria-hover-glow, var(--color-border));
   }
 
   a :global(.card-arrow) {
@@ -108,12 +118,11 @@ const { libro, fondo, libroImg } = Astro.props
     block-size: 2em;
     display: block;
     color: var(--color-white);
-    transition: transform 0.3s, filter 0.3s;
+    transition: color 0.3s, transform 0.3s;
   }
 
   article:hover :global(.card-arrow) {
     color: var(--categoria-hover-glow, var(--color-border-soft));
-    filter: drop-shadow(0 0 0.5em var(--categoria-hover-glow, var(--color-border-soft)));
   }
 
   h4 {

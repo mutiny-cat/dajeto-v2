@@ -42,6 +42,7 @@ const categoriaTexto: Record<string, string> = {
 
 <style>
   a {
+    position: relative;
     text-decoration: none;
     color: inherit;
     display: flex;
@@ -66,7 +67,18 @@ const categoriaTexto: Record<string, string> = {
       background: var(--color-cuento-infantil);
     }
     border: 1px solid var(--color-border);
-    transition: border-color 0.3s, box-shadow 0.3s;
+    transition: border-color 0.3s;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      box-shadow: 0 0 1em var(--color-green-500);
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
 
     &:focus-visible {
       outline: 2px solid var(--color-green-500);
@@ -75,7 +87,10 @@ const categoriaTexto: Record<string, string> = {
 
     &:hover {
       border-color: var(--color-green-500);
-      box-shadow: 0 0 1em var(--color-green-500);
+    }
+
+    &:hover::after {
+      opacity: 1;
     }
   }
 
