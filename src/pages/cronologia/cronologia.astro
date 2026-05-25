@@ -1,6 +1,18 @@
 ---
 import PageLayout from "@layouts/page-layout.astro"
+import Timeline from "@components/cronologia/cronologia.astro"
+import { trayectoria } from "@data/cronologia"
 ---
 
 <PageLayout title="Cronología">
+  <h2 class="page-heading">Cronología</h2>
+  <Timeline trayectoria={trayectoria} />
 </PageLayout>
+
+<style>
+  .page-heading {
+    text-align: center;
+    font-size: var(--text-h2);
+    color: var(--color-white);
+  }
+</style>
