@@ -78,6 +78,7 @@
 html {
 	scroll-behavior: smooth;
 	background-color: var(--color-black);
+	overflow-x: hidden;
 }
 
 body {
@@ -137,7 +138,7 @@ main {
 	max-inline-size: var(--max-width);
 	margin-inline: auto;
 	padding-inline: 1em;
-	padding-block-start: 8em;
+	padding-block-start: 6em;
 
 	@media (width >= 768px) {
 		padding-block-start: 10em;
