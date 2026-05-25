@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components"
 import type { EventoTrayectoria } from "@data/cronologia"
 
 export interface Props {
@@ -8,118 +9,312 @@ export interface Props {
 const { trayectoria } = Astro.props
 ---
 
-<div class="timeline">
+<h2 class="timeline-heading">Cronología</h2>
+<div class="card-container">
+  <div class="timeline-orb">
+    <Icon name="logo" />
+  </div>
   <div class="timeline-line"></div>
-  {trayectoria.map((evento, i) => (
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <article class="timeline-card">
-        <time class="timeline-ano">{evento.ano}</time>
-        <h3 class="timeline-titulo">{evento.titulo}</h3>
-        <p class="timeline-desc">{evento.descripcion}</p>
-      </article>
-    </div>
-  ))}
+  {trayectoria.map((evento, i) => {
+    const esCompletado = evento.estado === "completado"
+    return (
+      <section class="card-timeline">
+        <div class="card-content">
+          <div class="card-meta">
+            <time class="card-ano">{evento.ano}</time>
+            <span class="card-estado" data-estado={evento.estado}>
+              {esCompletado ? (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                  <path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              ) : (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3"/>
+                  <path d="M12 8v4m0 4v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              )}
+              <span>{esCompletado ? "Completado" : "Pendiente"}</span>
+            </span>
+          </div>
+          <h3 class="card-titulo">{evento.titulo}</h3>
+          <p class="card-desc">{evento.descripcion}</p>
+        </div>
+      </section>
+    )
+  })}
 </div>
 
+<script>
+  const container = document.querySelector(".card-container")
+  const orb = document.querySelector(".timeline-orb")
+  const cards = document.querySelectorAll(".card-timeline")
+  const BUFFER = 50
+
+  function updateOrb() {
+    if (!container || !orb) return
+    const max = Math.max(0, (container.offsetHeight ?? 0) - BUFFER)
+    const progress = Math.min(max, window.scrollY)
+    orb.style.setProperty("--top", `${progress}px`)
+  }
+
+  function updateProgreso() {
+    if (!container || cards.length === 0) return
+    const scrollY = window.scrollY
+    const containerTop = container.offsetTop
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight
+    const estaAlFondo = scrollY >= maxScroll - 20
+
+    if (scrollY > 10) {
+      cards[0].style.setProperty("--dot-opacity", "1")
+      cards[0].classList.add("is-visible")
+    } else {
+      cards[0].style.setProperty("--dot-opacity", "0")
+      cards[0].classList.remove("is-visible")
+    }
+
+    for (let i = 1; i < cards.length; i++) {
+      const prev = cards[i - 1]
+      const puntoActivar = containerTop + prev.offsetTop + prev.offsetHeight * 0.1
+      if (scrollY >= puntoActivar || estaAlFondo) {
+        cards[i].style.setProperty("--dot-opacity", "1")
+        cards[i].classList.add("is-visible")
+      } else {
+        cards[i].style.setProperty("--dot-opacity", "0")
+        cards[i].classList.remove("is-visible")
+      }
+    }
+  }
+
+  function ajustarEspaciado() {
+    if (!container || cards.length < 2) return
+    const fontSize = parseFloat(getComputedStyle(document.documentElement).fontSize)
+    const orbOffset = window.innerWidth >= 768 ? 4 : 3
+    const ultimaCard = cards[cards.length - 1]
+    const ultimoDotY = container.offsetTop + ultimaCard.offsetTop + ultimaCard.offsetHeight / 2
+    const scrollTarget = ultimoDotY - container.offsetTop + orbOffset * fontSize
+    const deficit = scrollTarget - (document.documentElement.scrollHeight - window.innerHeight)
+    const basePadding = 12 * fontSize
+    container.style.paddingBlockEnd = `${basePadding + Math.max(0, deficit) + 40}px`
+  }
+
+  function onScroll() {
+    requestAnimationFrame(() => {
+      updateOrb()
+      updateProgreso()
+    })
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true })
+  window.addEventListener("resize", () => {
+    updateProgreso()
+    ajustarEspaciado()
+  })
+  updateOrb()
+  updateProgreso()
+  ajustarEspaciado()
+</script>
+
 <style>
-  .timeline {
+  .timeline-heading {
+    text-align: center;
+    font-size: var(--text-h2);
+    color: var(--color-white);
+    margin-block-end: 1.5em;
+  }
+
+  .card-container {
     position: relative;
+    max-inline-size: 900px;
+    margin-inline: auto;
+    padding-block-end: 12em;
+  }
+
+  .timeline-orb {
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: calc(var(--top, 0px) - 5em);
+    z-index: 2;
+    inline-size: 4em;
+    block-size: 4em;
+    border-radius: 50%;
+    border: 2px solid var(--color-green-500);
     display: flex;
-    flex-direction: column;
-    gap: 3em;
-    padding-block: 2em;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-black);
+    box-shadow: 0 0 1.5em color-mix(in srgb, var(--color-green-500) 30%, transparent);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .timeline-orb :global(svg) {
+    inline-size: 2em;
+    block-size: 2em;
+    fill: var(--color-green-500);
   }
 
   .timeline-line {
     position: absolute;
-    inset-block: 0;
-    inset-inline-start: 50%;
+    inset-block-start: -3em;
+    inset-block-end: 0;
+    inset-inline-start: 2em;
     inline-size: 2px;
-    background: var(--color-green-500);
+    background: linear-gradient(
+      180deg,
+      var(--color-green-500) 0%,
+      color-mix(in srgb, var(--color-green-500) 40%, transparent) 100%
+    );
     translate: -50% 0;
   }
 
-  .timeline-item {
+  .card-timeline {
     position: relative;
-    display: flex;
-    align-items: flex-start;
+    padding-inline-start: 4em;
+    padding-block: 1.5em;
+    opacity: 0.3;
+    transition: opacity 0.5s ease;
   }
 
-  .timeline-dot {
+  .card-timeline::before {
+    content: "";
     position: absolute;
-    inset-inline-start: 50%;
-    translate: -50% 0.3em;
-    inline-size: 1em;
-    block-size: 1em;
+    inset-inline-start: calc(2em - 0.4em);
+    inset-block-start: 50%;
+    translate: 0 -50%;
+    inline-size: 0.8em;
+    block-size: 0.8em;
     border-radius: 50%;
     background: var(--color-green-500);
     box-shadow: 0 0 0.5em var(--color-green-500);
     z-index: 1;
+    opacity: var(--dot-opacity, 0);
+    transition: opacity 0.3s ease;
   }
 
-  .timeline-card {
-    inline-size: calc(50% - 2em);
-    margin-inline-start: auto;
-    padding: 1.5em;
+  .card-timeline.is-visible {
+    opacity: 1;
+  }
+
+  .card-content {
     border: 1px solid var(--color-border);
     border-radius: 1em;
     background: var(--color-black-soft);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    padding: 1.5em;
+    transition: border-color 0.5s ease;
   }
 
-  .timeline-card:hover {
+  .card-timeline.is-visible .card-content {
     border-color: var(--color-green-500);
-    box-shadow: 0 0 1em color-mix(in srgb, var(--color-green-500) 20%, transparent);
   }
 
-  .timeline-item:nth-child(odd) .timeline-card {
-    margin-inline-start: 0;
-    margin-inline-end: auto;
+  .card-meta {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-block-end: 0.75em;
+    flex-wrap: wrap;
   }
 
-  .timeline-ano {
-    display: inline-block;
-    font-size: 0.875em;
+  .card-ano {
+    font-size: 0.75em;
     font-weight: 700;
-    color: var(--color-green-500);
-    margin-block-end: 0.5em;
+    color: var(--color-white);
+    letter-spacing: 0.15em;
+    border: 1px solid var(--color-green-500);
+    border-radius: 2em;
+    padding: 0.2em 0.8em;
   }
 
-  .timeline-titulo {
+  .card-estado {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    font-size: 0.75em;
+    font-weight: 600;
+    color: var(--color-green-500);
+  }
+
+  .card-estado[data-estado="pendiente"] {
+    color: var(--color-white-soft);
+  }
+
+  .card-titulo {
     font-size: var(--text-h4);
     font-weight: 700;
     color: var(--color-white);
     margin-block-end: 0.5em;
   }
 
-  .timeline-desc {
+  .card-desc {
     font-size: 0.875em;
     color: var(--color-white-soft);
     line-height: 1.6;
   }
 
-  @media (width <= 768px) {
-    .timeline {
-      gap: 2em;
+  @media (width >= 768px) {
+    .timeline-orb {
+      inset-inline-start: 50%;
+      translate: -50% 0;
+      inline-size: 5em;
+      block-size: 5em;
+      inset-block-start: calc(var(--top, 0px) - 6.5em);
+    }
+
+    .timeline-orb :global(svg) {
+      inline-size: 2.5em;
+      block-size: 2.5em;
     }
 
     .timeline-line {
-      inset-inline-start: 1em;
+      inset-inline-start: 50%;
+      inset-block-start: -4em;
     }
 
-    .timeline-dot {
-      inset-inline-start: 1em;
+    .card-timeline {
+      padding-inline-start: 0;
+      inline-size: calc(50% - 3em);
     }
 
-    .timeline-card {
-      inline-size: 100%;
-      margin-inline-start: 2.5em;
+    .card-timeline:nth-child(odd) {
+      margin-inline-start: auto;
     }
 
-    .timeline-item:nth-child(odd) .timeline-card {
-      margin-inline-start: 2.5em;
-      margin-inline-end: 0;
+    .card-timeline::before {
+      display: none;
+    }
+
+    .card-timeline:nth-child(odd)::after {
+      content: "";
+      position: absolute;
+      inset-inline-start: -3.4em;
+      inset-block-start: 50%;
+      translate: 0 -50%;
+      inline-size: 0.8em;
+      block-size: 0.8em;
+      border-radius: 50%;
+      background: var(--color-green-500);
+      box-shadow: 0 0 0.5em var(--color-green-500);
+      z-index: 1;
+    }
+
+    .card-timeline:nth-child(even)::after {
+      content: "";
+      position: absolute;
+      inset-inline-end: -3.4em;
+      inset-block-start: 50%;
+      translate: 0 -50%;
+      inline-size: 0.8em;
+      block-size: 0.8em;
+      border-radius: 50%;
+      background: var(--color-green-500);
+      box-shadow: 0 0 0.5em var(--color-green-500);
+      z-index: 1;
+    }
+
+    .card-timeline::before,
+    .card-timeline::after {
+      opacity: var(--dot-opacity, 0);
+      transition: opacity 0.3s ease;
     }
   }
 </style>
