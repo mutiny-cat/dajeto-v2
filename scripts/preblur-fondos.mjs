@@ -17,8 +17,8 @@ for (const file of files) {
 
   await sharp(input)
     .resize(1200, undefined, { withoutEnlargement: true })
-    .blur(40)
-    .jpeg({ quality: 60 })
+    .blur(5)
+    .jpeg({ quality: 85 })
     .toFile(output)
 
   console.log(`✓ ${file}`)
