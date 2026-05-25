@@ -54,9 +54,11 @@ const { trayectoria } = Astro.props
       cards[0].style.setProperty("--dot-opacity", "1")
       cards[0].classList.add("is-visible")
       highestVisible = 0
+      orb?.style.setProperty("--orb-scale", "1")
     } else {
       cards[0].style.setProperty("--dot-opacity", "0")
       cards[0].classList.remove("is-visible")
+      orb?.style.setProperty("--orb-scale", "1.5")
     }
 
     for (let i = 1; i < cards.length; i++) {
@@ -125,10 +127,10 @@ const { trayectoria } = Astro.props
   .timeline-orb {
     position: absolute;
     inset-inline-start: 0;
-    inset-block-start: calc(var(--top, 0px) - 5em);
+    inset-block-start: calc(var(--top, 0px) - 4.25em);
     z-index: 2;
-    inline-size: 4em;
-    block-size: 4em;
+    inline-size: 2.5em;
+    block-size: 2.5em;
     border-radius: 50%;
     border: 2px solid var(--color-green-500);
     display: flex;
@@ -136,12 +138,13 @@ const { trayectoria } = Astro.props
     justify-content: center;
     background: var(--color-black);
     box-shadow: 0 0 1.5em color-mix(in srgb, var(--color-green-500) 30%, transparent);
-    transition: box-shadow 0.3s ease;
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+    transform: scale(var(--orb-scale, 1.5));
   }
 
   .timeline-orb :global(svg) {
-    inline-size: 2em;
-    block-size: 2em;
+    inline-size: 1.8em;
+    block-size: 1.8em;
     fill: var(--color-green-500);
   }
 
@@ -235,14 +238,14 @@ const { trayectoria } = Astro.props
     .timeline-orb {
       inset-inline-start: 50%;
       translate: -50% 0;
-      inline-size: 5em;
-      block-size: 5em;
-      inset-block-start: calc(var(--top, 0px) - 6.5em);
+      inline-size: 3em;
+      block-size: 3em;
+      inset-block-start: calc(var(--top, 0px) - 5.5em);
     }
 
     .timeline-orb :global(svg) {
-      inline-size: 2.5em;
-      block-size: 2.5em;
+      inline-size: 2em;
+      block-size: 2em;
     }
 
     .timeline-line {
