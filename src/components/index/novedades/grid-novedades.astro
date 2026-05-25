@@ -10,12 +10,12 @@ export interface Props {
 const { libros } = Astro.props
 ---
 
-<section class="grid">
+<div class="grid">
   <h4>Novedades</h4>
   {libros.map(({ libro, portada }) => (
     <CardNovedades libro={libro} portada={portada} />
   ))}
-</section>
+</div>
 
 <style>
   .grid {
