@@ -11,22 +11,27 @@ export interface Props {
 const { titulo, libros } = Astro.props
 ---
 
-<h2>{titulo}</h2>
-<div class="grid">
-  {libros.map(({ libro, fondo, libroImg }) => (
-    <CardCategoria libro={libro} fondo={fondo} libroImg={libroImg} />
-  ))}
+<div class="wrapper">
+  <h2>{titulo}</h2>
+  <div class="grid">
+    {libros.map(({ libro, fondo, libroImg }) => (
+      <CardCategoria libro={libro} fondo={fondo} libroImg={libroImg} />
+    ))}
+  </div>
 </div>
 
 <style>
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2em;
+  .wrapper {
     background: var(--categoria-grid-bg, var(--color-black-soft));
     border: 1px solid var(--categoria-grid-border, var(--color-border));
     border-radius: 0.75em;
     padding: 2em;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2em;
   }
 
   .grid > :global(:last-child:nth-child(odd)) {
