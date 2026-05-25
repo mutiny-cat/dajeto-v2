@@ -7,7 +7,7 @@ export interface EventoTrayectoria {
 
 export const trayectoria: EventoTrayectoria[] = [
   {
-    ano: 2008,
+    ano: 2005,
     titulo: "Inicios en la escritura",
     descripcion:
       "Daniel Jerez comienza su andadura literaria escribiendo relatos cortos, explorando su voz narrativa y los géneros que más tarde definirían su carrera.",
