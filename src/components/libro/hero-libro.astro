@@ -5,17 +5,21 @@ export interface Props {
   titulo: string
   ano: number
   fondo?: ImageMetadata
+  libroImg?: ImageMetadata
 }
 
-const { titulo, ano, fondo } = Astro.props
+const { titulo, ano, fondo, libroImg } = Astro.props
 ---
 
 <section class="hero">
   {fondo && <img src={fondo.src} alt="" class="bg" />}
-  <div class="overlay">
-    <h1>{titulo}</h1>
-    <p class="sub">Daniel Jerez Torns · {ano}</p>
-  </div>
+  <article class="content">
+    <div class="overlay">
+      <h1>{titulo}</h1>
+      <p class="sub">Daniel Jerez Torns · {ano}</p>
+    </div>
+    {libroImg && <div class="libro-wrap"><img src={libroImg.src} alt={titulo} class="libro" /></div>}
+  </article>
 </section>
 
 <style>
@@ -23,8 +27,6 @@ const { titulo, ano, fondo } = Astro.props
     grid-column: 1 / -1;
     position: relative;
     aspect-ratio: 21 / 9;
-    display: flex;
-    align-items: flex-end;
     border: none;
     border-radius: 0.75em;
     overflow: hidden;
@@ -39,11 +41,18 @@ const { titulo, ano, fondo } = Astro.props
     filter: grayscale(1) contrast(1.4) brightness(0.65);
   }
 
-  .overlay {
+  .content {
     position: relative;
-    inline-size: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    block-size: 100%;
+  }
+
+  .overlay {
     padding: 2em;
     background: linear-gradient(transparent, rgb(0 0 0 / 0.85));
+    flex: 1;
   }
 
   .overlay h1 {
@@ -55,5 +64,18 @@ const { titulo, ano, fondo } = Astro.props
     color: var(--color-white-soft);
     font-size: 1em;
     margin-block-start: 0.5em;
+  }
+
+  .libro-wrap {
+    align-self: flex-end;
+    margin-inline-end: 2em;
+    block-size: 100%;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .libro {
+    max-block-size: 80%;
+    object-fit: contain;
   }
 </style>

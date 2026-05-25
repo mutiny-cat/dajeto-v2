@@ -17,11 +17,13 @@ const { libro } = Astro.props as { libro: Libro }
 
 const portadas = import.meta.glob("/src/assets/images/portadas/*.png", { eager: true })
 const fondos = import.meta.glob("/src/assets/images/fondos/*.jpg", { eager: true })
+const librosImg = import.meta.glob("/src/assets/images/libro/*.png", { eager: true })
 
 const portada = portadas[`/src/assets/images/portadas/${libro.portada}`] as { default: ImageMetadata }
 const fondo = fondos[`/src/assets/images/fondos/bg-${libro.id}.jpg`] as { default: ImageMetadata } | undefined
+const libroImg = librosImg[`/src/assets/images/libro/libro-${libro.id}.png`] as { default: ImageMetadata } | undefined
 ---
 
 <PageLayout title={libro.titulo}>
-  <GridLibro {libro} fondo={fondo?.default} portada={portada.default} />
+  <GridLibro {libro} fondo={fondo?.default} portada={portada.default} libroImg={libroImg?.default} />
 </PageLayout>

@@ -12,13 +12,14 @@ export interface Props {
   libro: Libro
   fondo?: ImageMetadata
   portada: ImageMetadata
+  libroImg?: ImageMetadata
 }
 
-const { libro, fondo, portada } = Astro.props
+const { libro, fondo, portada, libroImg } = Astro.props
 ---
 
 <div class="grid">
-  <Hero titulo={libro.titulo} ano={libro.ano} {fondo} />
+  <Hero titulo={libro.titulo} ano={libro.ano} {fondo} {libroImg} />
   {libro.cita && <Cita cita={libro.cita} />}
   <Portada titulo={libro.titulo} {portada} sinopsis={libro.sinopsis} />
   <Contenido titulo={libro.titulo} subtitulo={libro.subtitulo} paginas={libro.paginas} />
