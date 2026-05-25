@@ -50,9 +50,10 @@ const { libro, fondo, libroImg } = Astro.props
     text-decoration: none;
     color: inherit;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    flex-direction: var(--card-dir, column);
+    align-items: var(--card-align, center);
+    justify-content: var(--card-justify, flex-start);
+    text-align: var(--card-text-align, center);
     gap: 1em;
   }
 
@@ -68,6 +69,9 @@ const { libro, fondo, libroImg } = Astro.props
   picture {
     display: block;
     inline-size: 40%;
+    max-inline-size: var(--orphan-max-w, none);
+    flex-shrink: var(--pic-shrink, 1);
+    align-self: var(--pic-align, auto);
     transition: transform 0.3s;
   }
 
@@ -83,9 +87,12 @@ const { libro, fondo, libroImg } = Astro.props
 
   div {
     display: flex;
-    justify-content: space-between;
+    flex-direction: var(--div-dir, row);
+    justify-content: var(--div-justify, space-between);
     align-items: center;
-    inline-size: 100%;
+    inline-size: var(--div-w, 100%);
+    max-inline-size: var(--div-max-w, none);
+    flex: var(--div-flex, none);
     background: rgb(0 0 0 / 0.5);
     padding: 0.6em 0.8em;
     border-radius: 0.4em;
