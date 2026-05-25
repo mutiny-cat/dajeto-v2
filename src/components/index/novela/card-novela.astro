@@ -1,0 +1,115 @@
+---
+import { Icon } from "astro-icon/components"
+import { Picture } from "astro:assets"
+import type { ImageMetadata } from "astro"
+import type { Libro } from "@data/libros"
+
+export interface Props {
+  libro: Libro
+  fondo: ImageMetadata | undefined
+  libroImg: ImageMetadata | undefined
+}
+
+const { libro, fondo, libroImg } = Astro.props
+---
+
+<article style={fondo ? `--fondo: url(${fondo.src})` : undefined}>
+  <a href={`/novela/${libro.id}`}>
+    {libroImg && <Picture src={libroImg} formats={['avif', 'webp']} alt={libro.titulo} width={200} height={300} />}
+    <div>
+      <h4>{libro.titulo}</h4>
+      <Icon name="arrow" class="card-arrow" />
+    </div>
+  </a>
+</article>
+
+<style>
+  article {
+    position: relative;
+    border: 1px solid var(--color-border);
+    border-radius: 0.75em;
+    padding: 1.5em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+  }
+
+  article::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--fondo);
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.4) blur(4px);
+    z-index: 0;
+  }
+
+  a {
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1em;
+  }
+
+  article:hover {
+    border-color: var(--color-border-soft);
+    box-shadow: 0 0 1em var(--color-border-soft);
+  }
+
+  article:hover h4 {
+    text-shadow: 0 0 0.5em var(--color-border-soft);
+  }
+
+  picture {
+    display: block;
+    inline-size: 40%;
+    transition: transform 0.3s;
+  }
+
+  article:hover picture {
+    transform: scale(1.05);
+  }
+
+  img {
+    display: block;
+    inline-size: 100%;
+    block-size: auto;
+  }
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    inline-size: 100%;
+    background: rgb(0 0 0 / 0.5);
+    padding: 0.6em 0.8em;
+    border-radius: 0.4em;
+    transition: box-shadow 0.3s;
+  }
+
+  article:hover div {
+    box-shadow: 0 0 0.6em var(--color-border);
+  }
+
+  a :global(.card-arrow) {
+    inline-size: 2em;
+    block-size: 2em;
+    display: block;
+    color: var(--color-white);
+    transition: transform 0.3s, filter 0.3s;
+  }
+
+  article:hover :global(.card-arrow) {
+    color: var(--color-border-soft);
+    filter: drop-shadow(0 0 0.5em var(--color-border-soft));
+  }
+
+  h4 {
+    transition: text-shadow 0.3s;
+  }
+</style>
