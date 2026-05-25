@@ -15,34 +15,17 @@ const { trayectoria } = Astro.props
     <Icon name="logo" />
   </div>
   <div class="timeline-line"></div>
-  {trayectoria.map((evento, i) => {
-    const esCompletado = evento.estado === "completado"
-    return (
+  {trayectoria.map((evento) => (
       <section class="card-timeline">
         <div class="card-content">
           <div class="card-meta">
             <time class="card-ano">{evento.ano}</time>
-            <span class="card-estado" data-estado={evento.estado}>
-              {esCompletado ? (
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                  <path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              ) : (
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3"/>
-                  <path d="M12 8v4m0 4v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-              )}
-              <span>{esCompletado ? "Completado" : "Pendiente"}</span>
-            </span>
           </div>
           <h3 class="card-titulo">{evento.titulo}</h3>
           <p class="card-desc">{evento.descripcion}</p>
         </div>
       </section>
-    )
-  })}
+  ))}
 </div>
 
 <script>
@@ -232,19 +215,6 @@ const { trayectoria } = Astro.props
     border: 1px solid var(--color-green-500);
     border-radius: 2em;
     padding: 0.2em 0.8em;
-  }
-
-  .card-estado {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35em;
-    font-size: 0.75em;
-    font-weight: 600;
-    color: var(--color-green-500);
-  }
-
-  .card-estado[data-estado="pendiente"] {
-    color: var(--color-white-soft);
   }
 
   .card-titulo {
