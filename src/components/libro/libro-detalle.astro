@@ -1,86 +1,64 @@
 ---
-import PageLayout from "@layouts/page-layout.astro"
 import { Picture } from "astro:assets"
+import type { Libro } from "@data/libros"
 
-const portada = await import("/src/assets/images/portadas/portada-el-canto-del-gallo.png")
-const fondo = "/assets/fondos/bg-el-canto-del-gallo.jpg"
-const libroImg = await import("/src/assets/images/libro/libro-el-canto-del-gallo.png")
-
-const libro = {
-  titulo: "El canto del gallo",
-  ano: 2026,
-  paginas: 416,
-  editorial: "Autoedición",
-  isbn: "978-84-126597-3-7",
-  idioma: "Castellano",
-  sinopsis:
-    "La agente Lorena Escudero encuentra el cuerpo de Nadia Lozano en el estanque de La Ricarda. Una joven periodista. Una mente inquieta. Alguien que hacía demasiadas preguntas. Poco después, una cadena de muertes sacude familias importantes. Las víctimas no parecen tener relación entre sí… hasta que un detalle comienza a repetirse. Una venganza que no distingue entre inocentes y culpables.",
-  enlaces: [
-    { tienda: "Amazon", url: "https://www.amazon.es/canto-gallo-Daniel-Jerez-Torns/dp/B0GSFNMQ7H", formato: "tapa-blanda" },
-    { tienda: "Amazon", url: "https://www.amazon.es/canto-gallo-Daniel-Jerez-Torns-ebook/dp/B0GSCGHFJG", formato: "ebook" },
-  ],
+export interface Props {
+  libro: Libro
+  fondo: string
+  portada: ImageMetadata
 }
+
+const { libro, fondo, portada } = Astro.props
 ---
 
-<PageLayout title={libro.titulo}>
-  <div class="page-grid">
-    <!-- 1. Hero card -->
-    <section class="card hero-card" style="background-image: url('{fondo}')">
-      <div class="hero-overlay">
-        <h1>{libro.titulo}</h1>
-        <p class="hero-sub">Daniel Jerez Torns · {libro.ano}</p>
-      </div>
-    </section>
+<div class="page-grid">
+  <!-- 1. Hero card -->
+  <section class="card hero-card" style="background-image: url('{fondo}')">
+    <div class="hero-overlay">
+      <h1>{libro.titulo}</h1>
+      <p class="hero-sub">Daniel Jerez Torns · {libro.ano}</p>
+    </div>
+  </section>
 
-    <!-- 2. Quote card -->
+  <!-- 2. Quote card -->
+  {libro.cita && (
     <section class="card quote-card">
-      <blockquote>
-        «Nadia Lozano hizo la pregunta equivocada. La última de su vida.»
-      </blockquote>
+      <blockquote>{libro.cita}</blockquote>
     </section>
+  )}
 
-    <!-- 3. Cover + description card -->
-    <section class="card cover-card">
-      <Picture src={portada.default} formats={['avif', 'webp']} alt={libro.titulo} class="cover-img" />
-      <div class="cover-info">
-        <h2>Sinopsis</h2>
-        <p>{libro.sinopsis}</p>
-      </div>
-    </section>
+  <!-- 3. Cover + description card -->
+  <section class="card cover-card">
+    <Picture src={portada} formats={['avif', 'webp']} alt={libro.titulo} class="cover-img" />
+    <div class="cover-info">
+      <h2>Sinopsis</h2>
+      <p>{libro.sinopsis}</p>
+    </div>
+  </section>
 
-    <!-- 4. Content card -->
-    <section class="card content-card">
-      <h2>La obra</h2>
-      <p>
-        {libro.titulo} es la obra más ambiciosa de Daniel Jerez Torns. Con 416 páginas, el autor
-        teje una trama policiaca que atrapa desde la primera página. La protagonista, la agente
-        Lorena Escudero, se enfrenta a un caso que pone a prueba no solo su instinto, sino también
-        su propia integridad.
-      </p>
-      <p>
-        Una historia que explora los límites de la justicia, el poder de la prensa y las
-        consecuencias de buscar la verdad en un mundo donde las apariencias engañan.
-      </p>
-    </section>
+  <!-- 4. Content card -->
+  <section class="card content-card">
+    <h2>La obra</h2>
+    <p>
+      {libro.titulo}{libro.subtitulo ? ` — ${libro.subtitulo}` : ''}, con {libro.paginas} páginas, es una obra que sumerge al lector en una historia única.
+    </p>
+  </section>
 
-    <!-- 5. Info card -->
-    <section class="card info-card">
-      <h2>Detalles</h2>
-      <dl>
-        <dt>Idioma</dt>
-        <dd>{libro.idioma}</dd>
-        <dt>Páginas</dt>
-        <dd>{libro.paginas}</dd>
-        <dt>Año</dt>
-        <dd>{libro.ano}</dd>
-        <dt>Editorial</dt>
-        <dd>{libro.editorial}</dd>
-        <dt>ISBN</dt>
-        <dd>{libro.isbn}</dd>
-      </dl>
-    </section>
+  <!-- 5. Info card -->
+  <section class="card info-card">
+    <h2>Detalles</h2>
+    <dl>
+      <dt>Idioma</dt>
+      <dd>Castellano</dd>
+      {libro.paginas && <><dt>Páginas</dt><dd>{libro.paginas}</dd></>}
+      <dt>Año</dt>
+      <dd>{libro.ano}</dd>
+      {libro.editorial && <><dt>Editorial</dt><dd>{libro.editorial}</dd></>}
+    </dl>
+  </section>
 
-    <!-- 6. Purchase card -->
+  <!-- 6. Purchase card -->
+  {libro.enlaces.length > 0 && (
     <section class="card buy-card">
       <h2>Comprar</h2>
       <div class="buy-list">
@@ -92,8 +70,8 @@ const libro = {
         ))}
       </div>
     </section>
-  </div>
-</PageLayout>
+  )}
+</div>
 
 <style>
   .page-grid {
@@ -111,7 +89,6 @@ const libro = {
     overflow: hidden;
   }
 
-  /* Hero: full width */
   .hero-card {
     grid-column: 1 / -1;
     padding: 0;
@@ -140,7 +117,6 @@ const libro = {
     margin-block-start: 0.5em;
   }
 
-  /* Quote: spans 2 columns */
   .quote-card {
     grid-column: 1 / -1;
     text-align: center;
@@ -154,7 +130,6 @@ const libro = {
     line-height: 1.4;
   }
 
-  /* Cover + description */
   .cover-card {
     grid-column: 1 / -1;
     display: grid;
@@ -174,7 +149,6 @@ const libro = {
     margin-block-end: 0.5em;
   }
 
-  /* Content: full width */
   .content-card {
     grid-column: 1 / -1;
   }
@@ -188,7 +162,6 @@ const libro = {
     margin-block-start: 1em;
   }
 
-  /* Info: half width */
   .info-card {
     grid-column: span 1;
   }
@@ -213,7 +186,6 @@ const libro = {
     margin: 0;
   }
 
-  /* Buy: half width */
   .buy-card {
     grid-column: span 1;
   }

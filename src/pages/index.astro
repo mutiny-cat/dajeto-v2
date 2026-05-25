@@ -1,5 +1,5 @@
 ---
-import IndexLayout from "@layouts/index-layout.astro"
+import PageLayout from "@layouts/page-layout.astro"
 import CardHero from "@components/index/card-hero.astro"
 import GridNovedades from "@components/index/novedades/grid-novedades.astro"
 import GridCategoria from "@components/index/categoria/grid-categoria.astro"
@@ -43,7 +43,7 @@ const cuentosAdol = libros.filter((l) => l.categoria === "cuento-adolescente")
 const cuentosInf = libros.filter((l) => l.categoria === "cuento-infantil")
 ---
 
-<IndexLayout title="Daniel Jerez Torns — Escritor de novela negra, misterio y ciencia ficción">
+<PageLayout title="Daniel Jerez Torns — Escritor de novela negra, misterio y ciencia ficción">
   <section style="content-visibility: auto">
     {ultimaNovela && <CardHero libro={ultimaNovela} fondo={getFondo(ultimaNovela)} />}
   </section>
@@ -72,4 +72,4 @@ const cuentosInf = libros.filter((l) => l.categoria === "cuento-infantil")
   <section style="--categoria-grid-bg: var(--color-cuento-infantil); --categoria-hover-glow: var(--color-cuento-infantil-glow); content-visibility: auto">
     <GridCategoria titulo="Cuentos infantiles" libros={cuentosInf.map(l => ({ libro: l, fondo: getFondoBlur(l), libroImg: getLibroImg(l) }))} />
   </section>
-</IndexLayout>
+</PageLayout>
