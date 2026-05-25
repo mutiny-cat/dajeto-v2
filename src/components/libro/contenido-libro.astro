@@ -1,0 +1,31 @@
+---
+export interface Props {
+  titulo: string
+  subtitulo?: string
+  paginas?: number
+}
+
+const { titulo, subtitulo, paginas } = Astro.props
+---
+
+<section class="card">
+  <h2>La obra</h2>
+  <p>
+    {titulo}{subtitulo ? ` — ${subtitulo}` : ''}{paginas ? `, con ${paginas} páginas,` : ''} es una obra que sumerge al lector en una historia única.
+  </p>
+</section>
+
+<style>
+  .card {
+    grid-column: 1 / -1;
+    background: var(--color-black-soft);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75em;
+    padding: 1.5em;
+  }
+
+  h2 {
+    font-size: var(--text-h2);
+    margin-block-end: 0.5em;
+  }
+</style>

@@ -1,6 +1,6 @@
 ---
 import PageLayout from "@layouts/page-layout.astro"
-import LibroDetalle from "@components/libro/libro-detalle.astro"
+import GridLibro from "@components/libro/grid-libro.astro"
 import { libros } from "@data/libros"
 import type { Libro } from "@data/libros"
 import type { ImageMetadata } from "astro:assets"
@@ -16,12 +16,12 @@ export async function getStaticPaths() {
 const { libro } = Astro.props as { libro: Libro }
 
 const portadas = import.meta.glob("/src/assets/images/portadas/*.png", { eager: true })
-const librosImg = import.meta.glob("/src/assets/images/libro/*.png", { eager: true })
+const fondos = import.meta.glob("/src/assets/images/fondos/*.jpg", { eager: true })
 
 const portada = portadas[`/src/assets/images/portadas/${libro.portada}`] as { default: ImageMetadata }
-const fondo = `/assets/fondos/bg-${libro.id}.jpg`
+const fondo = fondos[`/src/assets/images/fondos/bg-${libro.id}.jpg`] as { default: ImageMetadata } | undefined
 ---
 
 <PageLayout title={libro.titulo}>
-  <LibroDetalle {libro} {fondo} portada={portada.default} />
+  <GridLibro {libro} fondo={fondo?.default} portada={portada.default} />
 </PageLayout>

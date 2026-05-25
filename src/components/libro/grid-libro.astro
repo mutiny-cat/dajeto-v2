@@ -1,0 +1,36 @@
+---
+import type { ImageMetadata } from "astro:assets"
+import type { Libro } from "@data/libros"
+import Hero from "./hero-libro.astro"
+import Cita from "./cita-libro.astro"
+import Portada from "./portada-libro.astro"
+import Contenido from "./contenido-libro.astro"
+import Info from "./info-libro.astro"
+import Compra from "./compra-libro.astro"
+
+export interface Props {
+  libro: Libro
+  fondo?: ImageMetadata
+  portada: ImageMetadata
+}
+
+const { libro, fondo, portada } = Astro.props
+---
+
+<div class="grid">
+  <Hero titulo={libro.titulo} ano={libro.ano} {fondo} />
+  {libro.cita && <Cita cita={libro.cita} />}
+  <Portada titulo={libro.titulo} {portada} sinopsis={libro.sinopsis} />
+  <Contenido titulo={libro.titulo} subtitulo={libro.subtitulo} paginas={libro.paginas} />
+  <Info paginas={libro.paginas} ano={libro.ano} editorial={libro.editorial} />
+  {libro.enlaces.length > 0 && <Compra enlaces={libro.enlaces} />}
+</div>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    padding-block-end: 4em;
+  }
+</style>
