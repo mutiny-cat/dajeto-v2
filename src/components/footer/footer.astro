@@ -54,16 +54,31 @@ const anoActual = new Date().getFullYear()
       color: var(--color-white-soft);
       transition: color 0.3s ease;
       display: flex;
-
-      &:hover {
-        color: var(--color-green-500);
-      }
     }
 
     :global(svg) {
       inline-size: 2em;
       block-size: 2em;
       fill: currentColor;
+    }
+
+    @media (width >= 768px) {
+      a {
+        transition: color 0.3s ease, transform 0.3s ease;
+
+        &:hover {
+          color: var(--color-green-500);
+          transform: scale(1.2);
+        }
+      }
+
+      :global(svg) {
+        transition: filter 0.3s ease;
+      }
+
+      a:hover :global(svg) {
+        filter: drop-shadow(0 0 0.5em var(--color-green-500));
+      }
     }
   }
 
