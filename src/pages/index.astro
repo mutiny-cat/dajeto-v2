@@ -54,22 +54,22 @@ const cuentosInf = libros.filter((l) => l.categoria === "cuento-infantil")
   </section>
 
   <!-- Novela -->
-  <section style="--categoria-grid-bg: var(--color-novela); --categoria-hover-glow: var(--color-novela); content-visibility: auto">
+  <section style="--categoria-grid-bg: var(--color-novela); --categoria-hover-glow: var(--color-novela-glow); content-visibility: auto">
     <GridCategoria titulo="Novela" libros={novelas.map(l => ({ libro: l, fondo: getFondoBlur(l), libroImg: getLibroImg(l) }))} />
   </section>
 
   <!-- Novela corta -->
-  <section style="--categoria-grid-bg: var(--color-novela-corta); --categoria-hover-glow: var(--color-novela-corta); content-visibility: auto">
+  <section style="--categoria-grid-bg: var(--color-novela-corta); --categoria-hover-glow: var(--color-novela-corta-glow); content-visibility: auto">
     <GridCategoria titulo="Novela corta" libros={novelasCortas.map(l => ({ libro: l, fondo: getFondoBlur(l), libroImg: getLibroImg(l) }))} />
   </section>
 
   <!-- Cuentos adolescentes -->
-  <section style="--categoria-grid-bg: var(--color-cuento-adolescente); --categoria-hover-glow: var(--color-cuento-adolescente); content-visibility: auto">
+  <section style="--categoria-grid-bg: var(--color-cuento-adolescente); --categoria-hover-glow: var(--color-cuento-adolescente-glow); content-visibility: auto">
     <GridCategoria titulo="Cuentos" libros={cuentosAdol.map(l => ({ libro: l, fondo: getFondoBlur(l), libroImg: getLibroImg(l) }))} />
   </section>
 
   <!-- Cuentos infantiles -->
-  <section style="--categoria-grid-bg: var(--color-cuento-infantil); --categoria-hover-glow: var(--color-cuento-infantil); content-visibility: auto">
+  <section style="--categoria-grid-bg: var(--color-cuento-infantil); --categoria-hover-glow: var(--color-cuento-infantil-glow); content-visibility: auto">
     <GridCategoria titulo="Cuentos infantiles" libros={cuentosInf.map(l => ({ libro: l, fondo: getFondoBlur(l), libroImg: getLibroImg(l) }))} />
   </section>
 </IndexLayout>

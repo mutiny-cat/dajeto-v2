@@ -36,10 +36,15 @@
 	--color-green-500: #21d49b;
 	--color-green-600: #1aad7e;
 
-	--color-novela: #161617;
-	--color-novela-corta: #031a2c;
-	--color-cuento-adolescente: #450000;
-	--color-cuento-infantil: #274502;
+	--color-novela: #1a1410;
+	--color-novela-corta: #0a1628;
+	--color-cuento-adolescente: #1a0808;
+	--color-cuento-infantil: #0f1a08;
+
+	--color-novela-glow: #d4a574;
+	--color-novela-corta-glow: #5b8def;
+	--color-cuento-adolescente-glow: #e8a040;
+	--color-cuento-infantil-glow: #7bc850;
 
 	--gradient-primary: var(--color-secondary-500), var(--color-primary-500), var(--color-primary-500), var(--color-secondary-500);
 	--gradient-button-primary: var(--color-secondary-500), var(--color-primary-400), var(--color-primary-600), var(--color-secondary-600);
