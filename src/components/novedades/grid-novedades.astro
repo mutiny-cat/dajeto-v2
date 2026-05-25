@@ -1,0 +1,38 @@
+---
+import CardNovedades from "./card-novedades.astro"
+import type { ImageMetadata } from "astro"
+import type { Libro } from "@data/libros"
+
+export interface Props {
+  libros: { libro: Libro; portada: ImageMetadata | undefined }[]
+}
+
+const { libros } = Astro.props
+---
+
+<section class="grid">
+  <h4>Novedades</h4>
+  {libros.map(({ libro, portada }) => (
+    <CardNovedades libro={libro} portada={portada} />
+  ))}
+</section>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+    width: 100%;
+  }
+
+  @media (width <= 768px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .grid h4 {
+    grid-column: 1 / -1;
+    margin-block-end: 0.5em;
+  }
+</style>

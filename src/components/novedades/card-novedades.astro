@@ -1,0 +1,104 @@
+---
+import { Picture } from "astro:assets"
+import type { ImageMetadata } from "astro"
+import type { Libro } from "@data/libros"
+
+export interface Props {
+  libro: Libro
+  portada: ImageMetadata | undefined
+}
+
+const { libro, portada } = Astro.props
+
+function ruta(libro: Libro): string {
+  const mapa: Record<string, string> = {
+    novela: "novela",
+    "novela-corta": "novela-corta",
+    "cuento-adolescente": "cuentos/adolescentes",
+    "cuento-infantil": "cuentos/infantiles",
+  }
+  return `/${mapa[libro.categoria]}/${libro.id}`
+}
+
+const categoriaTexto: Record<string, string> = {
+  novela: "Novela",
+  "novela-corta": "Novela corta",
+  "cuento-adolescente": "Cuento",
+  "cuento-infantil": "Cuento infantil",
+}
+---
+
+<article>
+  <a href={ruta(libro)} class:list={[libro.categoriaColor]} aria-label={`Ver ${libro.titulo}`}>
+    <header>
+      {portada && <Picture src={portada} formats={['avif', 'webp']} alt={libro.titulo} width={150} height={225} />}
+    </header>
+    <footer>
+      <h4>{libro.titulo}</h4>
+      <p>{categoriaTexto[libro.categoria]} · {libro.ano}</p>
+    </footer>
+  </a>
+</article>
+
+<style>
+  a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em 0.6em;
+    border-radius: 0.75em;
+
+    &.novela {
+      background: var(--color-novela);
+    }
+
+    &.novela-corta {
+      background: var(--color-novela-corta);
+    }
+
+    &.cuento-adolescente {
+      background: var(--color-cuento-adolescente);
+    }
+
+    &.cuento-infantil {
+      background: var(--color-cuento-infantil);
+    }
+    border: 1px solid var(--color-border);
+    transition: border-color 0.3s, box-shadow 0.3s;
+
+    &:focus-visible {
+      outline: 2px solid var(--color-green-500);
+      outline-offset: 2px;
+    }
+
+    &:hover {
+      border-color: var(--color-green-500);
+      box-shadow: 0 0 1em var(--color-green-500);
+    }
+  }
+
+  header {
+    display: flex;
+    justify-content: center;
+  }
+
+  header img {
+    border-radius: 0.4em;
+    outline: 1px solid var(--color-border);
+  }
+
+  footer {
+    text-align: center;
+
+    h4 {
+      font-size: 0.78em;
+    }
+
+    p {
+      font-size: 0.65em;
+      opacity: 0.7;
+    }
+  }
+</style>
