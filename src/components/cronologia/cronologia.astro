@@ -65,9 +65,12 @@ const { trayectoria } = Astro.props
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight
     const estaAlFondo = scrollY >= maxScroll - 20
 
+    let highestVisible = -1
+
     if (scrollY > 10) {
       cards[0].style.setProperty("--dot-opacity", "1")
       cards[0].classList.add("is-visible")
+      highestVisible = 0
     } else {
       cards[0].style.setProperty("--dot-opacity", "0")
       cards[0].classList.remove("is-visible")
@@ -79,10 +82,16 @@ const { trayectoria } = Astro.props
       if (scrollY >= puntoActivar || estaAlFondo) {
         cards[i].style.setProperty("--dot-opacity", "1")
         cards[i].classList.add("is-visible")
+        highestVisible = i
       } else {
         cards[i].style.setProperty("--dot-opacity", "0")
         cards[i].classList.remove("is-visible")
       }
+    }
+
+    cards.forEach((c) => c.classList.remove("is-current"))
+    if (highestVisible >= 0) {
+      cards[highestVisible].classList.add("is-current")
     }
   }
 
@@ -203,7 +212,7 @@ const { trayectoria } = Astro.props
     transition: border-color 0.5s ease;
   }
 
-  .card-timeline.is-visible .card-content {
+  .card-timeline.is-current .card-content {
     border-color: var(--color-green-500);
   }
 
