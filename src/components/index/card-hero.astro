@@ -92,4 +92,27 @@ const { libro, fondo } = Astro.props
     color: var(--color-green-500);
     transform: scale(1.3) translateX(1.2em);
   }
+
+  @media (width <= 768px) {
+    a {
+      padding: 4em;
+    }
+
+    :global(.hero-arrow) {
+      inline-size: 3em;
+      block-size: 3em;
+    }
+  }
+
+  @media (width <= 480px) {
+    a {
+      padding: 2em;
+      gap: 1em;
+    }
+
+    :global(.hero-arrow) {
+      inline-size: 2.5em;
+      block-size: 2.5em;
+    }
+  }
 </style>

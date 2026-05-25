@@ -60,6 +60,17 @@ const { titulo, libros } = Astro.props
 
     .grid > :global(:last-child:nth-child(odd)) {
       grid-column: auto;
+      --card-dir: column;
+      --card-align: center;
+      --card-justify: flex-start;
+      --card-text-align: center;
+      --pic-shrink: 1;
+      --pic-align: auto;
+      --div-dir: row;
+      --div-justify: space-between;
+      --div-w: 100%;
+      --div-flex: none;
+      --orphan-max-w: none;
     }
   }
 </style>
