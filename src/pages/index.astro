@@ -2,7 +2,7 @@
 import IndexLayout from "@layouts/index-layout.astro"
 import CardHero from "@components/index/card-hero.astro"
 import GridNovedades from "@components/index/novedades/grid-novedades.astro"
-import GridNovela from "@components/index/novela/grid-novela.astro"
+import GridCategoria from "@components/index/categoria/grid-categoria.astro"
 import type { ImageMetadata } from "astro"
 import { libros } from "@data/libros"
 import type { Libro } from "@data/libros"
@@ -30,7 +30,11 @@ function getLibroImg(libro: Libro): ImageMetadata | undefined {
 const novedades = [...libros].sort((a, b) => new Date(b.fechaAgregado).getTime() - new Date(a.fechaAgregado).getTime()).slice(0, 4)
 
 const ultimaNovela = [...libros].filter((l) => l.categoria === "novela").sort((a, b) => b.ano - a.ano)[0]
+
 const novelas = libros.filter((l) => l.categoria === "novela")
+const novelasCortas = libros.filter((l) => l.categoria === "novela-corta")
+const cuentosAdol = libros.filter((l) => l.categoria === "cuento-adolescente")
+const cuentosInf = libros.filter((l) => l.categoria === "cuento-infantil")
 ---
 
 <IndexLayout title="Daniel Jerez Torns — Escritor de novela negra, misterio y ciencia ficción">
@@ -44,8 +48,22 @@ const novelas = libros.filter((l) => l.categoria === "novela")
   </section>
 
   <!-- Novela -->
-  <section>
-    <GridNovela libros={novelas.map(l => ({ libro: l, fondo: getFondo(l), libroImg: getLibroImg(l) }))} />
+  <section style="--categoria-grid-bg: var(--color-novela); --categoria-hover-glow: var(--color-novela)">
+    <GridCategoria titulo="Novela" libros={novelas.map(l => ({ libro: l, fondo: getFondo(l), libroImg: getLibroImg(l) }))} />
   </section>
 
+  <!-- Novela corta -->
+  <section style="--categoria-grid-bg: var(--color-novela-corta); --categoria-hover-glow: var(--color-novela-corta)">
+    <GridCategoria titulo="Novela corta" libros={novelasCortas.map(l => ({ libro: l, fondo: getFondo(l), libroImg: getLibroImg(l) }))} />
+  </section>
+
+  <!-- Cuentos adolescentes -->
+  <section style="--categoria-grid-bg: var(--color-cuento-adolescente); --categoria-hover-glow: var(--color-cuento-adolescente)">
+    <GridCategoria titulo="Cuentos" libros={cuentosAdol.map(l => ({ libro: l, fondo: getFondo(l), libroImg: getLibroImg(l) }))} />
+  </section>
+
+  <!-- Cuentos infantiles -->
+  <section style="--categoria-grid-bg: var(--color-cuento-infantil); --categoria-hover-glow: var(--color-cuento-infantil)">
+    <GridCategoria titulo="Cuentos infantiles" libros={cuentosInf.map(l => ({ libro: l, fondo: getFondo(l), libroImg: getLibroImg(l) }))} />
+  </section>
 </IndexLayout>

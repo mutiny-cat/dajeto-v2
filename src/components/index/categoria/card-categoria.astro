@@ -57,12 +57,12 @@ const { libro, fondo, libroImg } = Astro.props
   }
 
   article:hover {
-    border-color: var(--color-border-soft);
-    box-shadow: 0 0 1em var(--color-border-soft);
+    border-color: var(--categoria-hover-glow, var(--color-border-soft));
+    box-shadow: 0 0 1em var(--categoria-hover-glow, var(--color-border-soft));
   }
 
   article:hover h4 {
-    text-shadow: 0 0 0.5em var(--color-border-soft);
+    text-shadow: 0 0 0.5em var(--categoria-hover-glow, var(--color-border-soft));
   }
 
   picture {
@@ -93,7 +93,7 @@ const { libro, fondo, libroImg } = Astro.props
   }
 
   article:hover div {
-    box-shadow: 0 0 0.6em var(--color-border);
+    box-shadow: 0 0 0.6em var(--categoria-hover-glow, var(--color-border));
   }
 
   a :global(.card-arrow) {
@@ -105,8 +105,8 @@ const { libro, fondo, libroImg } = Astro.props
   }
 
   article:hover :global(.card-arrow) {
-    color: var(--color-border-soft);
-    filter: drop-shadow(0 0 0.5em var(--color-border-soft));
+    color: var(--categoria-hover-glow, var(--color-border-soft));
+    filter: drop-shadow(0 0 0.5em var(--categoria-hover-glow, var(--color-border-soft)));
   }
 
   h4 {
