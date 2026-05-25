@@ -12,6 +12,7 @@ export interface Libro {
   ano: number
   paginas?: number
   editorial?: string
+  cita?: string
   sinopsis: string
   categoria: "novela" | "novela-corta" | "cuento-adolescente" | "cuento-infantil"
   categoriaColor: "novela" | "novela-corta" | "cuento-adolescente" | "cuento-infantil"
@@ -30,6 +31,7 @@ export const libros: Libro[] = [
     editorial: "Autoedición",
     sinopsis:
       "La agente Lorena Escudero encuentra el cuerpo de Nadia Lozano en el estanque de La Ricarda. Una joven periodista. Una mente inquieta. Alguien que hacía demasiadas preguntas. Poco después, una cadena de muertes sacude familias importantes. Las víctimas no parecen tener relación entre sí… hasta que un detalle comienza a repetirse. Una venganza que no distingue entre inocentes y culpables.",
+    cita: "«Cuando el gallo cante, alguien caerá»",
     categoria: "novela",
     categoriaColor: "novela",
     fechaAgregado: "2026-05-20",
@@ -49,6 +51,7 @@ export const libros: Libro[] = [
     editorial: "Maeva Noir",
     sinopsis:
       "En El Prat de Llobregat siempre se ha dicho que no pasa nada. Pero hay silencios que duran demasiado… y cuando se rompen, lo hacen con violencia. Una novela negra donde los crímenes del pasado regresan para cobrarse lo que se les debe.",
+    cita: "«A veces los crímenes impunes salen a la luz»",
     categoria: "novela",
     categoriaColor: "novela",
     fechaAgregado: "2023-04-10",
@@ -128,6 +131,7 @@ export const libros: Libro[] = [
     editorial: "Autoedición",
     sinopsis:
       "Un extraño descubrimiento en el Polo Sur desencadena una serie de acontecimientos que arrastrarán a Blanca Serrano, periodista de ocultismo, y a Rosa Vidal, inspectora de policía, a una oscura trama. Deberán descifrar unos misteriosos escritos de Jacinto Verdaguer y enfrentarse a la CIA y a una peligrosa organización terrorista para evitar que se apoderen de un arma que cambiaría la historia de la Humanidad.",
+    cita: "«Un extraño y aparentemente fortuito descubrimiento en el polo sur»",
     categoria: "novela",
     categoriaColor: "novela",
     fechaAgregado: "2025-10-15",
@@ -162,6 +166,7 @@ export const libros: Libro[] = [
     editorial: "Autoedición",
     sinopsis:
       "En febrero de 1923 Albert Einstein visitó Barcelona para explicar la Teoría de la Relatividad, gracias a la intermediación del físico catalán Esteban Terradas. Pero el objetivo principal de su visita era otro e implicaba un gran peligro. Noventa años después, el inspector Ponce investiga el asesinato de un anticuario que guardaba el diario de Héctor Jubany, ayudante de Terradas. El caso lleva al inspector a sumergirse en edificios históricos y a descubrir la conexión entre los dos científicos y un legado que, en las manos equivocadas, desataría graves delitos.",
+    cita: "«¿Cómo había llegado aquel trozo de papel a su casa?»",
     categoria: "novela",
     categoriaColor: "novela",
     fechaAgregado: "2025-08-15",
@@ -180,6 +185,7 @@ export const libros: Libro[] = [
     editorial: "Autoedición",
     sinopsis:
       "El 17 de julio de 1642, 61 arcabuceros de Yecla fueron enviados a Vinaroz para detener el avance francés. Uno de ellos tenía una misión secreta: custodiar un artefacto de Galileo Galilei capaz de cambiar el curso de la humanidad. Siglos después, Valeria Soto, profesora de física, investiga la leyenda del arcabucero nº 61 y su relación con Galileo, Pascal y Yecla. Lo que empieza como una investigación inocente la convertirá en el blanco de un asesino sin escrúpulos.",
+    cita: "«No era el calor lo único que le ahogaba»",
     categoria: "novela",
     categoriaColor: "novela",
     fechaAgregado: "2025-08-01",

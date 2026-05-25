@@ -1,13 +1,14 @@
 ---
 import IndexLayout from "@layouts/index-layout.astro"
-import CardHero from "@components/card-hero.astro"
-import CardNovedades from "@components/novedades/card-novedades.astro"
-import GridNovedades from "@components/novedades/grid-novedades.astro"
+import CardHero from "@components/index/card-hero.astro"
+import CardNovedades from "@components/index/novedades/card-novedades.astro"
+import GridNovedades from "@components/index/novedades/grid-novedades.astro"
 import type { ImageMetadata } from "astro"
 import { libros } from "@data/libros"
 import type { Libro } from "@data/libros"
 
 const portadas = import.meta.glob('/src/assets/images/portadas/*.png', { eager: true })
+const fondos = import.meta.glob('/src/assets/images/fondos/*.jpg', { eager: true })
 
 function getPortada(libro: Libro): ImageMetadata | undefined {
   if (!libro.portadaMini) return
@@ -15,7 +16,14 @@ function getPortada(libro: Libro): ImageMetadata | undefined {
   return (portadas[key] as { default: ImageMetadata })?.default
 }
 
+function getFondo(libro: Libro): ImageMetadata | undefined {
+  const key = `/src/assets/images/fondos/bg-${libro.id}.jpg`
+  return (fondos[key] as { default: ImageMetadata })?.default
+}
+
 const novedades = [...libros].sort((a, b) => new Date(b.fechaAgregado).getTime() - new Date(a.fechaAgregado).getTime()).slice(0, 4)
+
+const ultimaNovela = [...libros].filter((l) => l.categoria === "novela").sort((a, b) => b.ano - a.ano)[0]
 
 const novelas = libros.filter((l) => l.categoria === "novela")
 const novelasCortas = libros.filter((l) => l.categoria === "novela-corta")
@@ -24,7 +32,7 @@ const cuentosInf = libros.filter((l) => l.categoria === "cuento-infantil")
 ---
 
 <IndexLayout title="Daniel Jerez Torns — Escritor de novela negra, misterio y ciencia ficción">
-  <CardHero />
+  {ultimaNovela && <CardHero libro={ultimaNovela} fondo={getFondo(ultimaNovela)} />}
 
   <!-- Novedades -->
   <GridNovedades libros={novedades.map(l => ({ libro: l, portada: getPortada(l) }))} />

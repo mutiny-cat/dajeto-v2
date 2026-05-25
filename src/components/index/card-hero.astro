@@ -1,11 +1,20 @@
 ---
 import { Icon } from "astro-icon/components"
+import type { ImageMetadata } from "astro"
+import type { Libro } from "@data/libros"
+
+export interface Props {
+  libro: Libro
+  fondo: ImageMetadata | undefined
+}
+
+const { libro, fondo } = Astro.props
 ---
 
-<section id="hero">
-  <a href="/novela/el-canto-del-gallo">
+<section id="hero" style={fondo ? `background-image: url(${fondo.src})` : undefined}>
+  <a href={`/novela/${libro.id}`}>
     <blockquote>
-      <h1>«Cuando el gallo cante, alguien caerá»</h1>
+      <h1>{libro.cita}</h1>
     </blockquote>
     <Icon name="arrow" class="hero-arrow" />
   </a>
@@ -17,7 +26,6 @@ import { Icon } from "astro-icon/components"
     align-items: center;
     justify-content: center;
     background-color: var(--color-black);
-    background-image: url('/assets/fondos/bg-el-canto-del-gallo.jpg');
     background-size: cover;
     background-position: center;
     width: 100%;
