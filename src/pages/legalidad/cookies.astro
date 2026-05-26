@@ -2,5 +2,57 @@
 import PageLayout from "@layouts/page-layout.astro"
 ---
 
-<PageLayout title="Política de cookies">
+<PageLayout title="Política de cookies — Daniel Jerez Torns" description="Política de cookies del sitio web de Daniel Jerez Torns">
+  <article class="content">
+    <h1>Política de cookies</h1>
+
+    <h2>¿Qué son las cookies?</h2>
+    <p>Las cookies son pequeños archivos de texto que se almacenan en el navegador del usuario cuando visita un sitio web. Sirven para recordar preferencias, analizar la navegación o identificar al usuario.</p>
+
+    <h2>Cookies en este sitio web</h2>
+    <p>Este sitio web <strong>no utiliza cookies propias</strong>. No se almacena ningún dato en el navegador del usuario ni se rastrea su actividad.</p>
+
+    <h2>Cookies de terceros</h2>
+    <p>Este sitio web contiene enlaces a plataformas externas de venta (Amazon, FNAC, Casa del Libro, Google Play, Apple Books, Audible, etc.) y a redes sociales (Instagram, X, Facebook, LinkedIn, Bluesky, Goodreads, Xing). Estas plataformas y redes pueden instalar sus propias cookies cuando el usuario accede a ellas a través de los enlaces proporcionados. El titular de este sitio web no tiene control sobre dichas cookies y recomienda al usuario revisar las políticas de cookies de cada plataforma.</p>
+
+    <h2>Cómo gestionar las cookies</h2>
+    <p>Puedes permitir, bloquear o eliminar las cookies desde la configuración de tu navegador:</p>
+    <ul>
+      <li><strong>Google Chrome:</strong> Configuración → Privacidad y seguridad → Cookies y otros datos de sitios.</li>
+      <li><strong>Mozilla Firefox:</strong> Opciones → Privacidad y seguridad → Cookies y datos del sitio.</li>
+      <li><strong>Safari:</strong> Preferencias → Privacidad → Gestionar datos de sitios web.</li>
+      <li><strong>Microsoft Edge:</strong> Configuración → Cookies y permisos del sitio → Administrar y eliminar cookies.</li>
+      <li><strong>Opera:</strong> Configuración → Privacidad y seguridad → Cookies.</li>
+      <li><strong>Arc:</strong> Arc → Preferencias → Privacidad → Cookies y otros datos de sitios.</li>
+      <li><strong>Brave:</strong> Configuración → Protección de privacidad y seguridad → Cookies y otros datos de sitios.</li>
+      <li><strong>LibreWolf:</strong> Configuración → Privacidad y seguridad → Cookies y datos del sitio.</li>
+    </ul>
+  </article>
 </PageLayout>
+
+<style>
+  .content {
+    max-width: 720px;
+    margin-inline: auto;
+  }
+
+  h1 {
+    font-size: var(--text-h1);
+    margin-block-end: 0.5em;
+  }
+
+  h2 {
+    font-size: var(--text-h2);
+    margin-block-start: 1.5em;
+    margin-block-end: 0.5em;
+  }
+
+  p, li {
+    line-height: 1.8;
+    margin-block-end: 0.75em;
+  }
+
+  ul {
+    padding-inline-start: 1.5em;
+  }
+</style>

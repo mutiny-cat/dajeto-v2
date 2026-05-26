@@ -2,5 +2,46 @@
 import PageLayout from "@layouts/page-layout.astro"
 ---
 
-<PageLayout title="Aviso legal">
+<PageLayout title="Aviso legal — Daniel Jerez Torns" description="Aviso legal del sitio web de Daniel Jerez Torns">
+  <article class="content">
+    <h1>Aviso legal</h1>
+
+    <h2>Identificación del titular</h2>
+    <p><strong>Nombre:</strong> Daniel Jerez Torns</p>
+    <p><strong>Correo electrónico:</strong> daniel@danieljerez.es</p>
+    <p>El presente aviso legal regula el uso del sitio web <strong>danieljerez.es</strong>.</p>
+
+    <h2>Propiedad intelectual</h2>
+    <p>Todos los contenidos del sitio web —incluyendo textos, imágenes, logotipos y diseño— son propiedad de Daniel Jerez Torns, salvo que se indique lo contrario. Queda prohibida la reproducción total o parcial sin autorización expresa del titular.</p>
+
+    <h2>Exención de responsabilidad</h2>
+    <p>El sitio web se proporciona «tal cual», sin garantías de ningún tipo. El titular no se responsabiliza de los daños que pudieran derivarse del uso de la información contenida en el sitio.</p>
+    <p>El sitio web contiene enlaces a terceros (Amazon, FNAC, Casa del Libro, etc.). El titular no se responsabiliza del contenido ni de las políticas de privacidad de dichos sitios externos.</p>
+
+    <h2>Legislación aplicable</h2>
+    <p>Este aviso legal se rige por la legislación española.</p>
+  </article>
 </PageLayout>
+
+<style>
+  .content {
+    max-width: 720px;
+    margin-inline: auto;
+  }
+
+  h1 {
+    font-size: var(--text-h1);
+    margin-block-end: 0.5em;
+  }
+
+  h2 {
+    font-size: var(--text-h2);
+    margin-block-start: 1.5em;
+    margin-block-end: 0.5em;
+  }
+
+  p {
+    line-height: 1.8;
+    margin-block-end: 0.75em;
+  }
+</style>

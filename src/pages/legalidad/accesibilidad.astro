@@ -2,5 +2,50 @@
 import PageLayout from "@layouts/page-layout.astro"
 ---
 
-<PageLayout title="Accesibilidad">
+<PageLayout title="Accesibilidad — Daniel Jerez Torns" description="Declaración de accesibilidad del sitio web de Daniel Jerez Torns">
+  <article class="content">
+    <h1>Accesibilidad</h1>
+
+    <p>Daniel Jerez Torns se ha comprometido a hacer su sitio web accesible de conformidad con el Real Decreto 1112/2018, sobre accesibilidad de los sitios web y aplicaciones para dispositivos móviles del sector público.</p>
+
+    <h2>Estado de cumplimiento</h2>
+    <p>Este sitio web es parcialmente conforme con el RD 1112/2018 debido a las excepciones y a la falta de conformidad de los aspectos que se indican a continuación.</p>
+
+    <h2>Contenido no accesible</h2>
+    <p>El contenido que se recoge a continuación no es accesible por lo siguiente:</p>
+    <ul>
+      <li>Algunas imágenes pueden carecer de texto alternativo descriptivo.</li>
+      <li>Es posible que ciertos contenidos de terceros (enlaces a plataformas externas) no sean accesibles.</li>
+    </ul>
+
+    <h2>Contacto</h2>
+    <p>Si detectas problemas de accesibilidad en este sitio web, puedes comunicarlo a través del correo electrónico: <strong>daniel@danieljerez.es</strong>.</p>
+  </article>
 </PageLayout>
+
+<style>
+  .content {
+    max-width: 720px;
+    margin-inline: auto;
+  }
+
+  h1 {
+    font-size: var(--text-h1);
+    margin-block-end: 0.5em;
+  }
+
+  h2 {
+    font-size: var(--text-h2);
+    margin-block-start: 1.5em;
+    margin-block-end: 0.5em;
+  }
+
+  p, li {
+    line-height: 1.8;
+    margin-block-end: 0.75em;
+  }
+
+  ul {
+    padding-inline-start: 1.5em;
+  }
+</style>

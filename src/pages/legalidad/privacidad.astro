@@ -2,5 +2,48 @@
 import PageLayout from "@layouts/page-layout.astro"
 ---
 
-<PageLayout title="Política de privacidad">
+<PageLayout title="Política de privacidad — Daniel Jerez Torns" description="Política de privacidad del sitio web de Daniel Jerez Torns">
+  <article class="content">
+    <h1>Política de privacidad</h1>
+
+    <h2>Responsable del tratamiento</h2>
+    <p><strong>Nombre:</strong> Daniel Jerez Torns</p>
+    <p><strong>Correo electrónico:</strong> daniel@danieljerez.es</p>
+
+    <h2>¿Qué datos recogemos?</h2>
+    <p>Este sitio web <strong>no recoge datos personales</strong> de los usuarios. No dispone de formularios de contacto, sistemas de comentarios, ni herramientas de registro.</p>
+    <p>No se almacena información en el navegador del usuario (localStorage, sessionStorage) ni se rastrea su actividad mediante cookies propias.</p>
+
+    <h2>Datos de terceros</h2>
+    <p>El sitio web contiene enlaces externos a plataformas de venta (Amazon, FNAC, Casa del Libro, etc.). Una vez que el usuario accede a dichos enlaces, la gestión de sus datos queda sujeta a las políticas de privacidad de cada plataforma.</p>
+
+    <h2>Derechos del usuario</h2>
+    <p>Al no recogerse datos personales, no se realiza ningún tratamiento sobre los mismos. No obstante, cualquier usuario puede ejercer sus derechos ARCO (acceso, rectificación, cancelación y oposición) dirigiéndose al correo electrónico indicado.</p>
+
+    <h2>Legislación</h2>
+    <p>Esta política de privacidad se rige por el Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica de Protección de Datos y Garantía de los Derechos Digitales (LOPDGDD).</p>
+  </article>
 </PageLayout>
+
+<style>
+  .content {
+    max-width: 720px;
+    margin-inline: auto;
+  }
+
+  h1 {
+    font-size: var(--text-h1);
+    margin-block-end: 0.5em;
+  }
+
+  h2 {
+    font-size: var(--text-h2);
+    margin-block-start: 1.5em;
+    margin-block-end: 0.5em;
+  }
+
+  p {
+    line-height: 1.8;
+    margin-block-end: 0.75em;
+  }
+</style>
