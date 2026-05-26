@@ -14,7 +14,7 @@ const { libro, fondo } = Astro.props
 <article id="hero" style={fondo ? `background-image: url(${fondo.src})` : undefined}>
   <a href={`/novela/${libro.id}`}>
     <blockquote>
-      <h1>{libro.cita}</h1>
+      <h1>{libro.fraseHero}</h1>
     </blockquote>
     <Icon name="arrow" class="hero-arrow" />
   </a>
@@ -75,6 +75,14 @@ const { libro, fondo } = Astro.props
     color: var(--color-white);
     margin: 0;
     transition: text-shadow 0.3s;
+  }
+
+  h1::before {
+    content: "«";
+  }
+
+  h1::after {
+    content: "»";
   }
 
   article:hover h1 {
