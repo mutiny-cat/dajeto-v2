@@ -1,0 +1,54 @@
+---
+import type { ImageMetadata } from "astro:assets"
+
+export interface Props {
+  avatar?: ImageMetadata
+  parrafos: { id: string; texto: string }[]
+}
+
+const { avatar, parrafos } = Astro.props
+---
+
+<section class="card">
+  {avatar && <img src={avatar.src} alt="Daniel Jerez" class="photo" />}
+  <div class="info">
+    <h2>Sobre mí</h2>
+    {parrafos.map((p) => (
+      <p>{p.texto}</p>
+    ))}
+  </div>
+</section>
+
+<style>
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2em;
+    align-items: start;
+    background: var(--color-primary-600);
+    border: 1px solid var(--color-green-700);
+    border-radius: 0.75em;
+    padding: 1.5em;
+  }
+
+  .photo {
+    inline-size: 100%;
+    block-size: auto;
+    border-radius: 0.5em;
+  }
+
+  .info h2 {
+    font-size: var(--text-h2);
+    margin-block-end: 0.5em;
+  }
+
+  .info p {
+    margin-block-end: 1em;
+  }
+
+  @media (width <= 768px) {
+    .card {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

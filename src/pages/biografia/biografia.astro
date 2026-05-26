@@ -1,6 +1,23 @@
 ---
 import PageLayout from "@layouts/page-layout.astro"
+import GridBiografia from "@components/biografia/grid-biografia.astro"
+import { biografia } from "@data/biografia"
+import type { ImageMetadata } from "astro"
+
+const fondos = import.meta.glob('/src/assets/images/fondos/*.jpg', { eager: true })
+const avatares = import.meta.glob('/src/assets/images/*.jpg', { eager: true })
+
+function getFondo(): ImageMetadata | undefined {
+  const key = "/src/assets/images/fondos/bg-daniel-jerez.jpg"
+  return (fondos[key] as { default: ImageMetadata })?.default
+}
+
+function getAvatar(): ImageMetadata | undefined {
+  const key = "/src/assets/images/daniel-jerez-perfil.jpg"
+  return (avatares[key] as { default: ImageMetadata })?.default
+}
 ---
 
-<PageLayout title="Biografía">
+<PageLayout title="Biografía — Daniel Jerez Torns" description="Conoce la historia de Daniel Jerez Torns, escritor de novela negra, misterio y ciencia ficción.">
+  <GridBiografia biografia={biografia} fondo={getFondo()} avatar={getAvatar()} />
 </PageLayout>

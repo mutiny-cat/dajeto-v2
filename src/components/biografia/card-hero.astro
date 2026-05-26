@@ -1,0 +1,77 @@
+---
+import type { ImageMetadata } from "astro:assets"
+
+export interface Props {
+  titulo: string
+  fondo?: ImageMetadata
+  avatar?: ImageMetadata
+}
+
+const { titulo, fondo, avatar } = Astro.props
+---
+
+<section class="hero">
+  {fondo && <img src={fondo.src} alt="" class="bg" />}
+  <article class="content">
+    <div class="overlay">
+      <h1 class="titulo">{titulo}</h1>
+    </div>
+    {avatar && <div class="avatar-wrap"><img src={avatar.src} alt="Daniel Jerez" class="avatar" /></div>}
+  </article>
+</section>
+
+<style>
+  .hero {
+    grid-column: 1 / -1;
+    position: relative;
+    aspect-ratio: 21 / 9;
+    border: 1px solid var(--color-border);
+    border-radius: 0.75em;
+    overflow: hidden;
+  }
+
+  .bg {
+    position: absolute;
+    inset: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    filter: grayscale(1) contrast(1.4) brightness(0.65);
+  }
+
+  .content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    block-size: 100%;
+    background: linear-gradient(transparent, rgb(0 0 0 / 0.85));
+  }
+
+  .overlay {
+    padding: 3em 4em;
+    flex: 1;
+    align-self: center;
+  }
+
+  .titulo {
+    font-size: var(--text-h1);
+    margin: 0;
+  }
+
+  .avatar-wrap {
+    align-self: center;
+    margin-inline-end: 4em;
+    display: flex;
+    align-items: center;
+    block-size: 60%;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--color-green-600);
+  }
+
+  .avatar {
+    block-size: 100%;
+    object-fit: contain;
+  }
+</style>

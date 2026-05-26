@@ -5,7 +5,7 @@ import Hero from "./hero-libro.astro"
 import Cita from "./cita-libro.astro"
 import Sinopsis from "./sinopsis-libro.astro"
 import Contenido from "./contenido-libro.astro"
-import Info from "./info-libro.astro"
+import Detalle from "./detalle-libro.astro"
 import Compra from "./compra-libro.astro"
 
 export interface Props {
@@ -30,7 +30,7 @@ const { libro, fondo, portada, libroImg } = Astro.props
   )}
   {!libro.fraseHero && <div class="full"><Sinopsis titulo={libro.titulo} {portada} sinopsis={libro.sinopsis} /></div>}
   <Contenido contenido={libro.contenido} />
-  <Info paginas={libro.paginas} ano={libro.ano} editorial={libro.editorial} />
+  <Detalle paginas={libro.paginas} ano={libro.ano} editorial={libro.editorial} />
   {libro.enlaces.length > 0 && <Compra enlaces={libro.enlaces} />}
 </div>
 

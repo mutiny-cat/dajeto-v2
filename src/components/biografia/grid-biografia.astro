@@ -1,0 +1,29 @@
+---
+import type { ImageMetadata } from "astro:assets"
+import type { Biografia } from "@data/biografia"
+import CardHero from "./card-hero.astro"
+import CardCita from "./card-cita.astro"
+import CardBiografia from "./card-biografia.astro"
+
+export interface Props {
+  biografia: Biografia
+  fondo?: ImageMetadata
+  avatar?: ImageMetadata
+}
+
+const { biografia: bio, fondo, avatar } = Astro.props
+---
+
+<div class="grid">
+  <CardHero titulo="Daniel Jerez, escritor" {fondo} {avatar} />
+  <CardCita cita={bio.cita} />
+  <CardBiografia avatar={avatar} parrafos={bio.parrafos} />
+</div>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2em;
+  }
+</style>

@@ -1,7 +1,7 @@
 export interface EnlaceCompra {
   tienda: string
   url: string
-  formato: "tapa-blanda" | "tapa-dura" | "ebook" | "audiolibro"
+  formato: "tapa-blanda" | "ebook" | "audiolibro"
   logo: string
 }
 
@@ -158,6 +158,7 @@ export const libros: Libro[] = [
     portadaMini: "portada-el-beso-de-la-muerte.png",
     portada: "portada-el-beso-de-la-muerte.png",
     enlaces: [
+      { tienda: "Amazon", url: "https://www.amazon.es/dp/B0851MBRKM", formato: "tapa-blanda", logo: "simple-icons:amazon" },
       { tienda: "Amazon", url: "https://www.amazon.es/beso-muerte-Daniel-Jerez-Torns-ebook/dp/B0851MPJGP", formato: "ebook", logo: "simple-icons:amazon" },
     ],
   },
