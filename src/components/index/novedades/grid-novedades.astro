@@ -21,7 +21,7 @@ const { libros } = Astro.props
   .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1em;
+    gap: 1em /* 16px */;
     inline-size: 100%;
   }
 
@@ -39,6 +39,6 @@ const { libros } = Astro.props
 
   .grid h4 {
     grid-column: 1 / -1;
-    margin-block-end: 0.5em;
+    margin-block-end: 0.5em /* 8px */;
   }
 </style>

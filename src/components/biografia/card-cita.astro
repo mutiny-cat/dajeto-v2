@@ -7,6 +7,11 @@ const { cita } = Astro.props
 ---
 
 <section class="card">
+  <div class="icon-wrap">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon" viewBox="0 0 16 16">
+      <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388q0-.527.062-1.054.093-.558.31-.992t.559-.683q.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612q0-.527.062-1.054.094-.558.31-.992.217-.434.559-.683.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 3 7.558V11a1 1 0 0 0 1 1z"/>
+    </svg>
+  </div>
   <blockquote>{cita}</blockquote>
 </section>
 
@@ -16,33 +21,42 @@ const { cita } = Astro.props
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2em 3em;
-    background: var(--color-green-700);
+    padding: 2em /* 32px */;
+    background: #5F5804;
     border: 1px solid var(--color-primary-600);
-    border-radius: 0.75em;
+    border-radius: 0.75em /* 12px */;
   }
 
-  .card::after {
-    content: "\201D";
+  .icon-wrap {
     position: absolute;
     z-index: 0;
-    inset-block-start: -0.1em;
-    inset-inline-start: 0em;
-    font-size: 30em;
-    line-height: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: var(--color-white);
     opacity: 0.15;
   }
 
-  blockquote {
-    position: relative;
-    z-index: 1;
-    font-size: var(--text-base);
-    font-weight: 600;
-    font-style: italic;
-    color: var(--color-white);
-    line-height: 1.8;
-    margin: 0;
-    text-align: center;
+  .icon {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transform: rotate(180deg);
+  }
+
+  @media (width <= 768px) {
+    .card {
+      padding: 1.5em /* 24px */;
+    }
+  }
+
+  @media (width <= 480px) {
+    .card {
+      padding: 1em /* 16px */;
+    }
   }
 </style>

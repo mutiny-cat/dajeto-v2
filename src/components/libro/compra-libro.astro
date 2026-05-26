@@ -1,11 +1,19 @@
 ---
 import type { EnlaceCompra } from "@data/libros"
+import type { ImageMetadata } from "astro"
 
 export interface Props {
   enlaces: EnlaceCompra[]
 }
 
 const { enlaces } = Astro.props
+
+const imagenesTienda = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/tiendas/logo-*.png', { eager: true })
+
+function getImagenTienda(archivo: string): ImageMetadata | undefined {
+  const key = `/src/assets/images/tiendas/${archivo}`
+  return imagenesTienda[key]?.default
+}
 
 const grupos = enlaces.reduce((acc, e) => {
   if (!acc[e.formato]) acc[e.formato] = []
@@ -26,11 +34,14 @@ const etiquetas: Record<string, string> = {
     <div class="group">
       <h3>{etiquetas[formato] ?? formato}</h3>
       <div class="list">
-        {items.map((e) => (
-          <a href={e.url} target="_blank" rel="noopener noreferrer" class="item">
-            <span class="tienda">{e.tienda}</span>
-          </a>
-        ))}
+        {items.map((e) => {
+          const img = getImagenTienda(e.logo)
+          return (
+            <a href={e.url} target="_blank" rel="noopener noreferrer" class="item">
+              {img && <img src={img.src} alt={e.tienda} class="logo" />}
+            </a>
+          )
+        })}
       </div>
     </div>
   ))}
@@ -38,32 +49,44 @@ const etiquetas: Record<string, string> = {
 
 <style>
   .card {
-    grid-column: span 1;
-    background: var(--color-green-700);
+    background: var(--color-white);
     border: 1px solid var(--color-primary-600);
-    border-radius: 0.75em;
-    padding: 1.5em;
+    border-radius: 0.75em /* 12px */;
+    padding: 2em /* 32px */;
+    color: var(--color-black);
+  }
+
+  @media (width <= 768px) {
+    .card {
+      padding: 1.5em /* 24px */;
+    }
+  }
+
+  @media (width <= 480px) {
+    .card {
+      padding: 1em /* 16px */;
+    }
   }
 
   h2 {
     font-size: var(--text-h3);
-    margin-block-end: 0.75em;
+    margin-block-end: 0.75em /* 12px */;
   }
 
   .group + .group {
-    margin-block-start: 1.25em;
+    margin-block-start: 1.25em /* 20px */;
   }
 
   h3 {
     font-size: var(--text-base);
-    margin-block-end: 0.5em;
-    color: var(--color-white-soft);
+    margin-block-end: 0.5em /* 8px */;
+    color: var(--color-gray-dark);
   }
 
   .list {
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
+    gap: 0.5em /* 8px */;
   }
 
   @media (width >= 768px) {
@@ -74,20 +97,18 @@ const etiquetas: Record<string, string> = {
   }
 
   .item {
-    display: block;
-    padding: 0.6em 1em;
-    background: var(--color-gray);
-    border-radius: 0.5em;
-    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.3em /* 5px */ 0.5em /* 8px */;
+    border-radius: 0.5em /* 8px */;
     text-decoration: none;
-    transition: background 0.2s;
   }
 
-  .item:hover {
-    background: var(--color-gray-dark);
-  }
-
-  .tienda {
-    font-weight: 600;
+  .logo {
+    display: block;
+    block-size: 1.8em /* 29px */;
+    inline-size: auto;
+    object-fit: contain;
   }
 </style>

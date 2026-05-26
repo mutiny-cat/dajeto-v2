@@ -57,11 +57,11 @@
 	--font-default: 'Inconsolata Variable', monospace;
 	--max-width: 1280px;
 
-	--text-base: clamp(0.875em, 0.75em + 0.5vw, 1em); /* 14px – 16px */
-	--text-h1: clamp(2em, 1em + 3vw, 3.5em); /* 32px – 56px */
-	--text-h2: clamp(1.5em, 0.75em + 2vw, 2.5em); /* 24px – 40px */
-	--text-h3: clamp(1.2em, 0.5em + 1.5vw, 1.75em); /* 19px – 28px */
-	--text-h4: clamp(1em, 0.5em + 1.2vw, 1.35em); /* 16px – 22px */
+	--text-base: clamp(0.875em /* 14px */, 0.75em /* 12px */ + 0.5vw, 1em /* 16px */); /* 14px – 16px */
+	--text-h1: clamp(2em /* 32px */, 1em /* 16px */ + 3vw, 3.5em /* 56px */); /* 32px – 56px */
+	--text-h2: clamp(1.5em /* 24px */, 0.75em /* 12px */ + 2vw, 2.5em /* 40px */); /* 24px – 40px */
+	--text-h3: clamp(1.2em /* 19px */, 0.5em /* 8px */ + 1.5vw, 1.75em /* 28px */); /* 19px – 28px */
+	--text-h4: clamp(1em /* 16px */, 0.5em /* 8px */ + 1.2vw, 1.35em /* 22px */); /* 16px – 22px */
 
 	--z-index-header: 10;
 	--z-index-submenu: 10;
@@ -138,21 +138,21 @@ button {
 main {
 	max-inline-size: var(--max-width);
 	margin-inline: auto;
-	padding-inline: 1em;
-	padding-block-start: 6em;
+	padding-inline: 1em /* 16px */;
+	padding-block-start: 6em /* 96px */;
 
 	@media (width >= 768px) {
-		padding-block-start: 10em;
+		padding-block-start: 10em /* 160px */;
 	}
 	min-block-size: 100dvh;
 	background-color: var(--color-black);
 	display: flex;
 	flex-direction: column;
-	gap: 4em;
+	gap: 4em /* 64px */;
 }
 
 ul {
 	list-style: none;
 	margin: 0;
-	padding: 0 2em;
+	padding: 0 2em /* 32px */;
 }

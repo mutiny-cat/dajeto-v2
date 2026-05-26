@@ -27,8 +27,8 @@ const { libro, fondo, libroImg } = Astro.props
   article {
     position: relative;
     border: 1px solid var(--color-border);
-    border-radius: 0.75em;
-    padding: 1.5em;
+    border-radius: 0.75em /* 12px */;
+    padding: 1.5em /* 24px */;
     transition: border-color 0.3s;
     overflow: hidden;
   }
@@ -49,7 +49,7 @@ const { libro, fondo, libroImg } = Astro.props
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    box-shadow: 0 0 1.2em var(--categoria-hover-glow, var(--color-border-soft));
+    box-shadow: 0 0 1.2em /* 19px */ var(--categoria-hover-glow, var(--color-border-soft));
     opacity: 0;
     transition: opacity 0.3s;
     pointer-events: none;
@@ -65,7 +65,7 @@ const { libro, fondo, libroImg } = Astro.props
   }
 
   article:hover h4 {
-    text-shadow: 0 0 0.5em var(--categoria-hover-glow, var(--color-border-soft));
+    text-shadow: 0 0 0.5em /* 8px */ var(--categoria-hover-glow, var(--color-border-soft));
   }
 
   a {
@@ -78,7 +78,7 @@ const { libro, fondo, libroImg } = Astro.props
     align-items: var(--card-align, center);
     justify-content: var(--card-justify, flex-start);
     text-align: var(--card-text-align, center);
-    gap: 1em;
+    gap: 1em /* 16px */;
   }
 
   picture {
@@ -109,13 +109,13 @@ const { libro, fondo, libroImg } = Astro.props
     max-inline-size: var(--div-max-w, none);
     flex: var(--div-flex, none);
     background: rgb(0 0 0 / 0.5);
-    padding: 0.6em 0.8em;
-    border-radius: 0.4em;
+    padding: 0.6em /* 10px */ 0.8em /* 13px */;
+    border-radius: 0.4em /* 6px */;
   }
 
   a :global(.card-arrow) {
-    inline-size: 2em;
-    block-size: 2em;
+    inline-size: 2em /* 32px */;
+    block-size: 2em /* 32px */;
     display: block;
     color: var(--color-white);
     transition: color 0.3s, transform 0.3s;

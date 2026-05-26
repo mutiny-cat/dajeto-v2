@@ -38,15 +38,15 @@ const { libro, fondo, portada, libroImg } = Astro.props
   .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1em;
-    padding-block-end: 4em;
+    gap: 3em /* 48px */;
+    padding-block-end: 4em /* 64px */;
   }
 
   .cita-sinopsis {
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 1em;
+    gap: 3em /* 48px */;
   }
 
   .portada-wrap {
@@ -55,5 +55,16 @@ const { libro, fondo, portada, libroImg } = Astro.props
 
   .full {
     grid-column: 1 / -1;
+  }
+
+  @media (width <= 768px) {
+    .grid,
+    .cita-sinopsis {
+      grid-template-columns: 1fr;
+    }
+
+    .portada-wrap {
+      grid-column: auto;
+    }
   }
 </style>

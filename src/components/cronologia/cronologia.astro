@@ -120,47 +120,47 @@ const { trayectoria } = Astro.props
     text-align: center;
     font-size: var(--text-h2);
     color: var(--color-white);
-    margin-block-end: 1.5em;
+    margin-block-end: 1.5em /* 24px */;
   }
 
   .card-container {
     position: relative;
     max-inline-size: 900px;
     margin-inline: auto;
-    padding-block-end: 12em;
+    padding-block-end: 12em /* 192px */;
   }
 
   .timeline-orb {
     --orb-color: var(--color-green-600);
     position: absolute;
     inset-inline-start: 0;
-    inset-block-start: calc(var(--top, 0px) - 4.25em);
+    inset-block-start: calc(var(--top, 0px) - 4.25em /* 68px */);
     z-index: 2;
-    inline-size: 2.5em;
-    block-size: 2.5em;
+    inline-size: 2.5em /* 40px */;
+    block-size: 2.5em /* 40px */;
     border-radius: 50%;
     border: 2px solid var(--orb-color);
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--color-black);
-    box-shadow: 0 0 1.5em color-mix(in srgb, var(--orb-color) 30%, transparent);
+    box-shadow: 0 0 1.5em /* 24px */ color-mix(in srgb, var(--orb-color) 30%, transparent);
     transition: transform 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
     transform: scale(var(--orb-scale, 1.5));
   }
 
   .timeline-orb :global(svg) {
-    inline-size: 1.8em;
-    block-size: 1.8em;
+    inline-size: 1.8em /* 29px */;
+    block-size: 1.8em /* 29px */;
     fill: var(--orb-svg-color, var(--color-black));
     transition: fill 0.5s ease;
   }
 
   .timeline-line {
     position: absolute;
-    inset-block-start: -3em;
+    inset-block-start: -3em /* -48px */;
     inset-block-end: 0;
-    inset-inline-start: 2em;
+    inset-inline-start: 2em /* 32px */;
     inline-size: 2px;
     background: linear-gradient(
       180deg,
@@ -173,8 +173,8 @@ const { trayectoria } = Astro.props
 
   .card-timeline {
     position: relative;
-    padding-inline-start: 4em;
-    padding-block: 1.5em;
+    padding-inline-start: 4em /* 64px */;
+    padding-block: 1.5em /* 24px */;
     opacity: 0.3;
     transition: opacity 0.5s ease;
   }
@@ -182,14 +182,14 @@ const { trayectoria } = Astro.props
   .card-timeline::before {
     content: "";
     position: absolute;
-    inset-inline-start: calc(2em - 0.4em);
+    inset-inline-start: calc(2em /* 32px */ - 0.4em /* 6px */);
     inset-block-start: 50%;
     translate: 0 -50%;
-    inline-size: 0.8em;
-    block-size: 0.8em;
+    inline-size: 0.8em /* 13px */;
+    block-size: 0.8em /* 13px */;
     border-radius: 50%;
     background: var(--color-green-500);
-    box-shadow: 0 0 0.5em var(--color-green-500);
+    box-shadow: 0 0 0.5em /* 8px */ var(--color-green-500);
     z-index: 1;
     opacity: var(--dot-opacity, 0);
     transition: opacity 0.3s ease;
@@ -201,9 +201,9 @@ const { trayectoria } = Astro.props
 
   .card-content {
     border: 1px solid var(--color-border);
-    border-radius: 1em;
+    border-radius: 1em /* 16px */;
     background: var(--color-black-soft);
-    padding: 1.5em;
+    padding: 1.5em /* 24px */;
     transition: border-color 0.5s ease;
   }
 
@@ -214,30 +214,30 @@ const { trayectoria } = Astro.props
   .card-meta {
     display: flex;
     align-items: center;
-    gap: 1em;
-    margin-block-end: 0.75em;
+    gap: 1em /* 16px */;
+    margin-block-end: 0.75em /* 12px */;
     flex-wrap: wrap;
   }
 
   .card-ano {
-    font-size: 0.75em;
+    font-size: 0.75em /* 12px */;
     font-weight: 700;
     color: var(--color-white);
-    letter-spacing: 0.15em;
+    letter-spacing: 0.15em /* 2px */;
     border: 1px solid var(--color-green-500);
-    border-radius: 2em;
-    padding: 0.2em 0.8em;
+    border-radius: 2em /* 32px */;
+    padding: 0.2em /* 3px */ 0.8em /* 13px */;
   }
 
   .card-titulo {
     font-size: var(--text-h4);
     font-weight: 700;
     color: var(--color-white);
-    margin-block-end: 0.5em;
+    margin-block-end: 0.5em /* 8px */;
   }
 
   .card-desc {
-    font-size: 0.875em;
+    font-size: 0.875em /* 14px */;
     color: var(--color-white-soft);
     line-height: 1.6;
   }
@@ -246,24 +246,24 @@ const { trayectoria } = Astro.props
     .timeline-orb {
       inset-inline-start: 50%;
       translate: -50% 0;
-      inline-size: 3em;
-      block-size: 3em;
-      inset-block-start: calc(var(--top, 0px) - 5.5em);
+      inline-size: 3em /* 48px */;
+      block-size: 3em /* 48px */;
+      inset-block-start: calc(var(--top, 0px) - 5.5em /* 88px */);
     }
 
     .timeline-orb :global(svg) {
-      inline-size: 2em;
-      block-size: 2em;
+      inline-size: 2em /* 32px */;
+      block-size: 2em /* 32px */;
     }
 
     .timeline-line {
       inset-inline-start: 50%;
-      inset-block-start: -4em;
+      inset-block-start: -4em /* -64px */;
     }
 
     .card-timeline {
       padding-inline-start: 0;
-      inline-size: calc(50% - 3em);
+      inline-size: calc(50% - 3em /* 48px */);
     }
 
     .card-timeline:nth-child(odd) {
@@ -277,28 +277,28 @@ const { trayectoria } = Astro.props
     .card-timeline:nth-child(odd)::after {
       content: "";
       position: absolute;
-      inset-inline-start: -3.4em;
+      inset-inline-start: -3.4em /* -54px */;
       inset-block-start: 50%;
       translate: 0 -50%;
-      inline-size: 0.8em;
-      block-size: 0.8em;
+      inline-size: 0.8em /* 13px */;
+      block-size: 0.8em /* 13px */;
       border-radius: 50%;
       background: var(--color-green-500);
-      box-shadow: 0 0 0.5em var(--color-green-500);
+      box-shadow: 0 0 0.5em /* 8px */ var(--color-green-500);
       z-index: 1;
     }
 
     .card-timeline:nth-child(even)::after {
       content: "";
       position: absolute;
-      inset-inline-end: -3.4em;
+      inset-inline-end: -3.4em /* -54px */;
       inset-block-start: 50%;
       translate: 0 -50%;
-      inline-size: 0.8em;
-      block-size: 0.8em;
+      inline-size: 0.8em /* 13px */;
+      block-size: 0.8em /* 13px */;
       border-radius: 50%;
       background: var(--color-green-500);
-      box-shadow: 0 0 0.5em var(--color-green-500);
+      box-shadow: 0 0 0.5em /* 8px */ var(--color-green-500);
       z-index: 1;
     }
 

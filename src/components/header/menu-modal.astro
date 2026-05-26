@@ -83,7 +83,7 @@ function getPortadaMini(ruta?: string) {
     z-index: 1;
     display: flex;
     justify-content: flex-end;
-    padding: 1.2em;
+    padding: 1.2em /* 19px */;
     background: var(--color-black);
   }
 
@@ -91,8 +91,8 @@ function getPortadaMini(ruta?: string) {
     display: flex;
     align-items: center;
     justify-content: center;
-    inline-size: 2.5em;
-    block-size: 2.5em;
+    inline-size: 2.5em /* 40px */;
+    block-size: 2.5em /* 40px */;
     border-radius: 50%;
     background-color: var(--color-black-soft);
     border: 1px solid var(--color-border-soft);
@@ -102,8 +102,8 @@ function getPortadaMini(ruta?: string) {
   }
 
   .modal-close :global(svg) {
-    inline-size: 1.5em;
-    block-size: 1.5em;
+    inline-size: 1.5em /* 24px */;
+    block-size: 1.5em /* 24px */;
     fill: currentColor;
   }
 
@@ -115,13 +115,13 @@ function getPortadaMini(ruta?: string) {
   .modal-logo {
     display: flex;
     justify-content: center;
-    padding-block-end: 2em;
+    padding-block-end: 2em /* 32px */;
     color: var(--color-white);
   }
 
   .modal-logo :global(svg) {
-    inline-size: 5em;
-    block-size: 5em;
+    inline-size: 5em /* 80px */;
+    block-size: 5em /* 80px */;
   }
 
   #menu-modal nav > ul {
@@ -141,8 +141,8 @@ function getPortadaMini(ruta?: string) {
   #menu-modal nav > ul > li > a {
     display: flex;
     align-items: center;
-    font-size: 1.2em;
-    padding-block: 0.75em;
+    font-size: 1.2em /* 19px */;
+    padding-block: 0.75em /* 12px */;
     padding-inline: 0;
     inline-size: 100%;
     color: var(--color-white-soft);
@@ -153,8 +153,8 @@ function getPortadaMini(ruta?: string) {
   #menu-modal nav > ul > li > button {
     display: flex;
     align-items: center;
-    font-size: 1.2em;
-    padding-block: 0.75em;
+    font-size: 1.2em /* 19px */;
+    padding-block: 0.75em /* 12px */;
     padding-inline: 0;
     inline-size: 100%;
     color: var(--color-white-soft);
@@ -169,8 +169,8 @@ function getPortadaMini(ruta?: string) {
   #menu-modal nav > ul > li:has(> ul) > button::after {
     content: '';
     display: inline-block;
-    inline-size: 0.6em;
-    block-size: 0.6em;
+    inline-size: 0.6em /* 10px */;
+    block-size: 0.6em /* 10px */;
     margin-inline-start: auto;
     border-inline-end: 2px solid var(--color-white-soft);
     border-block-end: 2px solid var(--color-white-soft);
@@ -207,20 +207,20 @@ function getPortadaMini(ruta?: string) {
   #menu-modal li ul li a {
     display: flex;
     align-items: center;
-    gap: 0.75em;
-    padding-block: 0.5em;
-    font-size: 1em;
+    gap: 0.75em /* 12px */;
+    padding-block: 0.5em /* 8px */;
+    font-size: 1em /* 16px */;
     color: var(--color-white-soft);
     text-decoration: none;
     font-weight: 400;
   }
 
   #menu-modal li > h4 {
-    padding-block: 0.5em;
-    font-size: 0.75em;
-    letter-spacing: 0.05em;
+    padding-block: 0.5em /* 8px */;
+    font-size: 0.75em /* 12px */;
+    letter-spacing: 0.05em /* 1px */;
     color: var(--color-white-soft);
-    margin-block-end: 0.25em;
+    margin-block-end: 0.25em /* 4px */;
   }
 
   #menu-modal .sub-links {
@@ -231,26 +231,26 @@ function getPortadaMini(ruta?: string) {
   #menu-modal .sub-links a {
     display: flex;
     align-items: center;
-    gap: 0.75em;
-    padding-block: 0.5em;
-    font-size: 1em;
+    gap: 0.75em /* 12px */;
+    padding-block: 0.5em /* 8px */;
+    font-size: 1em /* 16px */;
     color: var(--color-white-soft);
     text-decoration: none;
     font-weight: 400;
   }
 
   #menu-modal .portada-mini {
-    inline-size: 1.5em;
+    inline-size: 1.5em /* 24px */;
     block-size: auto;
     aspect-ratio: 2 / 3;
     object-fit: cover;
-    border-radius: 0.2em;
+    border-radius: 0.2em /* 3px */;
   }
 
   #menu-modal li ul li a picture,
   #menu-modal .sub-links a picture {
     flex: none;
-    inline-size: 1.5em;
+    inline-size: 1.5em /* 24px */;
   }
 
   #menu-modal[open] {

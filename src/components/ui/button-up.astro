@@ -9,13 +9,13 @@ import { Icon } from "astro-icon/components"
 <style>
   .button-up {
     position: fixed;
-    inset-block-end: 2em;
-    inset-inline-end: 2em;
+    inset-block-end: 2em /* 32px */;
+    inset-inline-end: 2em /* 32px */;
     display: flex;
     align-items: center;
     justify-content: center;
-    inline-size: 3em;
-    block-size: 3em;
+    inline-size: 3em /* 48px */;
+    block-size: 3em /* 48px */;
     border-radius: 50%;
     background-color: var(--color-gray-dark);
     color: var(--color-white-soft);
@@ -43,12 +43,12 @@ import { Icon } from "astro-icon/components"
   .button-up:hover {
     background-color: var(--color-green-500);
     color: var(--color-black);
-    transform: translateY(-0.2em);
+    transform: translateY(-0.2em /* -3px */);
   }
 
   .button-up :global(svg) {
-    inline-size: 1.25em;
-    block-size: 1.25em;
+    inline-size: 1.25em /* 20px */;
+    block-size: 1.25em /* 20px */;
     fill: currentColor;
   }
 </style>

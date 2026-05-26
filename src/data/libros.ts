@@ -42,8 +42,8 @@ export const libros: Libro[] = [
     portadaMini: "portada-el-canto-del-gallo.png",
     portada: "portada-el-canto-del-gallo.png",
     enlaces: [
-      { tienda: "Amazon", url: "https://www.amazon.es/canto-gallo-Daniel-Jerez-Torns/dp/B0GSFNMQ7H", formato: "tapa-blanda", logo: "simple-icons:amazon" },
-      { tienda: "Amazon", url: "https://www.amazon.es/canto-gallo-Daniel-Jerez-Torns-ebook/dp/B0GSCGHFJG", formato: "ebook", logo: "simple-icons:amazon" },
+      { tienda: "Amazon", url: "https://www.amazon.es/canto-gallo-Daniel-Jerez-Torns/dp/B0GSFNMQ7H", formato: "tapa-blanda", logo: "logo-amazon.png" },
+      { tienda: "Amazon", url: "https://www.amazon.es/canto-gallo-Daniel-Jerez-Torns-ebook/dp/B0GSCGHFJG", formato: "ebook", logo: "logo-amazon.png" },
     ],
   },
   {
@@ -64,17 +64,17 @@ export const libros: Libro[] = [
     portadaMini: "portada-el-pasado-nunca-nos-olvida.png",
     portada: "portada-el-pasado-nunca-nos-olvida.png",
     enlaces: [
-      { tienda: "Casa del Libro", url: "https://www.casadellibro.com/libro-el-pasado-nunca-nos-olvida/9788419110480/13185437", formato: "tapa-blanda", logo: "local:casadellibro" },
-      { tienda: "FNAC", url: "https://www.fnac.es/a9547088/Daniel-Jerez-El-pasado-nunca-nos-olvida", formato: "tapa-blanda", logo: "simple-icons:fnac" },
-      { tienda: "El Corte Inglés", url: "https://www.elcorteingles.es/libros/A44795177-el-pasado-nunca-nos-olvida-a-veces-los-crimenes-impunes-salen-a-la-luz-tapa-blanda/", formato: "tapa-blanda", logo: "local:elcorteingles" },
-      { tienda: "Amazon", url: "https://www.amazon.es/El-pasado-nunca-nos-olvida-ebook/dp/B0B7B93HCQ", formato: "ebook", logo: "simple-icons:amazon" },
-      { tienda: "Kobo", url: "https://www.kobo.com/es/es/ebook/el-pasado-nunca-nos-olvida", formato: "ebook", logo: "simple-icons:kobo" },
-      { tienda: "Casa del Libro", url: "https://www.casadellibro.com/ebook-el-pasado-nunca-nos-olvida-ebook/9788419110572/13151373", formato: "ebook", logo: "local:casadellibro" },
-      { tienda: "Nextory", url: "https://www.nextory.es/libro/el-pasado-nunca-nos-olvida-11725320/", formato: "ebook", logo: "local:nextory" },
-      { tienda: "Google Play", url: "https://play.google.com/store/books/details/Daniel_Jerez_El_pasado_nunca_nos_olvida?id=EBt9EAAAQBAJ", formato: "ebook", logo: "simple-icons:googleplay" },
-      { tienda: "Apple Books", url: "https://books.apple.com/es/book/el-pasado-nunca-nos-olvida/id6443200879", formato: "ebook", logo: "simple-icons:applebooks" },
-      { tienda: "Audible", url: "https://www.audible.es/pd/El-pasado-nunca-nos-olvida-Audiolibro/B0BF5VX968", formato: "audiolibro", logo: "simple-icons:audible" },
-      { tienda: "Apple Books", url: "https://books.apple.com/es/audiobook/el-pasado-nunca-nos-olvida-a-veces-los/id1645343488", formato: "audiolibro", logo: "simple-icons:applebooks" },
+      { tienda: "Casa del Libro", url: "https://www.casadellibro.com/libro-el-pasado-nunca-nos-olvida/9788419110480/13185437", formato: "tapa-blanda", logo: "logo-casa-del-libro.png" },
+      { tienda: "FNAC", url: "https://www.fnac.es/a9547088/Daniel-Jerez-El-pasado-nunca-nos-olvida", formato: "tapa-blanda", logo: "logo-fnac.png" },
+      { tienda: "El Corte Inglés", url: "https://www.elcorteingles.es/libros/A44795177-el-pasado-nunca-nos-olvida-a-veces-los-crimenes-impunes-salen-a-la-luz-tapa-blanda/", formato: "tapa-blanda", logo: "logo-el-corte-ingles.png" },
+      { tienda: "Amazon", url: "https://www.amazon.es/El-pasado-nunca-nos-olvida-ebook/dp/B0B7B93HCQ", formato: "ebook", logo: "logo-amazon.png" },
+      { tienda: "Kobo", url: "https://www.kobo.com/es/es/ebook/el-pasado-nunca-nos-olvida", formato: "ebook", logo: "logo-kobo.png" },
+      { tienda: "Casa del Libro", url: "https://www.casadellibro.com/ebook-el-pasado-nunca-nos-olvida-ebook/9788419110572/13151373", formato: "ebook", logo: "logo-casa-del-libro.png" },
+      { tienda: "Nextory", url: "https://www.nextory.es/libro/el-pasado-nunca-nos-olvida-11725320/", formato: "ebook", logo: "logo-nextory.png" },
+      { tienda: "Google Play", url: "https://play.google.com/store/books/details/Daniel_Jerez_El_pasado_nunca_nos_olvida?id=EBt9EAAAQBAJ", formato: "ebook", logo: "logo-googleplay.png" },
+      { tienda: "Apple Books", url: "https://books.apple.com/es/book/el-pasado-nunca-nos-olvida/id6443200879", formato: "ebook", logo: "logo-appstore.png" },
+      { tienda: "Audible", url: "https://www.audible.es/pd/El-pasado-nunca-nos-olvida-Audiolibro/B0BF5VX968", formato: "audiolibro", logo: "logo-audible.png" },
+      { tienda: "Apple Books", url: "https://books.apple.com/es/audiobook/el-pasado-nunca-nos-olvida-a-veces-los/id1645343488", formato: "audiolibro", logo: "logo-appstore.png" },
     ],
   },
   {
@@ -95,7 +95,7 @@ export const libros: Libro[] = [
     portadaMini: "portada-relatos-tendidos.png",
     portada: "portada-relatos-tendidos.png",
     enlaces: [
-      { tienda: "Amazon", url: "https://www.amazon.es/Relatos-tendidos-cotidiano-absurdo-inesperado-ebook/dp/B0GXVY44X8", formato: "ebook", logo: "simple-icons:amazon" },
+      { tienda: "Amazon", url: "https://www.amazon.es/Relatos-tendidos-cotidiano-absurdo-inesperado-ebook/dp/B0GXVY44X8", formato: "ebook", logo: "logo-amazon.png" },
     ],
   },
   {
@@ -116,7 +116,7 @@ export const libros: Libro[] = [
     portadaMini: "portada-grietas-en-el-muro.png",
     portada: "portada-grietas-en-el-muro.png",
     enlaces: [
-      { tienda: "Amazon", url: "https://www.amazon.es/Grietas-en-el-Muro-Suspenso-Psicol%C3%B3gica-ebook/dp/B0H1YHB8CX", formato: "ebook", logo: "simple-icons:amazon" },
+      { tienda: "Amazon", url: "https://www.amazon.es/Grietas-en-el-Muro-Suspenso-Psicol%C3%B3gica-ebook/dp/B0H1YHB8CX", formato: "ebook", logo: "logo-amazon.png" },
     ],
   },
   {
@@ -137,7 +137,7 @@ export const libros: Libro[] = [
     portadaMini: "portada-el-silencio-de-las-ruinas.png",
     portada: "portada-el-silencio-de-las-ruinas.png",
     enlaces: [
-      { tienda: "Amazon", url: "https://www.amazon.es/El-silencio-de-las-ruinas-Daniel-Jerez-Torns-ebook/dp/B086R5WQV5", formato: "ebook", logo: "simple-icons:amazon" },
+      { tienda: "Amazon", url: "https://www.amazon.es/El-silencio-de-las-ruinas-Daniel-Jerez-Torns-ebook/dp/B086R5WQV5", formato: "ebook", logo: "logo-amazon.png" },
     ],
   },
   {
@@ -158,8 +158,8 @@ export const libros: Libro[] = [
     portadaMini: "portada-el-beso-de-la-muerte.png",
     portada: "portada-el-beso-de-la-muerte.png",
     enlaces: [
-      { tienda: "Amazon", url: "https://www.amazon.es/dp/B0851MBRKM", formato: "tapa-blanda", logo: "simple-icons:amazon" },
-      { tienda: "Amazon", url: "https://www.amazon.es/beso-muerte-Daniel-Jerez-Torns-ebook/dp/B0851MPJGP", formato: "ebook", logo: "simple-icons:amazon" },
+      { tienda: "Amazon", url: "https://www.amazon.es/dp/B0851MBRKM", formato: "tapa-blanda", logo: "logo-amazon.png" },
+      { tienda: "Amazon", url: "https://www.amazon.es/beso-muerte-Daniel-Jerez-Torns-ebook/dp/B0851MPJGP", formato: "ebook", logo: "logo-amazon.png" },
     ],
   },
   {
@@ -180,7 +180,7 @@ export const libros: Libro[] = [
     portadaMini: "portada-al-iksir.png",
     portada: "portada-al-iksir.png",
     enlaces: [
-      { tienda: "Amazon", url: "https://www.amazon.es/Al-iksir-Daniel-Jerez-Torns-ebook/dp/B0CWY5MPZ9", formato: "ebook", logo: "simple-icons:amazon" },
+      { tienda: "Amazon", url: "https://www.amazon.es/Al-iksir-Daniel-Jerez-Torns-ebook/dp/B0CWY5MPZ9", formato: "ebook", logo: "logo-amazon.png" },
     ],
   },
   {
@@ -201,7 +201,7 @@ export const libros: Libro[] = [
     portadaMini: "portada-la-formula-terradas.png",
     portada: "portada-la-formula-terradas.png",
     enlaces: [
-      { tienda: "Amazon", url: "https://www.amazon.es/f%C3%B3rmula-Terradas-Daniel-Jerez-Torns-ebook/dp/B01C4VVN8A", formato: "ebook", logo: "simple-icons:amazon" },
+      { tienda: "Amazon", url: "https://www.amazon.es/f%C3%B3rmula-Terradas-Daniel-Jerez-Torns-ebook/dp/B01C4VVN8A", formato: "ebook", logo: "logo-amazon.png" },
     ],
   },
   {
@@ -222,7 +222,7 @@ export const libros: Libro[] = [
     portadaMini: "portada-el-arcabucero-numero-61.png",
     portada: "portada-el-arcabucero-numero-61.png",
     enlaces: [
-      { tienda: "Amazon", url: "https://www.amazon.es/El-arcabucero-Daniel-Jerez-Torns-ebook/dp/B00G2PYF76", formato: "ebook", logo: "simple-icons:amazon" },
+      { tienda: "Amazon", url: "https://www.amazon.es/El-arcabucero-Daniel-Jerez-Torns-ebook/dp/B00G2PYF76", formato: "ebook", logo: "logo-amazon.png" },
     ],
   },
   {
@@ -243,7 +243,7 @@ export const libros: Libro[] = [
     portadaMini: "portada-el-secreto-del-tesoro-guardado.png",
     portada: "portada-el-secreto-del-tesoro-guardado.png",
     enlaces: [
-      { tienda: "Amazon", url: "https://www.amazon.es/El-secreto-del-tesoro-guardado-ebook/dp/B0DZ5X4VY5", formato: "ebook", logo: "simple-icons:amazon" },
+      { tienda: "Amazon", url: "https://www.amazon.es/El-secreto-del-tesoro-guardado-ebook/dp/B0DZ5X4VY5", formato: "ebook", logo: "logo-amazon.png" },
     ],
   },
   {
@@ -264,7 +264,7 @@ export const libros: Libro[] = [
     portadaMini: "portada-el-faraon-y-el-prevencionista.png",
     portada: "portada-el-faraon-y-el-prevencionista.png",
     enlaces: [
-      { tienda: "Amazon", url: "https://www.amazon.es/El-Fara%C3%B3n-y-el-prevencionista-ebook/dp/B0G1QSGLD4", formato: "ebook", logo: "simple-icons:amazon" },
+      { tienda: "Amazon", url: "https://www.amazon.es/El-Fara%C3%B3n-y-el-prevencionista-ebook/dp/B0G1QSGLD4", formato: "ebook", logo: "logo-amazon.png" },
     ],
   },
   {
@@ -285,7 +285,7 @@ export const libros: Libro[] = [
     portadaMini: "portada-el-mapa-de-la-isla-del-estres.png",
     portada: "portada-el-mapa-de-la-isla-del-estres.png",
     enlaces: [
-      { tienda: "Amazon", url: "https://www.amazon.es/El-mapa-isla-del-estr%C3%A9s-Daniel-Jerez-Torns-ebook/dp/B0FP2M68PG", formato: "ebook", logo: "simple-icons:amazon" },
+      { tienda: "Amazon", url: "https://www.amazon.es/El-mapa-isla-del-estr%C3%A9s-Daniel-Jerez-Torns-ebook/dp/B0FP2M68PG", formato: "ebook", logo: "logo-amazon.png" },
     ],
   },
   {
@@ -306,7 +306,7 @@ export const libros: Libro[] = [
     portadaMini: "portada-tres-en-raya.png",
     portada: "portada-tres-en-raya.png",
     enlaces: [
-      { tienda: "Amazon", url: "https://www.amazon.es/Tres-raya-Daniel-Jerez-Torns-ebook/dp/B0GD979Q8P", formato: "ebook", logo: "simple-icons:amazon" },
+      { tienda: "Amazon", url: "https://www.amazon.es/Tres-raya-Daniel-Jerez-Torns-ebook/dp/B0GD979Q8P", formato: "ebook", logo: "logo-amazon.png" },
     ],
   },
   {
@@ -327,8 +327,8 @@ export const libros: Libro[] = [
     portadaMini: "portada-cada-etapa-su-camino.png",
     portada: "portada-cada-etapa-su-camino.png",
     enlaces: [
-      { tienda: "Amazon", url: "https://www.amazon.es/Cada-etapa-camino-Tres-atreverse-ebook/dp/B0GL174TMW", formato: "ebook", logo: "simple-icons:amazon" },
-      { tienda: "Amazon", url: "https://www.amazon.es/Cada-etapa-camino-Tres-atreverse/dp/B0GL174TMW", formato: "tapa-blanda", logo: "simple-icons:amazon" },
+      { tienda: "Amazon", url: "https://www.amazon.es/Cada-etapa-camino-Tres-atreverse-ebook/dp/B0GL174TMW", formato: "ebook", logo: "logo-amazon.png" },
+      { tienda: "Amazon", url: "https://www.amazon.es/Cada-etapa-camino-Tres-atreverse/dp/B0GL174TMW", formato: "tapa-blanda", logo: "logo-amazon.png" },
     ],
   },
 ]

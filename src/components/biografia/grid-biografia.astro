@@ -26,6 +26,12 @@ const { biografia: bio, fondo, foto } = Astro.props
   .grid {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 2em;
+    gap: 3em /* 48px */;
+  }
+
+  @media (width <= 768px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

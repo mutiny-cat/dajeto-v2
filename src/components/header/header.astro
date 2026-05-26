@@ -79,7 +79,7 @@ function getPortadaMini(ruta?: string) {
     display: flex;
     align-items: center;
     justify-content: space-between;
-		padding: 2.4em;
+		padding: 2.4em /* 38px */;
 		position: fixed;
     inset-block-start: 0;
 		inset-inline: 0;
@@ -92,7 +92,7 @@ function getPortadaMini(ruta?: string) {
     align-items: center;
     color: var(--color-white);
     font-weight: 700;
-    font-size: 1em;
+    font-size: 1em /* 16px */;
     text-decoration: none;
     transition: transform 0.5s;
 
@@ -102,8 +102,8 @@ function getPortadaMini(ruta?: string) {
   }
 
   .logo :global(svg) {
-    inline-size: 2.5em;
-    block-size: 2.5em;
+    inline-size: 2.5em /* 40px */;
+    block-size: 2.5em /* 40px */;
   }
 
   .menu-toggle {
@@ -115,29 +115,29 @@ function getPortadaMini(ruta?: string) {
   }
 
   .menu-toggle :global(svg) {
-    inline-size: 1.5em;
-    block-size: 1.5em;
+    inline-size: 1.5em /* 24px */;
+    block-size: 1.5em /* 24px */;
     fill: currentColor;
   }
 
   .portada-mini {
-    inline-size: 1.5em;
+    inline-size: 1.5em /* 24px */;
     block-size: auto;
     aspect-ratio: 2 / 3;
     object-fit: cover;
-    border-radius: 0.2em;
+    border-radius: 0.2em /* 3px */;
   }
 
   li ul li a picture,
   .sub-links a picture {
     flex: none;
-    inline-size: 1.5em;
+    inline-size: 1.5em /* 24px */;
   }
 
   nav {
     border: 1px solid var(--color-border);
-    border-radius: 2em;
-    padding: 0.75em 1.5em;
+    border-radius: 2em /* 32px */;
+    padding: 0.75em /* 12px */ 1.5em /* 24px */;
 
     ul {
       display: flex;
@@ -157,22 +157,22 @@ function getPortadaMini(ruta?: string) {
         position: absolute;
         inset-block-start: 100%;
         inset-inline: 0;
-        block-size: 1em;
+        block-size: 1em /* 16px */;
       }
     }
 
     > ul > li + li::before {
       content: '·';
-      font-size: 1.5em;
+      font-size: 1.5em /* 24px */;
       line-height: 1;
       color: var(--color-white-soft);
-      margin-inline: 0.5em;
+      margin-inline: 0.5em /* 8px */;
     }
 
     li ul {
       display: flex;
       position: absolute;
-      inset-block-start: calc(100% + 1em);
+      inset-block-start: calc(100% + 1em /* 16px */);
       inset-inline-start: 0;
       flex-direction: column;
       gap: 0;
@@ -182,8 +182,8 @@ function getPortadaMini(ruta?: string) {
       transition: opacity 0.5s ease, visibility 0.5s ease;
       background: rgb(10 10 10 / 0.95);
       border: 1px solid var(--color-border);
-      border-radius: 0.75em;
-      padding: 0.5em 0;
+      border-radius: 0.75em /* 12px */;
+      padding: 0.5em /* 8px */ 0;
       min-inline-size: max-content;
       z-index: var(--z-index-submenu, 20);
     }
@@ -196,17 +196,17 @@ function getPortadaMini(ruta?: string) {
     }
 
     li ul li {
-      padding: 0.5em 1em;
+      padding: 0.5em /* 8px */ 1em /* 16px */;
       white-space: nowrap;
 
       a {
         display: flex;
         align-items: center;
-        gap: 0.75em;
+        gap: 0.75em /* 12px */;
         font-weight: 400;
-        font-size: 0.9em;
-        padding: 0.25em 0.5em;
-        border-radius: 0.4em;
+        font-size: 0.9em /* 14px */;
+        padding: 0.25em /* 4px */ 0.5em /* 8px */;
+        border-radius: 0.4em /* 6px */;
         transition: 0.2s;
 
         &:hover {
@@ -222,12 +222,12 @@ function getPortadaMini(ruta?: string) {
       a {
         display: flex;
         align-items: center;
-        gap: 0.75em;
-        padding: 0.25em 0.5em;
-        margin-block: 0.25em;
-        border-radius: 0.4em;
+        gap: 0.75em /* 12px */;
+        padding: 0.25em /* 4px */ 0.5em /* 8px */;
+        margin-block: 0.25em /* 4px */;
+        border-radius: 0.4em /* 6px */;
         font-weight: 400;
-        font-size: 0.9em;
+        font-size: 0.9em /* 14px */;
         transition: 0.2s;
 
         &:hover {
@@ -237,17 +237,17 @@ function getPortadaMini(ruta?: string) {
     }
 
     li ul h4 {
-      font-size: 0.75em;
-      letter-spacing: 0.05em;
+      font-size: 0.75em /* 12px */;
+      letter-spacing: 0.05em /* 1px */;
       color: var(--color-white-soft);
       opacity: 0.6;
-      margin-block-end: 0.25em;
+      margin-block-end: 0.25em /* 4px */;
     }
 
     a, span {
       display: block;
       color: var(--color-white-soft);
-      font-size: 1em;
+      font-size: 1em /* 16px */;
       font-weight: 600;
       text-decoration: none;
       transition: color 0.2s;
@@ -293,14 +293,14 @@ function getPortadaMini(ruta?: string) {
   @media (width > 1366px) {
     nav > ul > li:nth-child(3) > ul {
       flex-direction: row;
-      gap: 2em;
-      padding: 1em;
+      gap: 2em /* 32px */;
+      padding: 1em /* 16px */;
     }
   }
 
   @media (width <= 1366px) {
     header {
-      padding: 1.2em;
+      padding: 1.2em /* 19px */;
     }
 
     nav {
@@ -311,8 +311,8 @@ function getPortadaMini(ruta?: string) {
       display: flex;
       align-items: center;
       justify-content: center;
-      inline-size: 2.5em;
-      block-size: 2.5em;
+      inline-size: 2.5em /* 40px */;
+      block-size: 2.5em /* 40px */;
       opacity: 1;
       pointer-events: auto;
       z-index: var(--z-index-modal, 101);

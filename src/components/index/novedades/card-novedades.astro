@@ -47,9 +47,9 @@ const categoriaTexto: Record<string, string> = {
     color: inherit;
     display: flex;
     flex-direction: column;
-    gap: 1em;
-    padding: 1em 0.6em;
-    border-radius: 0.75em;
+    gap: 1em /* 16px */;
+    padding: 1em /* 16px */ 0.6em /* 10px */;
+    border-radius: 0.75em /* 12px */;
 
     &.novela {
       background: var(--color-novela);
@@ -74,7 +74,7 @@ const categoriaTexto: Record<string, string> = {
       position: absolute;
       inset: 0;
       border-radius: inherit;
-      box-shadow: 0 0 1em var(--color-green-500);
+      box-shadow: 0 0 1em /* 16px */ var(--color-green-500);
       opacity: 0;
       transition: opacity 0.3s;
       pointer-events: none;
@@ -100,7 +100,7 @@ const categoriaTexto: Record<string, string> = {
   }
 
   header img {
-    border-radius: 0.4em;
+    border-radius: 0.4em /* 6px */;
     outline: 1px solid var(--color-border);
   }
 
@@ -108,11 +108,11 @@ const categoriaTexto: Record<string, string> = {
     text-align: center;
 
     h4 {
-      font-size: 0.78em;
+      font-size: 0.78em /* 12px */;
     }
 
     p {
-      font-size: 0.65em;
+      font-size: 0.65em /* 10px */;
       opacity: 0.7;
     }
   }

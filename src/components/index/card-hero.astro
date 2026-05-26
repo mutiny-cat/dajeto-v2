@@ -31,7 +31,7 @@ const { libro, fondo } = Astro.props
     background-position: center;
     inline-size: 100%;
     border: 1px solid var(--color-border);
-    border-radius: 1em;
+    border-radius: 1em /* 16px */;
     transition: border-color 0.3s;
   }
 
@@ -40,7 +40,7 @@ const { libro, fondo } = Astro.props
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    box-shadow: 0 0 1.2em var(--color-green-500);
+    box-shadow: 0 0 1.2em /* 19px */ var(--color-green-500);
     opacity: 0;
     transition: opacity 0.3s;
     pointer-events: none;
@@ -59,9 +59,9 @@ const { libro, fondo } = Astro.props
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1.5em;
+    gap: 1.5em /* 24px */;
     text-decoration: none;
-    padding: 8em;
+    padding: 8em /* 128px */;
   }
 
   blockquote {
@@ -86,41 +86,41 @@ const { libro, fondo } = Astro.props
   }
 
   article:hover h1 {
-    text-shadow: 0 0 0.5em var(--color-green-500);
+    text-shadow: 0 0 0.5em /* 8px */ var(--color-green-500);
   }
 
   :global(.hero-arrow) {
     color: var(--color-white);
-    inline-size: 4em;
-    block-size: 4em;
+    inline-size: 4em /* 64px */;
+    block-size: 4em /* 64px */;
     transition: color 0.3s, transform 0.3s;
   }
 
   article:hover :global(.hero-arrow) {
     color: var(--color-green-500);
-    transform: scale(1.3) translateX(1.2em);
+    transform: scale(1.3) translateX(1.2em /* 19px */);
   }
 
   @media (width <= 768px) {
     a {
-      padding: 4em;
+      padding: 4em /* 64px */;
     }
 
     :global(.hero-arrow) {
-      inline-size: 3em;
-      block-size: 3em;
+      inline-size: 3em /* 48px */;
+      block-size: 3em /* 48px */;
     }
   }
 
   @media (width <= 480px) {
     a {
-      padding: 2em;
-      gap: 1em;
+      padding: 2em /* 32px */;
+      gap: 1em /* 16px */;
     }
 
     :global(.hero-arrow) {
-      inline-size: 2.5em;
-      block-size: 2.5em;
+      inline-size: 2.5em /* 40px */;
+      block-size: 2.5em /* 40px */;
     }
   }
 </style>
