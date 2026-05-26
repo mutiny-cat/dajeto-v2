@@ -101,8 +101,8 @@ export const libros: Libro[] = [
   {
     id: "grietas-en-el-muro",
     titulo: "Grietas en el muro",
-    fraseHero: "¿Qué ocurriría si las ideas, los sueños y los valores pudieran desaparecer físicamente de las personas?",
-    cita: "vacío",
+    fraseHero: "A veces, lo más pequeño revela lo más grande",
+    cita: "¿Qué ocurriría si las ideas, los sueños y los valores pudieran desaparecer físicamente de las personas?",
     ano: 2026,
     paginas: 167,
     editorial: "Autoedición",

@@ -19,7 +19,7 @@
 
 	--color-primary-400: #52d7ff;
 	--color-primary-500: #2e58ff;
-	--color-primary-600: #1a35cc;
+	--color-primary-600: #010716;
 
 	--color-secondary-500: #9452ff;
 	--color-secondary-600: #7a3dd4;
@@ -35,6 +35,7 @@
 
 	--color-green-500: #21d49b;
 	--color-green-600: #1e9972;
+	--color-green-700: #024E23;
 
 	--color-novela: #1a1410;
 	--color-novela-corta: #0a1628;
@@ -56,11 +57,11 @@
 	--font-default: 'Inconsolata Variable', monospace;
 	--max-width: 1280px;
 
-	--text-base: clamp(0.875em, 0.75em + 0.5vw, 1em);
-	--text-h1: clamp(2em, 1em + 3vw, 3.5em);
-	--text-h2: clamp(1.5em, 0.75em + 2vw, 2.5em);
-	--text-h3: clamp(1.2em, 0.5em + 1.5vw, 1.75em);
-	--text-h4: clamp(1em, 0.5em + 1.2vw, 1.35em);
+	--text-base: clamp(0.875em, 0.75em + 0.5vw, 1em); /* 14px – 16px */
+	--text-h1: clamp(2em, 1em + 3vw, 3.5em); /* 32px – 56px */
+	--text-h2: clamp(1.5em, 0.75em + 2vw, 2.5em); /* 24px – 40px */
+	--text-h3: clamp(1.2em, 0.5em + 1.5vw, 1.75em); /* 19px – 28px */
+	--text-h4: clamp(1em, 0.5em + 1.2vw, 1.35em); /* 16px – 22px */
 
 	--z-index-header: 10;
 	--z-index-submenu: 10;
