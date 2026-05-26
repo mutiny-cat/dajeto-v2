@@ -56,7 +56,7 @@
 	--font-default: 'Inconsolata Variable', monospace;
 	--max-width: 1280px;
 
-	--text-base: clamp(1em, 0.75em + 0.5vw, 1.25em);
+	--text-base: clamp(0.875em, 0.75em + 0.5vw, 1em);
 	--text-h1: clamp(2em, 1em + 3vw, 3.5em);
 	--text-h2: clamp(1.5em, 0.75em + 2vw, 2.5em);
 	--text-h3: clamp(1.2em, 0.5em + 1.5vw, 1.75em);

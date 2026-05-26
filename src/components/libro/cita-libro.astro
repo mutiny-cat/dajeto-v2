@@ -13,7 +13,9 @@ const { cita } = Astro.props
 
 <style>
   .card {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 2em 3em;
     background: var(--color-black-soft);
     border: 1px solid var(--color-border);
@@ -21,7 +23,8 @@ const { cita } = Astro.props
   }
 
   blockquote {
-    font-size: var(--text-h3);
+    font-size: var(--text-base);
+    font-weight: 600;
     font-style: italic;
     color: var(--color-white);
     line-height: 1.4;

@@ -22,7 +22,7 @@ const { libro, fondo, portada, libroImg } = Astro.props
   <Hero fraseHero={libro.fraseHero} ano={libro.ano} {fondo} {libroImg} />
   {libro.fraseHero && (
     <div class="cita-sinopsis">
-      <Cita cita={libro.fraseHero} />
+      <Cita cita={libro.cita} />
       <div class="portada-wrap">
         <Portada titulo={libro.titulo} {portada} sinopsis={libro.sinopsis} />
       </div>
