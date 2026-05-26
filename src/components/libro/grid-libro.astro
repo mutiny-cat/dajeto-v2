@@ -30,7 +30,7 @@ const { libro, fondo, portada, libroImg } = Astro.props
   )}
   {!libro.fraseHero && <div class="full"><Portada titulo={libro.titulo} {portada} sinopsis={libro.sinopsis} /></div>}
   <Contenido contenido={libro.contenido} />
-  <Info paginas={libro.paginas} ano={libro.ano} editorial={libro.editorial} isbn={libro.isbn} />
+  <Info paginas={libro.paginas} ano={libro.ano} editorial={libro.editorial} />
   {libro.enlaces.length > 0 && <Compra enlaces={libro.enlaces} />}
 </div>
 

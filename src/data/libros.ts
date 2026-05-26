@@ -20,7 +20,6 @@ export interface Libro {
   fechaAgregado: string
   portadaMini?: string
   portada?: string
-  isbn?: string
   enlaces: EnlaceCompra[]
 }
 
@@ -42,7 +41,6 @@ export const libros: Libro[] = [
     fechaAgregado: "2026-05-20",
     portadaMini: "portada-el-canto-del-gallo.png",
     portada: "portada-el-canto-del-gallo.png",
-    isbn: "979-8251293296",
     enlaces: [
       { tienda: "Amazon", url: "https://www.amazon.es/canto-gallo-Daniel-Jerez-Torns/dp/B0GSFNMQ7H", formato: "tapa-blanda", logo: "simple-icons:amazon" },
       { tienda: "Amazon", url: "https://www.amazon.es/canto-gallo-Daniel-Jerez-Torns-ebook/dp/B0GSCGHFJG", formato: "ebook", logo: "simple-icons:amazon" },
@@ -65,7 +63,6 @@ export const libros: Libro[] = [
     fechaAgregado: "2023-04-10",
     portadaMini: "portada-el-pasado-nunca-nos-olvida.png",
     portada: "portada-el-pasado-nunca-nos-olvida.png",
-    isbn: "978-84-19110-48-0",
     enlaces: [
       { tienda: "Casa del Libro", url: "https://www.casadellibro.com/libro-el-pasado-nunca-nos-olvida/9788419110480/13185437", formato: "tapa-blanda", logo: "local:casadellibro" },
       { tienda: "FNAC", url: "https://www.fnac.es/a9547088/Daniel-Jerez-El-pasado-nunca-nos-olvida", formato: "tapa-blanda", logo: "simple-icons:fnac" },
@@ -158,7 +155,6 @@ export const libros: Libro[] = [
     fechaAgregado: "2025-10-15",
     portadaMini: "portada-el-beso-de-la-muerte.png",
     portada: "portada-el-beso-de-la-muerte.png",
-    isbn: "979-8613878055",
     enlaces: [
       { tienda: "Amazon", url: "https://www.amazon.es/beso-muerte-Daniel-Jerez-Torns-ebook/dp/B0851MPJGP", formato: "ebook", logo: "simple-icons:amazon" },
     ],
@@ -201,7 +197,6 @@ export const libros: Libro[] = [
     fechaAgregado: "2025-08-15",
     portadaMini: "portada-la-formula-terradas.png",
     portada: "portada-la-formula-terradas.png",
-    isbn: "978-84-94272-11-0",
     enlaces: [
       { tienda: "Amazon", url: "https://www.amazon.es/f%C3%B3rmula-Terradas-Daniel-Jerez-Torns-ebook/dp/B01C4VVN8A", formato: "ebook", logo: "simple-icons:amazon" },
     ],
@@ -223,7 +218,6 @@ export const libros: Libro[] = [
     fechaAgregado: "2025-08-01",
     portadaMini: "portada-el-arcabucero-numero-61.png",
     portada: "portada-el-arcabucero-numero-61.png",
-    isbn: "978-84-616-0794-5",
     enlaces: [
       { tienda: "Amazon", url: "https://www.amazon.es/El-arcabucero-Daniel-Jerez-Torns-ebook/dp/B00G2PYF76", formato: "ebook", logo: "simple-icons:amazon" },
     ],
@@ -324,7 +318,6 @@ export const libros: Libro[] = [
     fechaAgregado: "2026-05-10",
     portadaMini: "portada-cada-etapa-su-camino.png",
     portada: "portada-cada-etapa-su-camino.png",
-    isbn: "979-8246492758",
     enlaces: [
       { tienda: "Amazon", url: "https://www.amazon.es/Cada-etapa-camino-Tres-atreverse-ebook/dp/B0GL174TMW", formato: "ebook", logo: "simple-icons:amazon" },
       { tienda: "Amazon", url: "https://www.amazon.es/Cada-etapa-camino-Tres-atreverse/dp/B0GL174TMW", formato: "tapa-blanda", logo: "simple-icons:amazon" },
