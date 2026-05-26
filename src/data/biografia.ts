@@ -5,15 +5,17 @@ export interface ParrafoBiografia {
 
 export interface Biografia {
   cita: string
-  parrafos: ParrafoBiografia[]
+  sinopsis: string
+  biografia: ParrafoBiografia[]
 }
 
 export const biografia: Biografia = {
   cita: "El señor Charles me inculcó la pasión por la lectura...",
-  parrafos: [
+  sinopsis: "Daniel Jerez Torns (Barcelona, 1975) es psicólogo de formación y escritor de vocación. Sus lectores destacan su estilo sencillo y directo, la rigurosa documentación histórica y una ambientación que convierte El Prat de Llobregat en un personaje más de sus novelas. Capítulos cortos, ritmo ágil y tramas que entrelazan pasado y presente definen su narrativa, donde la novela negra y el misterio se combinan con temas como el acoso escolar, la corrupción o el Alzheimer. Desde su primera novela en 2012, ha ido construyendo una obra que sus lectores definen como «adictiva» y «un descubrimiento».",
+  biografia: [
     {
       id: "nacimiento",
-      texto: "Nací un 11 de septiembre, allá por el año 1975, en Barcelona.",
+      texto: "Nací un 11 de septiembre de 1975, en Barcelona.",
     },
     {
       id: "infancia",
@@ -25,7 +27,7 @@ export const biografia: Biografia = {
     },
     {
       id: "profesor",
-      texto: "Tuve un profesor en Literatura Española, el Sr. Charles, que me inculcó la pasión por la lectura, por la comprensión del texto y por conocer los autores a fondo.",
+      texto: "Tuve un profesor de literatura, el Sr. Charles, que me inculcó la pasión por la lectura, por la comprensión del texto y por conocer los autores a fondo.",
     },
     {
       id: "psicologia",
@@ -41,7 +43,11 @@ export const biografia: Biografia = {
     },
     {
       id: "novela-negra",
-      texto: "«El pasado nunca nos olvida» es mi primera incursión en la novela negra, cuya trama transcurre en El Prat del Llobregat, ciudad donde crecí, estudié y me enamoré.",
+      texto: "«El pasado nunca nos olvida» es mi primera incursión en la novela negra, cuya trama transcurre en El Prat de Llobregat, ciudad donde crecí, estudié y me enamoré.",
+    },
+    {
+      id: "el-canto-del-gallo",
+      texto: "«El canto del gallo» es mi última novela, publicada en 2026, donde Lorena Escudero, la agente de la Guardia Urbana, investiga una cadena de muertes que agita las familias más poderosas de El Prat de Llobregat. Una historia de suspense y venganza que arranca con el hallazgo del cuerpo de una joven periodista en el estanque de La Ricarda.",
     },
   ],
 }
