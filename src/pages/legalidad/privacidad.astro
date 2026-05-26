@@ -8,7 +8,7 @@ import PageLayout from "@layouts/page-layout.astro"
 
     <h2>Responsable del tratamiento</h2>
     <p><strong>Nombre:</strong> Daniel Jerez Torns</p>
-    <p><strong>Correo electrónico:</strong> daniel@danieljerez.es</p>
+    <p><strong>Correo electrónico:</strong> <span class="email" data-user="daniel" data-domain="danieljerez.es">se.zerejleinad@leinad</span></p>
 
     <h2>¿Qué datos recogemos?</h2>
     <p>Este sitio web <strong>no recoge datos personales</strong> de los usuarios. No dispone de formularios de contacto, sistemas de comentarios, ni herramientas de registro.</p>
@@ -24,6 +24,17 @@ import PageLayout from "@layouts/page-layout.astro"
     <p>Esta política de privacidad se rige por el Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica de Protección de Datos y Garantía de los Derechos Digitales (LOPDGDD).</p>
   </article>
 </PageLayout>
+
+<script>
+  document.querySelectorAll(".email").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault()
+      const user = el.dataset.user
+      const domain = el.dataset.domain
+      window.location.href = `mailto:${user}@${domain}`
+    })
+  })
+</script>
 
 <style>
   .content {
@@ -45,5 +56,15 @@ import PageLayout from "@layouts/page-layout.astro"
   p {
     line-height: 1.8;
     margin-block-end: 0.75em;
+  }
+
+  .email {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    cursor: pointer;
+  }
+
+  .email:hover {
+    color: var(--color-green-500);
   }
 </style>

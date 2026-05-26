@@ -8,7 +8,7 @@ import PageLayout from "@layouts/page-layout.astro"
 
     <h2>Identificación del titular</h2>
     <p><strong>Nombre:</strong> Daniel Jerez Torns</p>
-    <p><strong>Correo electrónico:</strong> daniel@danieljerez.es</p>
+    <p><strong>Correo electrónico:</strong> <span class="email" data-user="daniel" data-domain="danieljerez.es">se.zerejleinad@leinad</span></p>
     <p>El presente aviso legal regula el uso del sitio web <strong>danieljerez.es</strong>.</p>
 
     <h2>Propiedad intelectual</h2>
@@ -22,6 +22,17 @@ import PageLayout from "@layouts/page-layout.astro"
     <p>Este aviso legal se rige por la legislación española.</p>
   </article>
 </PageLayout>
+
+<script>
+  document.querySelectorAll(".email").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault()
+      const user = el.dataset.user
+      const domain = el.dataset.domain
+      window.location.href = `mailto:${user}@${domain}`
+    })
+  })
+</script>
 
 <style>
   .content {
@@ -43,5 +54,15 @@ import PageLayout from "@layouts/page-layout.astro"
   p {
     line-height: 1.8;
     margin-block-end: 0.75em;
+  }
+
+  .email {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    cursor: pointer;
+  }
+
+  .email:hover {
+    color: var(--color-green-500);
   }
 </style>

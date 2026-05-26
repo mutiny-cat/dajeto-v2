@@ -4,22 +4,34 @@ import PageLayout from "@layouts/page-layout.astro"
 
 <PageLayout title="Accesibilidad — Daniel Jerez Torns" description="Declaración de accesibilidad del sitio web de Daniel Jerez Torns">
   <article class="content">
-    <h1>Accesibilidad</h1>
+    <h1>Declaración de accesibilidad</h1>
 
-    <p>Daniel Jerez Torns se ha comprometido a hacer su sitio web accesible de conformidad con el Real Decreto 1112/2018, sobre accesibilidad de los sitios web y aplicaciones para dispositivos móviles del sector público.</p>
+    <p>Daniel Jerez Torns se ha comprometido a hacer su sitio web accesible para todos los usuarios, independientemente de sus capacidades o del dispositivo desde el que accedan. Este sitio se ha desarrollado siguiendo las pautas de accesibilidad al contenido web (WCAG) para garantizar una experiencia inclusiva.</p>
 
-    <h2>Estado de cumplimiento</h2>
-    <p>Este sitio web es parcialmente conforme con el RD 1112/2018 debido a las excepciones y a la falta de conformidad de los aspectos que se indican a continuación.</p>
+    <h2>Estándar aplicado</h2>
+    <p>Este sitio web sigue los principios de las <strong>WCAG 2.1 nivel AA</strong>, el estándar internacionalmente reconocido para la accesibilidad web.</p>
 
-    <h2>Contenido no accesible</h2>
-    <p>El contenido que se recoge a continuación no es accesible por lo siguiente:</p>
+    <h2>Estado de conformidad</h2>
+    <p>Este sitio web es <strong>parcialmente conforme</strong> con WCAG 2.1 nivel AA. Esto significa que algunas partes del contenido no se ajustan completamente al estándar, tal como se detalla a continuación.</p>
+
+    <h2>Medidas adoptadas</h2>
+    <p>Para garantizar la accesibilidad, se han implementado las siguientes medidas:</p>
     <ul>
-      <li>Algunas imágenes pueden carecer de texto alternativo descriptivo.</li>
-      <li>Es posible que ciertos contenidos de terceros (enlaces a plataformas externas) no sean accesibles.</li>
+      <li>Diseño con alto contraste y paleta de colores cuidada para facilitar la lectura.</li>
+      <li>Uso de unidades relativas (<code>em</code>, <code>clamp</code>) para permitir el escalado del texto.</li>
+      <li>Navegación mediante teclado accesible en menús y modales.</li>
+      <li>Estructura semántica HTML5 con encabezados jerárquicos.</li>
     </ul>
 
-    <h2>Contacto</h2>
-    <p>Si detectas problemas de accesibilidad en este sitio web, puedes comunicarlo a través del correo electrónico: <strong>daniel@danieljerez.es</strong>.</p>
+    <h2>Limitaciones conocidas</h2>
+    <p>A pesar de nuestros esfuerzos, existen algunas limitaciones que estamos trabajando para resolver:</p>
+    <ul>
+      <li><strong>Imágenes:</strong> algunas imágenes pueden carecer de texto alternativo descriptivo. Se irá corrigiendo progresivamente.</li>
+      <li><strong>Contenido de terceros:</strong> los enlaces a plataformas externas (Amazon, FNAC, redes sociales, etc.) no están bajo nuestro control y pueden no cumplir con los mismos estándares de accesibilidad.</li>
+    </ul>
+
+    <h2>Compatibilidad</h2>
+    <p>Este sitio web está diseñado para funcionar correctamente en los navegadores modernos más utilizados: Chrome, Firefox, Safari, Edge, Opera, Arc, Brave y LibreWolf.</p>
   </article>
 </PageLayout>
 
@@ -47,5 +59,12 @@ import PageLayout from "@layouts/page-layout.astro"
 
   ul {
     padding-inline-start: 1.5em;
+  }
+
+  code {
+    background: var(--color-gray-dark);
+    padding: 0.1em 0.3em;
+    border-radius: 0.25em;
+    font-size: 0.9em;
   }
 </style>
