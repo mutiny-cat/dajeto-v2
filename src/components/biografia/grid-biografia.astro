@@ -8,16 +8,16 @@ import CardBiografia from "./card-biografia.astro"
 export interface Props {
   biografia: Biografia
   fondo?: ImageMetadata
-  avatar?: ImageMetadata
+  foto?: ImageMetadata
 }
 
-const { biografia: bio, fondo, avatar } = Astro.props
+const { biografia: bio, fondo, foto } = Astro.props
 ---
 
 <div class="grid">
-  <CardHero titulo="Daniel Jerez, escritor" {fondo} {avatar} />
+  <CardHero titulo="Daniel Jerez" {fondo} />
   <CardCita cita={bio.cita} />
-  <CardBiografia avatar={avatar} parrafos={bio.parrafos} />
+  <CardBiografia {foto} parrafos={bio.parrafos} />
 </div>
 
 <style>
