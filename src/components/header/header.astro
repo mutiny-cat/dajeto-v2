@@ -84,8 +84,20 @@ function getPortadaMini(ruta?: string) {
     inset-block-start: 0;
 		inset-inline: 0;
 		background: linear-gradient(to bottom, var(--color-black), transparent);
-    z-index: var(--z-index-header, 10);
-  }
+		z-index: var(--z-index-header, 10);
+	}
+
+	@media (width > 1366px) {
+		header {
+			box-shadow: 0 0.25em 1em rgb(0 0 0 / 0.5);
+		}
+	}
+
+	@media (width <= 1366px) {
+		header {
+			background: var(--color-black);
+		}
+	}
 
   .logo {
     display: flex;

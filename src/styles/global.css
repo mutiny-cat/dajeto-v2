@@ -79,7 +79,6 @@
 html {
 	scroll-behavior: smooth;
 	background-color: var(--color-black);
-	overflow-x: hidden;
 }
 
 body {
@@ -138,7 +137,7 @@ button {
 main {
 	max-inline-size: var(--max-width);
 	margin-inline: auto;
-	padding-inline: 1em /* 16px */;
+	padding-inline: 1.5em /* 24px */;
 	padding-block-start: 6em /* 96px */;
 
 	@media (width >= 768px) {
