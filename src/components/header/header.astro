@@ -135,9 +135,26 @@ function getPortadaMini(ruta?: string) {
   }
 
   nav {
-    border: 1px solid var(--color-border);
+    position: relative;
+    border: 1px solid var(--color-border-soft);
     border-radius: 2em /* 32px */;
     padding: 0.75em /* 12px */ 1.5em /* 24px */;
+    background: rgb(0 0 0 / 0.6);
+    isolation: isolate;
+
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      inset: 50%;
+      translate: -50% -50%;
+      inline-size: 200%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--color-green-500) 0%, transparent 60%);
+      opacity: 0.12;
+      pointer-events: none;
+    }
 
     ul {
       display: flex;
@@ -181,7 +198,7 @@ function getPortadaMini(ruta?: string) {
       pointer-events: none;
       transition: opacity 0.5s ease, visibility 0.5s ease;
       background: rgb(10 10 10 / 0.95);
-      border: 1px solid var(--color-border);
+    border: 1px solid var(--color-border-soft);
       border-radius: 0.75em /* 12px */;
       padding: 0.5em /* 8px */ 0;
       min-inline-size: max-content;
