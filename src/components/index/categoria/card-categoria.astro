@@ -41,7 +41,6 @@ function rutaLibro(libro: Libro): string {
     border-radius: 0.75em /* 12px */;
     padding: 1.5em /* 24px */;
     transition: border-color 0.3s;
-    border-radius: inherit;
   }
 
   article::before {
@@ -51,6 +50,7 @@ function rutaLibro(libro: Libro): string {
     background-image: var(--fondo);
     background-size: cover;
     background-position: center;
+    border-radius: inherit;
     filter: brightness(0.5);
     z-index: 0;
   }
