@@ -64,4 +64,4 @@ node scripts/preblur-fondos.mjs    # regenerar fondos borrosos
 
 ## Despliegue
 
-Subir el contenido de `dist/` al servidor (Hostinger). El `.htaccess` incluido redirige los errores 404 a la página personalizada.
+Subir el contenido de `dist/` al servidor. El `.htaccess` incluido redirige los errores 404 a la página personalizada.
