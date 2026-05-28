@@ -11,27 +11,12 @@
 	--color-black: #0a0a0a;
 	--color-black-soft: #161617;
 	--color-gray-dark: #242424;
-	--color-gray: #1f1f1f;
 	--color-border: #292929;
 	--color-border-soft: #999999;
 	--color-white-soft: #cccccc;
 	--color-white: #ffffff;
 
-	--color-primary-400: #52d7ff;
-	--color-primary-500: #2e58ff;
 	--color-primary-600: #010716;
-
-	--color-secondary-500: #9452ff;
-	--color-secondary-600: #7a3dd4;
-
-	--color-aurora-violet: #9452ff;
-	--color-aurora-pink: #ed8f9e;
-	--color-aurora-dark-blue: #11005f;
-	--color-aurora-cyan: #52d7ff;
-
-	--color-turquoise-400: #8fe7ed;
-	--color-turquoise-500: #30b7ca;
-	--color-turquoise-600: #2199a8;
 
 	--color-green-500: #21d49b;
 	--color-green-600: #1e9972;
@@ -46,13 +31,6 @@
 	--color-novela-corta-glow: #5b8def;
 	--color-cuento-adolescente-glow: #e8a040;
 	--color-cuento-infantil-glow: #7bc850;
-
-	--gradient-primary: var(--color-secondary-500), var(--color-primary-500), var(--color-primary-500), var(--color-secondary-500);
-	--gradient-button-primary: var(--color-secondary-500), var(--color-primary-400), var(--color-primary-600), var(--color-secondary-600);
-	--gradient-button-secondary: #2e58ff, #9452ff;
-	--gradient-button-ghost: #242424, #1f1f1f, #1f1f1f, #242424;
-	--gradient-tertiary: linear-gradient(90deg, #30b7ca4d 0%, #21d49b4d 100%);
-	--gradient-secondary: linear-gradient(127.36deg, #2e58ff4d 5.98%, #9452ff4d 90.92%);
 
 	--font-default: 'Inconsolata Variable', monospace;
 	--max-width: 1280px;
