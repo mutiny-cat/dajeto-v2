@@ -54,12 +54,15 @@ import { Icon } from "astro-icon/components"
 </style>
 
 <script>
-  const button = document.querySelector(".button-up")
+  document.addEventListener("astro:page-load", () => {
+    const button = document.querySelector(".button-up")
+    if (!button) return
 
-  if (button) {
+    const handler = button._scrollHandler
+    if (handler) window.removeEventListener("scroll", handler)
+
     let ticking = false
-
-    window.addEventListener("scroll", () => {
+    const newHandler = () => {
       if (!ticking) {
         requestAnimationFrame(() => {
           button.classList.toggle("is-visible", window.scrollY > 300)
@@ -67,10 +70,14 @@ import { Icon } from "astro-icon/components"
         })
         ticking = true
       }
-    })
+    }
+
+    button._scrollHandler = newHandler
+    window.addEventListener("scroll", newHandler, { passive: true })
+    newHandler()
 
     button.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" })
     })
-  }
+  })
 </script>
