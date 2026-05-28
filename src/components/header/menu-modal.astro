@@ -11,7 +11,7 @@ const libroPorSlug = new Map(libros.map((l) => [l.id, l]))
 
 function getPortadaMini(ruta?: string) {
   if (!ruta) return
-  const slug = ruta.split('/').at(-1)
+  const slug = ruta.split('/').filter(Boolean).at(-1)
   const libro = libroPorSlug.get(slug!)
   if (!libro?.portadaMini) return
   const key = `/src/assets/images/portadas/${libro.portadaMini}`

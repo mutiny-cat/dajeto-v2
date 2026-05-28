@@ -25,7 +25,7 @@ function esActivo(item: typeof menu[number]): boolean {
 
 function getPortadaMini(ruta?: string) {
   if (!ruta) return
-  const slug = ruta.split('/').at(-1)
+  const slug = ruta.split('/').filter(Boolean).at(-1)
   const libro = libroPorSlug.get(slug!)
   if (!libro?.portadaMini) return
   const key = `/src/assets/images/portadas/${libro.portadaMini}`
