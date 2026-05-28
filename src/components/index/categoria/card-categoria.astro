@@ -26,7 +26,7 @@ function rutaLibro(libro: Libro): string {
 
 <article style={fondo ? `--fondo: url(${fondo.src})` : undefined}>
   <a href={rutaLibro(libro)}>
-    {libroImg && <Picture src={libroImg} formats={['avif', 'webp']} alt={libro.titulo} width={200} height={300} />}
+    {libroImg && <Picture src={libroImg} formats={['avif', 'webp']} alt={libro.titulo} width={200} height={300} loading="lazy" />}
     <div>
       <h4>{libro.titulo}</h4>
       <Icon name="arrow" class="card-arrow" />

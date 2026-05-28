@@ -51,12 +51,12 @@ function getPortadaMini(ruta?: string) {
                       <h4>{hijo.texto}</h4>
                       <div class="sub-links">
                         {hijo.hijos.map((sub) => (
-                          <a href={sub.ruta!} class:list={{ active: esActivo(sub) }}>{getPortadaMini(sub.ruta) && <Picture src={getPortadaMini(sub.ruta)!} formats={['avif', 'webp']} alt="" class="portada-mini" width={30} height={45} />}<span>{sub.texto}</span></a>
+                          <a href={sub.ruta!} class:list={{ active: esActivo(sub) }}>{getPortadaMini(sub.ruta) && <Picture src={getPortadaMini(sub.ruta)!} formats={['avif', 'webp']} alt="" class="portada-mini" width={30} height={45} loading="lazy" />}<span>{sub.texto}</span></a>
                         ))}
                       </div>
                     </li>
                   ) : (
-                    <li><a href={hijo.ruta!} class:list={{ active: esActivo(hijo) }}>{getPortadaMini(hijo.ruta) && <Picture src={getPortadaMini(hijo.ruta)!} formats={['avif', 'webp']} alt="" class="portada-mini" width={30} height={45} />}<span>{hijo.texto}</span></a></li>
+                    <li><a href={hijo.ruta!} class:list={{ active: esActivo(hijo) }}>{getPortadaMini(hijo.ruta) && <Picture src={getPortadaMini(hijo.ruta)!} formats={['avif', 'webp']} alt="" class="portada-mini" width={30} height={45} loading="lazy" />}<span>{hijo.texto}</span></a></li>
                   )
                 ))}
               </ul>

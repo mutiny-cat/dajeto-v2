@@ -10,7 +10,7 @@ const { titulo, fondo } = Astro.props
 ---
 
 <section class="hero">
-  {fondo && <img src={fondo.src} alt="" class="bg" />}
+  {fondo && <img src={fondo.src} alt="" class="bg" fetchpriority="high" />}
   <article class="content">
     <div class="overlay">
       <h1 class="titulo">{titulo}</h1>

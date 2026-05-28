@@ -38,7 +38,7 @@ const etiquetas: Record<string, string> = {
           const img = getImagenTienda(e.logo)
           return (
             <a href={e.url} target="_blank" rel="noopener noreferrer" class="item">
-              {img && <img src={img.src} alt={e.tienda} class="logo" />}
+              {img && <img src={img.src} alt={e.tienda} class="logo" loading="lazy" fetchpriority="low" />}
             </a>
           )
         })}

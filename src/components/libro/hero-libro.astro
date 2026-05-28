@@ -12,13 +12,13 @@ const { fraseHero, ano, fondo, libroImg } = Astro.props
 ---
 
 <section class="hero">
-  {fondo && <img src={fondo.src} alt="" class="bg" />}
+  {fondo && <img src={fondo.src} alt="" class="bg" fetchpriority="high" />}
   <article class="content">
     <div class="overlay">
       {fraseHero && <p class="cita">{fraseHero}</p>}
       <p class="sub">Daniel Jerez · {ano}</p>
     </div>
-    {libroImg && <div class="libro-wrap"><img src={libroImg.src} alt="" class="libro" /></div>}
+    {libroImg && <div class="libro-wrap"><img src={libroImg.src} alt="" class="libro" loading="lazy" /></div>}
   </article>
 </section>
 

@@ -11,7 +11,7 @@ const { sinopsis, foto } = Astro.props
 ---
 
 <section class="card">
-  {foto && <Picture src={foto} formats={['avif', 'webp']} alt="Daniel Jerez" class="photo" />}
+  {foto && <Picture src={foto} formats={['avif', 'webp']} alt="Daniel Jerez" class="photo" loading="lazy" />}
   <div class="info">
     <h2>Sobre el autor</h2>
     <p>{sinopsis}</p>

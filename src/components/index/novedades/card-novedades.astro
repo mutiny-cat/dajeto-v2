@@ -31,7 +31,7 @@ const categoriaTexto: Record<string, string> = {
 <article>
   <a href={ruta(libro)} class:list={[libro.categoriaColor]} aria-label={`Ver ${libro.titulo}`}>
     <header>
-      {portada && <Picture src={portada} formats={['avif', 'webp']} alt={libro.titulo} width={150} height={225} />}
+      {portada && <Picture src={portada} formats={['avif', 'webp']} alt={libro.titulo} width={150} height={225} loading="lazy" />}
     </header>
     <footer>
       <h4>{libro.titulo}</h4>
