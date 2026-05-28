@@ -31,7 +31,7 @@ export const trayectoria: EventoTrayectoria[] = [
     ano: 2020,
     titulo: "Doble publicación: El beso de la muerte y El silencio de las ruinas",
     descripcion:
-      "Un ano clave en su carrera con dos novelas publicadas. El beso de la muerte se convierte en una de sus obras más valoradas por los lectores.",
+      "Un año clave en su carrera con dos novelas publicadas. El beso de la muerte se convierte en una de sus obras más valoradas por los lectores.",
     estado: "completado",
   },
   {
@@ -52,7 +52,7 @@ export const trayectoria: EventoTrayectoria[] = [
     ano: 2025,
     titulo: "Tres nuevos títulos",
     descripcion:
-      "Un ano prolífico con El secreto del tesoro guardado, El Faraón y el prevencionista, y El mapa de la isla del estrés, explorando nuevos formatos y temáticas.",
+      "Un año prolífico con El secreto del tesoro guardado, El Faraón y el prevencionista, y El mapa de la isla del estrés, explorando nuevos formatos y temáticas.",
     estado: "completado",
   },
   {

@@ -9,10 +9,21 @@ export interface Props {
 }
 
 const { libro, fondo } = Astro.props
+
+function rutaLibro(libro: Libro): string {
+  const mapa: Record<string, string> = {
+    novela: "/novela",
+    "novela-corta": "/novela-corta",
+    "cuento-adolescente": "/cuentos/adolescentes",
+    "cuento-infantil": "/cuentos/infantiles",
+  }
+  const base = mapa[libro.categoria]
+  return base ? `${base}/${libro.id}/` : `/novela/${libro.id}/`
+}
 ---
 
 <article id="hero" style={fondo ? `background-image: url(${fondo.src})` : undefined}>
-  <a href={`/novela/${libro.id}`}>
+  <a href={rutaLibro(libro)}>
     <blockquote>
       <h1>{libro.fraseHero}</h1>
     </blockquote>
@@ -32,8 +43,7 @@ const { libro, fondo } = Astro.props
     inline-size: 100%;
     border: 1px solid var(--color-border);
     border-radius: 1em /* 16px */;
-    outline: 1px solid transparent;
-    transition: outline-color 0.3s;
+    transition: border-color 0.3s;
   }
 
   article::after {
@@ -48,7 +58,7 @@ const { libro, fondo } = Astro.props
   }
 
   article:hover {
-    outline-color: var(--color-green-500);
+    border-color: var(--color-green-500);
   }
 
   article:hover::after {
