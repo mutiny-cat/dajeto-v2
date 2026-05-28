@@ -11,10 +11,21 @@ export interface Props {
 }
 
 const { libro, fondo, libroImg } = Astro.props
+
+function rutaLibro(libro: Libro): string {
+  const mapa: Record<string, string> = {
+    novela: "/novela",
+    "novela-corta": "/novela-corta",
+    "cuento-adolescente": "/cuentos/adolescentes",
+    "cuento-infantil": "/cuentos/infantiles",
+  }
+  const base = mapa[libro.categoria]
+  return base ? `${base}/${libro.id}/` : `/novela/${libro.id}/`
+}
 ---
 
 <article style={fondo ? `--fondo: url(${fondo.src})` : undefined}>
-  <a href={`/novela/${libro.id}`}>
+  <a href={rutaLibro(libro)}>
     {libroImg && <Picture src={libroImg} formats={['avif', 'webp']} alt={libro.titulo} width={200} height={300} />}
     <div>
       <h4>{libro.titulo}</h4>
@@ -29,9 +40,8 @@ const { libro, fondo, libroImg } = Astro.props
     border: 1px solid var(--color-border);
     border-radius: 0.75em /* 12px */;
     padding: 1.5em /* 24px */;
-    outline: 1px solid transparent;
-    transition: outline-color 0.3s;
-    overflow: hidden;
+    transition: border-color 0.3s;
+    border-radius: inherit;
   }
 
   article::before {
@@ -58,7 +68,7 @@ const { libro, fondo, libroImg } = Astro.props
   }
 
   article:hover {
-    outline-color: var(--categoria-hover-glow, var(--color-border-soft));
+    border-color: var(--categoria-hover-glow, var(--color-border-soft));
   }
 
   article:hover::after {

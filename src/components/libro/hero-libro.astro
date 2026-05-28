@@ -29,7 +29,7 @@ const { fraseHero, ano, fondo, libroImg } = Astro.props
     aspect-ratio: 21 / 9;
     border: 1px solid var(--color-border);
     border-radius: 0.75em /* 12px */;
-    overflow: hidden;
+    isolation: isolate;
   }
 
   .bg {
@@ -38,6 +38,7 @@ const { fraseHero, ano, fondo, libroImg } = Astro.props
     inline-size: 100%;
     block-size: 100%;
     object-fit: cover;
+    border-radius: inherit;
     filter: grayscale(1) contrast(1.4) brightness(0.65);
   }
 

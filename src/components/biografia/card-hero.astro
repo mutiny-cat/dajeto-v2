@@ -25,7 +25,7 @@ const { titulo, fondo } = Astro.props
     aspect-ratio: 21 / 9;
     border: 1px solid var(--color-border);
     border-radius: 0.75em /* 12px */;
-    overflow: hidden;
+    isolation: isolate;
   }
 
   .bg {
@@ -34,6 +34,7 @@ const { titulo, fondo } = Astro.props
     inline-size: 100%;
     block-size: 100%;
     object-fit: cover;
+    border-radius: inherit;
   }
 
   .content {

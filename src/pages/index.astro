@@ -44,32 +44,32 @@ const cuentosInf = libros.filter((l) => l.categoria === "cuento-infantil")
 ---
 
 <PageLayout title="Daniel Jerez Torns — Escritor de novela negra, misterio y ciencia ficción">
-  <section style="content-visibility: auto">
+  <section>
     {ultimaNovela && <CardHero libro={ultimaNovela} fondo={getFondo(ultimaNovela)} />}
   </section>
 
   <!-- Novedades -->
-  <section style="content-visibility: auto">
+  <section>
     <GridNovedades libros={novedades.map(l => ({ libro: l, portada: getPortada(l) }))} />
   </section>
 
   <!-- Novela -->
-  <section style="--categoria-grid-bg: var(--color-novela); --categoria-hover-glow: var(--color-novela-glow); content-visibility: auto">
+  <section style="--categoria-grid-bg: var(--color-novela); --categoria-hover-glow: var(--color-novela-glow)">
     <GridCategoria titulo="Novela" libros={novelas.map(l => ({ libro: l, fondo: getFondoBlur(l), libroImg: getLibroImg(l) }))} />
   </section>
 
   <!-- Novela corta -->
-  <section style="--categoria-grid-bg: var(--color-novela-corta); --categoria-hover-glow: var(--color-novela-corta-glow); content-visibility: auto">
+  <section style="--categoria-grid-bg: var(--color-novela-corta); --categoria-hover-glow: var(--color-novela-corta-glow)">
     <GridCategoria titulo="Novela corta" libros={novelasCortas.map(l => ({ libro: l, fondo: getFondoBlur(l), libroImg: getLibroImg(l) }))} />
   </section>
 
   <!-- Cuentos adolescentes -->
-  <section style="--categoria-grid-bg: var(--color-cuento-adolescente); --categoria-hover-glow: var(--color-cuento-adolescente-glow); content-visibility: auto">
+  <section style="--categoria-grid-bg: var(--color-cuento-adolescente); --categoria-hover-glow: var(--color-cuento-adolescente-glow)">
     <GridCategoria titulo="Cuentos" libros={cuentosAdol.map(l => ({ libro: l, fondo: getFondoBlur(l), libroImg: getLibroImg(l) }))} />
   </section>
 
   <!-- Cuentos infantiles -->
-  <section style="--categoria-grid-bg: var(--color-cuento-infantil); --categoria-hover-glow: var(--color-cuento-infantil-glow); content-visibility: auto">
+  <section style="--categoria-grid-bg: var(--color-cuento-infantil); --categoria-hover-glow: var(--color-cuento-infantil-glow)">
     <GridCategoria titulo="Cuentos infantiles" libros={cuentosInf.map(l => ({ libro: l, fondo: getFondoBlur(l), libroImg: getLibroImg(l) }))} />
   </section>
 </PageLayout>
