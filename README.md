@@ -1,46 +1,67 @@
-# Astro Starter Kit: Basics
+# Daniel Jerez Torns — Web personal
+
+Sitio web del escritor Daniel Jerez Torns, construido con [Astro](https://astro.build).
+
+## Stack
+
+- **Astro** (static site generator)
+- **TypeScript**
+- **CSS moderno** (nesting, custom properties, clamp, dvh)
+- **Sharp** (optimización de imágenes)
+
+## Estructura
+
+```
+src/
+├── assets/images/     # Imágenes originales
+│   ├── fondos/         # Fondos de héroe (1920px JPG)
+│   │   └── blurred/    # Versiones borrosas (1200px)
+│   ├── portadas/       # Portadas de libros (PNG con canal alfa)
+│   ├── libro/          # Mockups 3D de libros
+│   └── tiendas/        # Logos de tiendas (PNG + SVG)
+├── components/
+│   ├── index/          # Hero, novedades, categorías
+│   ├── libro/          # Hero, cita, sinopsis, contenido, detalles, compra
+│   ├── biografia/      # Hero, cita, sinopsis, biografía
+│   ├── header/         # Menú escritorio + modal móvil
+│   ├── footer/         # Redes sociales + enlaces legales
+│   └── ui/             # Botón scroll-to-top
+├── data/               # Contenido (libros, biografía, menú, SEO, legal)
+├── layouts/            # page-layout.astro (compartido)
+├── pages/              # 22 páginas (index, libros, legal, 404, RSS)
+├── seo/                # Meta tags, Open Graph, Twitter Cards
+└── styles/             # global.css (variables + reset)
+```
+
+## Desarrollo
 
 ```sh
-pnpm create astro@latest -- --template basics
+pnpm install
+pnpm dev          # servidor local → localhost:4321
+pnpm build        # build → dist/
+pnpm preview      # previsualizar build local
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Scripts
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```sh
+node scripts/optimize-images.mjs   # optimizar imágenes fuente
+node scripts/preblur-fondos.mjs    # regenerar fondos borrosos
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Páginas
 
-## 🧞 Commands
+| Sección | Rutas |
+|---------|-------|
+| Novela | `/novela/[slug]/` |
+| Novela corta | `/novela-corta/[slug]/` |
+| Cuentos adolescentes | `/cuentos/adolescentes/[slug]/` |
+| Cuentos infantiles | `/cuentos/infantiles/[slug]/` |
+| Biografía | `/biografia/biografia/` |
+| Cronología | `/cronologia/cronologia/` |
+| Legal | `/legalidad/aviso-legal/`, `/legalidad/privacidad/`, `/legalidad/cookies/`, `/legalidad/accesibilidad/` |
+| 404 | Personalizado con `ErrorDocument` |
 
-All commands are run from the root of the project, from a terminal:
+## Despliegue
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Subir el contenido de `dist/` al servidor (Hostinger). El `.htaccess` incluido redirige los errores 404 a la página personalizada.
