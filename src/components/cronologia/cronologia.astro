@@ -29,90 +29,92 @@ const { trayectoria } = Astro.props
 </div>
 
 <script>
-  const container = document.querySelector(".card-container")
-  const orb = document.querySelector(".timeline-orb")
-  const cards = document.querySelectorAll(".card-timeline")
-  const BUFFER = 50
+  document.addEventListener("astro:page-load", () => {
+    const container = document.querySelector(".card-container")
+    const orb = document.querySelector(".timeline-orb")
+    const cards = document.querySelectorAll(".card-timeline")
+    const BUFFER = 50
 
-  function updateOrb() {
-    if (!container || !orb) return
-    const max = Math.max(0, (container.offsetHeight ?? 0) - BUFFER)
-    const progress = Math.min(max, window.scrollY)
-    orb.style.setProperty("--top", `${progress}px`)
-  }
-
-  function updateProgreso() {
-    if (!container || cards.length === 0) return
-    const scrollY = window.scrollY
-    const containerTop = container.offsetTop
-    const maxScroll = document.documentElement.scrollHeight - window.innerHeight
-    const estaAlFondo = scrollY >= maxScroll - 20
-
-    let highestVisible = -1
-
-    if (scrollY > 10) {
-      cards[0].style.setProperty("--dot-opacity", "1")
-      cards[0].classList.add("is-visible")
-      highestVisible = 0
-      orb?.style.setProperty("--orb-scale", "1")
-      orb?.style.setProperty("--orb-color", "var(--color-green-500)")
-      orb?.style.setProperty("--orb-svg-color", "var(--color-green-500)")
-      container?.style.setProperty("--line-color", "var(--color-green-500)")
-    } else {
-      cards[0].style.setProperty("--dot-opacity", "0")
-      cards[0].classList.remove("is-visible")
-      orb?.style.setProperty("--orb-scale", "1.5")
-      orb?.style.setProperty("--orb-color", "var(--color-green-600)")
-      orb?.style.removeProperty("--orb-svg-color")
-      container?.style.setProperty("--line-color", "var(--color-green-600)")
+    function updateOrb() {
+      if (!container || !orb) return
+      const max = Math.max(0, (container.offsetHeight ?? 0) - BUFFER)
+      const progress = Math.min(max, window.scrollY)
+      orb.style.setProperty("--top", `${progress}px`)
     }
 
-    for (let i = 1; i < cards.length; i++) {
-      const prev = cards[i - 1]
-      const puntoActivar = containerTop + prev.offsetTop + prev.offsetHeight * 0.1
-      if (scrollY >= puntoActivar || estaAlFondo) {
-        cards[i].style.setProperty("--dot-opacity", "1")
-        cards[i].classList.add("is-visible")
-        highestVisible = i
+    function updateProgreso() {
+      if (!container || cards.length === 0) return
+      const scrollY = window.scrollY
+      const containerTop = container.offsetTop
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight
+      const estaAlFondo = scrollY >= maxScroll - 20
+
+      let highestVisible = -1
+
+      if (scrollY > 10) {
+        cards[0].style.setProperty("--dot-opacity", "1")
+        cards[0].classList.add("is-visible")
+        highestVisible = 0
+        orb?.style.setProperty("--orb-scale", "1")
+        orb?.style.setProperty("--orb-color", "var(--color-green-500)")
+        orb?.style.setProperty("--orb-svg-color", "var(--color-green-500)")
+        container?.style.setProperty("--line-color", "var(--color-green-500)")
       } else {
-        cards[i].style.setProperty("--dot-opacity", "0")
-        cards[i].classList.remove("is-visible")
+        cards[0].style.setProperty("--dot-opacity", "0")
+        cards[0].classList.remove("is-visible")
+        orb?.style.setProperty("--orb-scale", "1.5")
+        orb?.style.setProperty("--orb-color", "var(--color-green-600)")
+        orb?.style.removeProperty("--orb-svg-color")
+        container?.style.setProperty("--line-color", "var(--color-green-600)")
+      }
+
+      for (let i = 1; i < cards.length; i++) {
+        const prev = cards[i - 1]
+        const puntoActivar = containerTop + prev.offsetTop + prev.offsetHeight * 0.1
+        if (scrollY >= puntoActivar || estaAlFondo) {
+          cards[i].style.setProperty("--dot-opacity", "1")
+          cards[i].classList.add("is-visible")
+          highestVisible = i
+        } else {
+          cards[i].style.setProperty("--dot-opacity", "0")
+          cards[i].classList.remove("is-visible")
+        }
+      }
+
+      cards.forEach((c) => c.classList.remove("is-current"))
+      if (highestVisible >= 0) {
+        cards[highestVisible].classList.add("is-current")
       }
     }
 
-    cards.forEach((c) => c.classList.remove("is-current"))
-    if (highestVisible >= 0) {
-      cards[highestVisible].classList.add("is-current")
+    function ajustarEspaciado() {
+      if (!container || cards.length < 2) return
+      const fontSize = parseFloat(getComputedStyle(document.documentElement).fontSize)
+      const orbOffset = window.innerWidth >= 768 ? 4 : 3
+      const ultimaCard = cards[cards.length - 1]
+      const ultimoDotY = container.offsetTop + ultimaCard.offsetTop + ultimaCard.offsetHeight / 2
+      const scrollTarget = ultimoDotY - container.offsetTop + orbOffset * fontSize
+      const deficit = scrollTarget - (document.documentElement.scrollHeight - window.innerHeight)
+      const basePadding = 12 * fontSize
+      container.style.paddingBlockEnd = `${basePadding + Math.max(0, deficit) + 40}px`
     }
-  }
 
-  function ajustarEspaciado() {
-    if (!container || cards.length < 2) return
-    const fontSize = parseFloat(getComputedStyle(document.documentElement).fontSize)
-    const orbOffset = window.innerWidth >= 768 ? 4 : 3
-    const ultimaCard = cards[cards.length - 1]
-    const ultimoDotY = container.offsetTop + ultimaCard.offsetTop + ultimaCard.offsetHeight / 2
-    const scrollTarget = ultimoDotY - container.offsetTop + orbOffset * fontSize
-    const deficit = scrollTarget - (document.documentElement.scrollHeight - window.innerHeight)
-    const basePadding = 12 * fontSize
-    container.style.paddingBlockEnd = `${basePadding + Math.max(0, deficit) + 40}px`
-  }
+    function onScroll() {
+      requestAnimationFrame(() => {
+        updateOrb()
+        updateProgreso()
+      })
+    }
 
-  function onScroll() {
-    requestAnimationFrame(() => {
-      updateOrb()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    window.addEventListener("resize", () => {
       updateProgreso()
+      ajustarEspaciado()
     })
-  }
-
-  window.addEventListener("scroll", onScroll, { passive: true })
-  window.addEventListener("resize", () => {
+    updateOrb()
     updateProgreso()
     ajustarEspaciado()
   })
-  updateOrb()
-  updateProgreso()
-  ajustarEspaciado()
 </script>
 
 <style>
