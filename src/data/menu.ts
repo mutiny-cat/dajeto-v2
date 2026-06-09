@@ -18,7 +18,6 @@ export const menu: ItemMenu[] = [
   {
     texto: "Novela corta",
     hijos: [
-      { ruta: "/novela-corta/relatos-tendidos/", texto: "Relatos tendidos" },
       { ruta: "/novela-corta/grietas-en-el-muro/", texto: "Grietas en el muro" },
       { ruta: "/novela-corta/el-silencio-de-las-ruinas/", texto: "El silencio de las ruinas" },
       { ruta: "/novela-corta/al-iksir/", texto: "Al-iksir" },
@@ -30,6 +29,8 @@ export const menu: ItemMenu[] = [
       {
         texto: "Adolescentes y adultos",
         hijos: [
+          { ruta: "/cuentos/adolescentes/los-tiburones-del-front-maritim/", texto: "Los tiburones del Front Marítim" },
+          { ruta: "/cuentos/adolescentes/relatos-tendidos/", texto: "Relatos tendidos" },
           { ruta: "/cuentos/adolescentes/el-secreto-del-tesoro-guardado/", texto: "El secreto del tesoro guardado" },
           { ruta: "/cuentos/adolescentes/el-faraon-y-el-prevencionista/", texto: "El Faraón y el prevencionista" },
           { ruta: "/cuentos/adolescentes/el-mapa-de-la-isla-del-estres/", texto: "El mapa de la isla del estrés" },

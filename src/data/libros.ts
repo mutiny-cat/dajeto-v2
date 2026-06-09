@@ -89,8 +89,8 @@ export const libros: Libro[] = [
       "Doce relatos que transforman lo cotidiano en algo inquietante, irónico o profundamente revelador.\n\nUn hombre entra en un bar y descubre que el tiempo puede detenerse. Un experimento con ratas revela quién observa realmente a quién. Un príncipe rompe el destino del mundo por un detalle insignificante.\n\nEn Relatos tendidos, Daniel Jerez despliega una colección de historias breves donde lo aparentemente trivial se transforma en algo inesperado. Cada relato es una invitación a mirar la realidad desde un ángulo distinto, a cuestionar lo que damos por sentado y a encontrar la belleza —o el absurdo— en los pequeños detalles.",
     sinopsis:
       "Un hombre entra en un bar y descubre que el tiempo puede detenerse. Un experimento con ratas revela quién observa realmente a quién. Un príncipe rompe el destino del mundo por un detalle insignificante. En Relatos tendidos, Daniel Jerez despliega una colección de historias breves donde lo aparentemente trivial se transforma en algo inquietante, irónico o profundamente revelador.",
-    categoria: "novela-corta",
-    categoriaColor: "novela-corta",
+    categoria: "cuento-adolescente",
+    categoriaColor: "cuento-adolescente",
     fechaAgregado: "2026-05-18",
     portadaMini: "portada-relatos-tendidos.png",
     portada: "portada-relatos-tendidos.png",
@@ -307,6 +307,27 @@ export const libros: Libro[] = [
     portada: "portada-tres-en-raya.png",
     enlaces: [
       { tienda: "Amazon", url: "https://www.amazon.es/Tres-raya-Daniel-Jerez-Torns-ebook/dp/B0GD979Q8P", formato: "ebook", logo: "logo-amazon.png" },
+    ],
+  },
+  {
+    id: "los-tiburones-del-front-maritim",
+    titulo: "Los tiburones del Front Marítim",
+    fraseHero: "Una emocionante aventura juvenil llena de humor, misterio y emoción",
+    cita: "Porque algunos equipos duran una temporada… pero otros se quedan contigo para siempre.",
+    ano: 2026,
+    paginas: 36,
+    editorial: "Autoedición",
+    contenido:
+      "En el pabellón del Front Maritim, donde las luces parpadean cuando cae la noche y el eco de los balones parece guardar secretos antiguos, once chicos del C.E. Diagonal Mar están a punto de vivir mucho más que una temporada de baloncesto.\n\nGuerau, Donis, Lucas, Mateu, Daniel, Pol, Bruno, Roc, Ari, Eric e Iván apenas se conocían unos meses atrás. Venían de colegios distintos, tenían personalidades completamente diferentes y nadie imaginaba que acabarían formando una auténtica familia dentro de la pista. Pero todo cambia la noche en la que, después de un entrenamiento, descubren una misteriosa sala escondida bajo el pabellón y la leyenda de un trofeo desaparecido hace más de treinta años: la Copa Sharks de 1989.\n\nGuiados por pistas ocultas, pasillos secretos y mensajes olvidados en el tiempo, los Sharks deberán resolver un misterio que conecta su equipo con la historia más antigua del club. Mientras recorren los rincones ocultos del Front Maritim, descubrirán que el verdadero secreto no tiene que ver con ganar partidos, sino con algo mucho más importante: la amistad, los recuerdos y las personas que dejan huella para siempre.\n\nLos Tiburones del Front Maritim es una emocionante aventura juvenil llena de humor, misterio y emoción, inspirada en el compañerismo real de un equipo de baloncesto infantil.",
+    sinopsis:
+      "Once chicos del C.E. Diagonal Mar están a punto de vivir mucho más que una temporada de baloncesto. Una noche, tras un entrenamiento, descubren una misteriosa sala escondida bajo el pabellón del Front Maritim y la leyenda de un trofeo desaparecido hace más de treinta años: la Copa Sharks de 1989. Guiados por pistas ocultas y mensajes olvidados, deberán resolver un misterio que les enseñará que lo más importante no es ganar partidos, sino la amistad y las personas que dejan huella para siempre.",
+    categoria: "cuento-adolescente",
+    categoriaColor: "cuento-adolescente",
+    fechaAgregado: "2026-06-09",
+    portadaMini: "portada-los-tiburones-del-front-maritim.png",
+    portada: "portada-los-tiburones-del-front-maritim.png",
+    enlaces: [
+      { tienda: "Amazon", url: "https://www.amazon.es/Daniel-Jerez-Torns/dp/B0H2YC9WZC", formato: "tapa-blanda", logo: "logo-amazon.png" },
     ],
   },
   {
