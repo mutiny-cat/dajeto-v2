@@ -39,7 +39,7 @@ export const biografia: Biografia = {
     },
     {
       id: "novelas",
-      texto: "Publiqué mi primera novela de misterio en 2012, «El arcabucero nº 61» y desde entonces he publicado tres novelas más. «La fórmula Terradas» en 2014, «El beso de la muerte» en 2020 y «El silencio de las ruinas» también en 2020.",
+      texto: "Publiqué mi primera novela de misterio en 2012, «El arcabucero nº 61», y desde entonces he publicado cinco novelas más. «La fórmula Terradas» en 2014, «El beso de la muerte» y «El silencio de las ruinas» en 2020, «El pasado nunca nos olvida» en 2022 y «El canto del gallo» en 2026.",
     },
     {
       id: "novela-negra",
@@ -48,6 +48,10 @@ export const biografia: Biografia = {
     {
       id: "el-canto-del-gallo",
       texto: "«El canto del gallo» es mi última novela, publicada en 2026, donde Lorena Escudero, la agente de la Guardia Urbana, investiga una cadena de muertes que agita las familias más poderosas de El Prat de Llobregat. Una historia de suspense y venganza que arranca con el hallazgo del cuerpo de una joven periodista en el estanque de La Ricarda.",
+    },
+    {
+      id: "los-tiburones-del-front-maritim",
+      texto: "En mayo de 2026 publiqué «Los tiburones del Front Marítim», un cuento juvenil inspirado en el compañerismo real de un equipo de baloncesto infantil. Once chicos del C.E. Diagonal Mar descubren una misteriosa sala escondida bajo el pabellón y la leyenda de un trofeo desaparecido, en una aventura que celebra la amistad y los recuerdos que dejan huella.",
     },
   ],
 }

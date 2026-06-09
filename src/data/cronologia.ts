@@ -57,9 +57,9 @@ export const trayectoria: EventoTrayectoria[] = [
   },
   {
     ano: 2026,
-    titulo: "El canto del gallo",
+    titulo: "El canto del gallo y nuevos títulos",
     descripcion:
-      "Su obra más ambiciosa: 416 páginas de novela policiaca. La historia de la agente Lorena Escudero marca un antes y un después en su carrera. Publica también Relatos tendidos y Grietas en el muro.",
+      "Un año prolífico con El canto del gallo, su obra más ambiciosa: 416 páginas de novela policiaca protagonizada por la agente Lorena Escudero. Publica también Grietas en el muro, Relatos tendidos, Cada etapa, su camino y Los tiburones del Front Marítim, explorando desde la distopía hasta el cuento juvenil.",
     estado: "completado",
   },
 ]
