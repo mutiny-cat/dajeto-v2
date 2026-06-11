@@ -310,6 +310,27 @@ export const libros: Libro[] = [
     ],
   },
   {
+    id: "los-tiburones-del-front-maritim",
+    titulo: "Los tiburones del Front Marítim",
+    fraseHero: "Una emocionante aventura juvenil llena de humor, misterio y emoción",
+    cita: "Porque algunos equipos duran una temporada… pero otros se quedan contigo para siempre.",
+    ano: 2026,
+    paginas: 36,
+    editorial: "Autoedición",
+    contenido:
+      "En el pabellón del Front Maritim, donde las luces parpadean cuando cae la noche y el eco de los balones parece guardar secretos antiguos, once chicos del C.E. Diagonal Mar están a punto de vivir mucho más que una temporada de baloncesto.\n\nGuerau, Donis, Lucas, Mateu, Daniel, Pol, Bruno, Roc, Ari, Eric e Iván apenas se conocían unos meses atrás. Venían de colegios distintos, tenían personalidades completamente diferentes y nadie imaginaba que acabarían formando una auténtica familia dentro de la pista. Pero todo cambia la noche en la que, después de un entrenamiento, descubren una misteriosa sala escondida bajo el pabellón y la leyenda de un trofeo desaparecido hace más de treinta años: la Copa Sharks de 1989.\n\nGuiados por pistas ocultas, pasillos secretos y mensajes olvidados en el tiempo, los Sharks deberán resolver un misterio que conecta su equipo con la historia más antigua del club. Mientras recorren los rincones ocultos del Front Maritim, descubrirán que el verdadero secreto no tiene que ver con ganar partidos, sino con algo mucho más importante: la amistad, los recuerdos y las personas que dejan huella para siempre.\n\nLos Tiburones del Front Maritim es una emocionante aventura juvenil llena de humor, misterio y emoción, inspirada en el compañerismo real de un equipo de baloncesto infantil.",
+    sinopsis:
+      "Once chicos del C.E. Diagonal Mar están a punto de vivir mucho más que una temporada de baloncesto. Una noche, tras un entrenamiento, descubren una misteriosa sala escondida bajo el pabellón del Front Maritim y la leyenda de un trofeo desaparecido hace más de treinta años: la Copa Sharks de 1989. Guiados por pistas ocultas y mensajes olvidados, deberán resolver un misterio que les enseñará que lo más importante no es ganar partidos, sino la amistad y las personas que dejan huella para siempre.",
+    categoria: "cuento-adolescente",
+    categoriaColor: "cuento-adolescente",
+    fechaAgregado: "2026-06-09",
+    portadaMini: "portada-los-tiburones-del-front-maritim.png",
+    portada: "portada-los-tiburones-del-front-maritim.png",
+    enlaces: [
+      { tienda: "Amazon", url: "https://www.amazon.es/Daniel-Jerez-Torns/dp/B0H2YC9WZC", formato: "tapa-blanda", logo: "logo-amazon.png" },
+    ],
+  },
+  {
     id: "historias-que-previenen",
     titulo: "Historias que previenen",
     fraseHero: "Relatos para proteger lo que más importa",
@@ -329,27 +350,6 @@ export const libros: Libro[] = [
     enlaces: [
       { tienda: "Amazon", url: "https://www.amazon.es/dp/B0H4S5BBY1", formato: "tapa-blanda", logo: "logo-amazon.png" },
       { tienda: "Amazon", url: "https://www.amazon.es/dp/B0GYZFGJQB", formato: "ebook", logo: "logo-amazon.png" },
-    ],
-  },
-  {
-    id: "los-tiburones-del-front-maritim",
-    titulo: "Los tiburones del Front Marítim",
-    fraseHero: "Una emocionante aventura juvenil llena de humor, misterio y emoción",
-    cita: "Porque algunos equipos duran una temporada… pero otros se quedan contigo para siempre.",
-    ano: 2026,
-    paginas: 36,
-    editorial: "Autoedición",
-    contenido:
-      "En el pabellón del Front Maritim, donde las luces parpadean cuando cae la noche y el eco de los balones parece guardar secretos antiguos, once chicos del C.E. Diagonal Mar están a punto de vivir mucho más que una temporada de baloncesto.\n\nGuerau, Donis, Lucas, Mateu, Daniel, Pol, Bruno, Roc, Ari, Eric e Iván apenas se conocían unos meses atrás. Venían de colegios distintos, tenían personalidades completamente diferentes y nadie imaginaba que acabarían formando una auténtica familia dentro de la pista. Pero todo cambia la noche en la que, después de un entrenamiento, descubren una misteriosa sala escondida bajo el pabellón y la leyenda de un trofeo desaparecido hace más de treinta años: la Copa Sharks de 1989.\n\nGuiados por pistas ocultas, pasillos secretos y mensajes olvidados en el tiempo, los Sharks deberán resolver un misterio que conecta su equipo con la historia más antigua del club. Mientras recorren los rincones ocultos del Front Maritim, descubrirán que el verdadero secreto no tiene que ver con ganar partidos, sino con algo mucho más importante: la amistad, los recuerdos y las personas que dejan huella para siempre.\n\nLos Tiburones del Front Maritim es una emocionante aventura juvenil llena de humor, misterio y emoción, inspirada en el compañerismo real de un equipo de baloncesto infantil.",
-    sinopsis:
-      "Once chicos del C.E. Diagonal Mar están a punto de vivir mucho más que una temporada de baloncesto. Una noche, tras un entrenamiento, descubren una misteriosa sala escondida bajo el pabellón del Front Maritim y la leyenda de un trofeo desaparecido hace más de treinta años: la Copa Sharks de 1989. Guiados por pistas ocultas y mensajes olvidados, deberán resolver un misterio que les enseñará que lo más importante no es ganar partidos, sino la amistad y las personas que dejan huella para siempre.",
-    categoria: "cuento-adolescente",
-    categoriaColor: "cuento-adolescente",
-    fechaAgregado: "2026-06-09",
-    portadaMini: "portada-los-tiburones-del-front-maritim.png",
-    portada: "portada-los-tiburones-del-front-maritim.png",
-    enlaces: [
-      { tienda: "Amazon", url: "https://www.amazon.es/Daniel-Jerez-Torns/dp/B0H2YC9WZC", formato: "tapa-blanda", logo: "logo-amazon.png" },
     ],
   },
   {
