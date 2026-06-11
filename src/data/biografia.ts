@@ -53,5 +53,9 @@ export const biografia: Biografia = {
       id: "los-tiburones-del-front-maritim",
       texto: "En mayo de 2026 publiqué «Los tiburones del Front Marítim», un cuento juvenil inspirado en el compañerismo real de un equipo de baloncesto infantil. Once chicos del C.E. Diagonal Mar descubren una misteriosa sala escondida bajo el pabellón y la leyenda de un trofeo desaparecido, en una aventura que celebra la amistad y los recuerdos que dejan huella.",
     },
+    {
+      id: "historias-que-previenen",
+      texto: "En junio de 2026 publiqué «Historias que previenen», una colección de dieciséis relatos que acercan la prevención de riesgos laborales a través del humor y la fantasía. Con personajes como Papá Noel, Dorothy o un dragón, transformo conceptos como la seguridad laboral o los riesgos psicosociales en historias que emocionan y hacen pensar.",
+    },
   ],
 }

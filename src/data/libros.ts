@@ -310,6 +310,28 @@ export const libros: Libro[] = [
     ],
   },
   {
+    id: "historias-que-previenen",
+    titulo: "Historias que previenen",
+    fraseHero: "Relatos para proteger lo que más importa",
+    cita: "Porque detrás de cada norma, cada procedimiento y cada equipo de protección hay algo mucho más importante: personas.",
+    ano: 2026,
+    paginas: 105,
+    editorial: "Autoedición",
+    contenido:
+      "¿Qué tienen en común Papá Noel, el Mago de Oz, un dragón, unos zombis y un técnico de prevención de riesgos laborales? Más de lo que imaginas.\n\nHistorias que previenen reúne dieciséis relatos que combinan humor, fantasía, emoción y reflexión para acercar la prevención de riesgos laborales de una forma diferente. A través de personajes inolvidables, situaciones sorprendentes y guiños a cuentos clásicos, Daniel Jerez transforma conceptos como la seguridad, la salud laboral, los riesgos psicosociales, la ergonomía o la cultura preventiva en historias capaces de emocionar y hacer pensar.\n\nAquí encontrarás a un Papá Noel sometido a una inspección de trabajo, un técnico de prevención enfrentándose a una invasión zombi, una Dorothy que descubre el verdadero significado de la seguridad laboral en Oz, un dragón víctima de acoso, trabajadores que luchan por regresar a casa sanos y salvos y familias que recuerdan por qué la prevención importa.\n\nPorque detrás de cada norma, cada procedimiento y cada equipo de protección hay algo mucho más importante: personas.",
+    sinopsis:
+      "Dieciséis relatos que combinan humor, fantasía, emoción y reflexión para acercar la prevención de riesgos laborales de una forma diferente. Un Papá Noel inspeccionado, un técnico de prevención ante una invasión zombi, una Dorothy que descubre la seguridad laboral en Oz y un dragón víctima de acoso. Porque las mejores lecciones no siempre se aprenden en un manual: a veces se aprenden en una historia.",
+    categoria: "cuento-adolescente",
+    categoriaColor: "cuento-adolescente",
+    fechaAgregado: "2026-06-11",
+    portadaMini: "portada-historias-que-previenen.png",
+    portada: "portada-historias-que-previenen.png",
+    enlaces: [
+      { tienda: "Amazon", url: "https://www.amazon.es/dp/B0H4S5BBY1", formato: "tapa-blanda", logo: "logo-amazon.png" },
+      { tienda: "Amazon", url: "https://www.amazon.es/dp/B0GYZFGJQB", formato: "ebook", logo: "logo-amazon.png" },
+    ],
+  },
+  {
     id: "los-tiburones-del-front-maritim",
     titulo: "Los tiburones del Front Marítim",
     fraseHero: "Una emocionante aventura juvenil llena de humor, misterio y emoción",

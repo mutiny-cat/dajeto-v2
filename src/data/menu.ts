@@ -29,6 +29,7 @@ export const menu: ItemMenu[] = [
       {
         texto: "Adolescentes y adultos",
         hijos: [
+          { ruta: "/cuentos/adolescentes/historias-que-previenen/", texto: "Historias que previenen" },
           { ruta: "/cuentos/adolescentes/los-tiburones-del-front-maritim/", texto: "Los tiburones del Front Marítim" },
           { ruta: "/cuentos/adolescentes/relatos-tendidos/", texto: "Relatos tendidos" },
           { ruta: "/cuentos/adolescentes/el-secreto-del-tesoro-guardado/", texto: "El secreto del tesoro guardado" },
