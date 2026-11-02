@@ -1,26 +1,34 @@
 export interface EnlaceCompra {
-  tienda: string
-  url: string
-  formato: "tapa-blanda" | "ebook" | "audiolibro"
-  logo: string
+  tienda: string;
+  url: string;
+  formato: "tapa-blanda" | "ebook" | "audiolibro";
+  logo: string;
 }
 
 export interface Libro {
-  id: string
-  titulo: string
-  ano: number
-  paginas?: number
-  editorial?: string
-  fraseHero?: string
-  cita?: string
-  contenido?: string
-  sinopsis: string
-  categoria: "novela" | "novela-corta" | "cuento-adolescente" | "cuento-infantil"
-  categoriaColor: "novela" | "novela-corta" | "cuento-adolescente" | "cuento-infantil"
-  fechaAgregado: string
-  portadaMini?: string
-  portada?: string
-  enlaces: EnlaceCompra[]
+  id: string;
+  titulo: string;
+  ano: number;
+  paginas?: number;
+  editorial?: string;
+  fraseHero?: string;
+  cita?: string;
+  contenido?: string;
+  sinopsis: string;
+  categoria:
+    | "novela"
+    | "novela-corta"
+    | "cuento-adolescente"
+    | "cuento-infantil";
+  categoriaColor:
+    | "novela"
+    | "novela-corta"
+    | "cuento-adolescente"
+    | "cuento-infantil";
+  fechaAgregado: string;
+  portadaMini?: string;
+  portada?: string;
+  enlaces: EnlaceCompra[];
 }
 
 export const libros: Libro[] = [
@@ -42,8 +50,18 @@ export const libros: Libro[] = [
     portadaMini: "portada-el-canto-del-gallo.png",
     portada: "portada-el-canto-del-gallo.png",
     enlaces: [
-      { tienda: "Amazon", url: "https://www.amazon.es/canto-gallo-Daniel-Jerez-Torns/dp/B0GSFNMQ7H", formato: "tapa-blanda", logo: "logo-amazon.png" },
-      { tienda: "Amazon", url: "https://www.amazon.es/canto-gallo-Daniel-Jerez-Torns-ebook/dp/B0GSCGHFJG", formato: "ebook", logo: "logo-amazon.png" },
+      {
+        tienda: "Amazon",
+        url: "https://www.amazon.es/canto-gallo-Daniel-Jerez-Torns/dp/B0GSFNMQ7H",
+        formato: "tapa-blanda",
+        logo: "logo-amazon.png",
+      },
+      {
+        tienda: "Amazon",
+        url: "https://www.amazon.es/canto-gallo-Daniel-Jerez-Torns-ebook/dp/B0GSCGHFJG",
+        formato: "ebook",
+        logo: "logo-amazon.png",
+      },
     ],
   },
   {
@@ -53,7 +71,7 @@ export const libros: Libro[] = [
     paginas: 320,
     editorial: "Maeva Noir",
     fraseHero: "A veces los crímenes impunes salen a la luz",
-    cita: "Por mucho que uno intentara taparlo, esconderlo, camuflarlo, el pasado siempre estaba ahí.\n\nEl título del artículo se lo recordaba: \"El pasado nunca nos olvida\", y es así como nos encadena.",
+    cita: 'Por mucho que uno intentara taparlo, esconderlo, camuflarlo, el pasado siempre estaba ahí.\n\nEl título del artículo se lo recordaba: "El pasado nunca nos olvida", y es así como nos encadena.',
     contenido:
       "Un avión de combate desenterrado en las inmediaciones de El Prat de Llobregat, en Barcelona.\n\nUn periodista que investiga el asesinato de un amigo.\n\nUna policía que regresa al lugar donde pasó su infancia.\n\nEl hallazgo en los terrenos de El Prat de Llobregat de los restos de un avión de combate alemán accidentado en un vuelo de exhibición en 1940, saca a la luz los restos del fuselaje y los huesos del piloto.\n\nSebastian, periodista de un diario local de El Prat de Llobregat, cubre la noticia con ayuda de su amigo Vidal, técnico del aeropuerto, que le aporta valiosa información. Un año más tarde, le tocará investigar la muerte de su amigo junto a Lorena, una antigua compañera de clase, que trabaja ahora como agente de la Guardia Urbana de Barcelona. Entre los dos indagarán en el pasado de la Caserna de los Carabineros de El Prat de Llobregat y se toparán con un secreto oculto durante décadas.",
     sinopsis:
@@ -64,17 +82,72 @@ export const libros: Libro[] = [
     portadaMini: "portada-el-pasado-nunca-nos-olvida.png",
     portada: "portada-el-pasado-nunca-nos-olvida.png",
     enlaces: [
-      { tienda: "Casa del Libro", url: "https://www.casadellibro.com/libro-el-pasado-nunca-nos-olvida/9788419110480/13185437", formato: "tapa-blanda", logo: "logo-casa-del-libro.png" },
-      { tienda: "FNAC", url: "https://www.fnac.es/a9547088/Daniel-Jerez-El-pasado-nunca-nos-olvida", formato: "tapa-blanda", logo: "logo-fnac.png" },
-      { tienda: "El Corte Inglés", url: "https://www.elcorteingles.es/libros/A44795177-el-pasado-nunca-nos-olvida-a-veces-los-crimenes-impunes-salen-a-la-luz-tapa-blanda/", formato: "tapa-blanda", logo: "logo-el-corte-ingles.png" },
-      { tienda: "Amazon", url: "https://www.amazon.es/El-pasado-nunca-nos-olvida-ebook/dp/B0B7B93HCQ", formato: "ebook", logo: "logo-amazon.png" },
-      { tienda: "Kobo", url: "https://www.kobo.com/es/es/ebook/el-pasado-nunca-nos-olvida", formato: "ebook", logo: "logo-kobo.png" },
-      { tienda: "Casa del Libro", url: "https://www.casadellibro.com/ebook-el-pasado-nunca-nos-olvida-ebook/9788419110572/13151373", formato: "ebook", logo: "logo-casa-del-libro.png" },
-      { tienda: "Nextory", url: "https://www.nextory.es/libro/el-pasado-nunca-nos-olvida-11725320/", formato: "ebook", logo: "logo-nextory.png" },
-      { tienda: "Google Play", url: "https://play.google.com/store/books/details/Daniel_Jerez_El_pasado_nunca_nos_olvida?id=EBt9EAAAQBAJ", formato: "ebook", logo: "logo-googleplay.png" },
-      { tienda: "Apple Books", url: "https://books.apple.com/es/book/el-pasado-nunca-nos-olvida/id6443200879", formato: "ebook", logo: "logo-appstore.png" },
-      { tienda: "Audible", url: "https://www.audible.es/pd/El-pasado-nunca-nos-olvida-Audiolibro/B0BF5VX968", formato: "audiolibro", logo: "logo-audible.png" },
-      { tienda: "Apple Books", url: "https://books.apple.com/es/audiobook/el-pasado-nunca-nos-olvida-a-veces-los/id1645343488", formato: "audiolibro", logo: "logo-appstore.png" },
+      {
+        tienda: "Casa del Libro",
+        url: "https://www.casadellibro.com/libro-el-pasado-nunca-nos-olvida/9788419110480/13185437",
+        formato: "tapa-blanda",
+        logo: "logo-casa-del-libro.png",
+      },
+      {
+        tienda: "FNAC",
+        url: "https://www.fnac.es/a9547088/Daniel-Jerez-El-pasado-nunca-nos-olvida",
+        formato: "tapa-blanda",
+        logo: "logo-fnac.png",
+      },
+      {
+        tienda: "El Corte Inglés",
+        url: "https://www.elcorteingles.es/libros/A44795177-el-pasado-nunca-nos-olvida-a-veces-los-crimenes-impunes-salen-a-la-luz-tapa-blanda/",
+        formato: "tapa-blanda",
+        logo: "logo-el-corte-ingles.png",
+      },
+      {
+        tienda: "Amazon",
+        url: "https://www.amazon.es/El-pasado-nunca-nos-olvida-ebook/dp/B0B7B93HCQ",
+        formato: "ebook",
+        logo: "logo-amazon.png",
+      },
+      {
+        tienda: "Kobo",
+        url: "https://www.kobo.com/es/es/ebook/el-pasado-nunca-nos-olvida",
+        formato: "ebook",
+        logo: "logo-kobo.png",
+      },
+      {
+        tienda: "Casa del Libro",
+        url: "https://www.casadellibro.com/ebook-el-pasado-nunca-nos-olvida-ebook/9788419110572/13151373",
+        formato: "ebook",
+        logo: "logo-casa-del-libro.png",
+      },
+      {
+        tienda: "Nextory",
+        url: "https://www.nextory.es/libro/el-pasado-nunca-nos-olvida-11725320/",
+        formato: "ebook",
+        logo: "logo-nextory.png",
+      },
+      {
+        tienda: "Google Play",
+        url: "https://play.google.com/store/books/details/Daniel_Jerez_El_pasado_nunca_nos_olvida?id=EBt9EAAAQBAJ",
+        formato: "ebook",
+        logo: "logo-googleplay.png",
+      },
+      {
+        tienda: "Apple Books",
+        url: "https://books.apple.com/es/book/el-pasado-nunca-nos-olvida/id6443200879",
+        formato: "ebook",
+        logo: "logo-appstore.png",
+      },
+      {
+        tienda: "Audible",
+        url: "https://www.audible.es/pd/El-pasado-nunca-nos-olvida-Audiolibro/B0BF5VX968",
+        formato: "audiolibro",
+        logo: "logo-audible.png",
+      },
+      {
+        tienda: "Apple Books",
+        url: "https://books.apple.com/es/audiobook/el-pasado-nunca-nos-olvida-a-veces-los/id1645343488",
+        formato: "audiolibro",
+        logo: "logo-appstore.png",
+      },
     ],
   },
   {
@@ -95,7 +168,12 @@ export const libros: Libro[] = [
     portadaMini: "portada-relatos-tendidos.png",
     portada: "portada-relatos-tendidos.png",
     enlaces: [
-      { tienda: "Amazon", url: "https://www.amazon.es/Relatos-tendidos-cotidiano-absurdo-inesperado-ebook/dp/B0GXVY44X8", formato: "ebook", logo: "logo-amazon.png" },
+      {
+        tienda: "Amazon",
+        url: "https://www.amazon.es/Relatos-tendidos-cotidiano-absurdo-inesperado-ebook/dp/B0GXVY44X8",
+        formato: "ebook",
+        logo: "logo-amazon.png",
+      },
     ],
   },
   {
@@ -109,14 +187,19 @@ export const libros: Libro[] = [
     contenido:
       "En una ciudad cubierta por una extraña niebla que adormece la voluntad de sus habitantes, todo parece perdido.\n\nVíctor, un barrendero desencadenado, descubre pequeños escarabajos que empujan bolas formadas por palabras como esperanza, amor, futuro o sueño. Son fragmentos de un mundo que la niebla intenta borrar.\n\nJunto a Clara iniciarán una lucha absurda y simbólica contra el Señor Muro, una fuerza que manipula la mente colectiva. Una batalla contra la resignación, el olvido y la apatía. Una novela fantástica y distópica sobre la lucha por no dejar de sentir, pensar y soñar.",
     sinopsis:
-      "En una ciudad cubierta por una extraña niebla, Víctor, un barrendero desencantado, descubre pequeños escarabajos que empujan bolas formadas por palabras como \"esperanza\", \"amor\" o \"futuro\". Junto a Clara, iniciará una lucha absurda y simbólica contra el Señor Muro, una fuerza que manipula la mente colectiva. Una novela fantástica y distópica sobre la lucha por no dejar de sentir, pensar y soñar.",
+      'En una ciudad cubierta por una extraña niebla, Víctor, un barrendero desencantado, descubre pequeños escarabajos que empujan bolas formadas por palabras como "esperanza", "amor" o "futuro". Junto a Clara, iniciará una lucha absurda y simbólica contra el Señor Muro, una fuerza que manipula la mente colectiva. Una novela fantástica y distópica sobre la lucha por no dejar de sentir, pensar y soñar.',
     categoria: "novela-corta",
     categoriaColor: "novela-corta",
     fechaAgregado: "2026-05-15",
     portadaMini: "portada-grietas-en-el-muro.png",
     portada: "portada-grietas-en-el-muro.png",
     enlaces: [
-      { tienda: "Amazon", url: "https://www.amazon.es/Grietas-en-el-Muro-Suspenso-Psicol%C3%B3gica-ebook/dp/B0H1YHB8CX", formato: "ebook", logo: "logo-amazon.png" },
+      {
+        tienda: "Amazon",
+        url: "https://www.amazon.es/Grietas-en-el-Muro-Suspenso-Psicol%C3%B3gica-ebook/dp/B0H1YHB8CX",
+        formato: "ebook",
+        logo: "logo-amazon.png",
+      },
     ],
   },
   {
@@ -124,7 +207,7 @@ export const libros: Libro[] = [
     titulo: "El silencio de las ruinas",
     fraseHero: "Una trama de misterio en una Barcelona de 2035",
     ano: 2020,
-    paginas: 107,
+    paginas: 209,
     editorial: "Autoedición",
     cita: "La ciudad se despertaba inocente de lo que le deparaba.\n\nNada sería igual. Cabía esa posibilidad y todo el mundo lo sabía, sin embargo, como siempre ocurre, las personas tienden a pensar que nada malo puede ocurrirnos a nosotros.",
     contenido:
@@ -137,7 +220,12 @@ export const libros: Libro[] = [
     portadaMini: "portada-el-silencio-de-las-ruinas.png",
     portada: "portada-el-silencio-de-las-ruinas.png",
     enlaces: [
-      { tienda: "Amazon", url: "https://www.amazon.es/El-silencio-de-las-ruinas-Daniel-Jerez-Torns-ebook/dp/B086R5WQV5", formato: "ebook", logo: "logo-amazon.png" },
+      {
+        tienda: "Amazon",
+        url: "https://www.amazon.es/El-silencio-de-las-ruinas-Daniel-Jerez-Torns-ebook/dp/B086R5WQV5",
+        formato: "ebook",
+        logo: "logo-amazon.png",
+      },
     ],
   },
   {
@@ -146,7 +234,8 @@ export const libros: Libro[] = [
     ano: 2020,
     paginas: 391,
     editorial: "Autoedición",
-    fraseHero: "Un extraño y aparentemente fortuito descubrimiento en el polo sur",
+    fraseHero:
+      "Un extraño y aparentemente fortuito descubrimiento en el polo sur",
     cita: "Los nueve cadáveres estaban momificados por haber permanecido tanto tiempo bajo el hielo. Todos mostraban una piel dura, parecida al cuero curtido. La mayoría conservaba el pelo y dientes, lo que creaba un ambiente aún más terrorífico a la escena.",
     contenido:
       "Manifestación.\n\nInfestación.\n\nOpresión.\n\nUn extraño y aparentemente fortuito descubrimiento en el Polo Sur desencadena una serie de acontecimientos que arrastrará a Blanca Serrano, periodista de una revista de ocultismo, y a Rosa Vidal, inspectora de policía, a una oscura trama que les llevará a intentar descifrar unos misteriosos escritos de Jacinto Verdaguer y en la que deberán enfrentarse a poderosas organizaciones como la CIA y una peligrosa organización terrorista para evitar que se apoderen de un arma que pondría en peligro la historia de la Humanidad tal y como la conocemos.",
@@ -158,8 +247,18 @@ export const libros: Libro[] = [
     portadaMini: "portada-el-beso-de-la-muerte.png",
     portada: "portada-el-beso-de-la-muerte.png",
     enlaces: [
-      { tienda: "Amazon", url: "https://www.amazon.es/dp/B0851MBRKM", formato: "tapa-blanda", logo: "logo-amazon.png" },
-      { tienda: "Amazon", url: "https://www.amazon.es/beso-muerte-Daniel-Jerez-Torns-ebook/dp/B0851MPJGP", formato: "ebook", logo: "logo-amazon.png" },
+      {
+        tienda: "Amazon",
+        url: "https://www.amazon.es/dp/B0851MBRKM",
+        formato: "tapa-blanda",
+        logo: "logo-amazon.png",
+      },
+      {
+        tienda: "Amazon",
+        url: "https://www.amazon.es/beso-muerte-Daniel-Jerez-Torns-ebook/dp/B0851MPJGP",
+        formato: "ebook",
+        logo: "logo-amazon.png",
+      },
     ],
   },
   {
@@ -180,7 +279,12 @@ export const libros: Libro[] = [
     portadaMini: "portada-al-iksir.png",
     portada: "portada-al-iksir.png",
     enlaces: [
-      { tienda: "Amazon", url: "https://www.amazon.es/Al-iksir-Daniel-Jerez-Torns-ebook/dp/B0CWY5MPZ9", formato: "ebook", logo: "logo-amazon.png" },
+      {
+        tienda: "Amazon",
+        url: "https://www.amazon.es/Al-iksir-Daniel-Jerez-Torns-ebook/dp/B0CWY5MPZ9",
+        formato: "ebook",
+        logo: "logo-amazon.png",
+      },
     ],
   },
   {
@@ -201,7 +305,12 @@ export const libros: Libro[] = [
     portadaMini: "portada-la-formula-terradas.png",
     portada: "portada-la-formula-terradas.png",
     enlaces: [
-      { tienda: "Amazon", url: "https://www.amazon.es/f%C3%B3rmula-Terradas-Daniel-Jerez-Torns-ebook/dp/B01C4VVN8A", formato: "ebook", logo: "logo-amazon.png" },
+      {
+        tienda: "Amazon",
+        url: "https://www.amazon.es/f%C3%B3rmula-Terradas-Daniel-Jerez-Torns-ebook/dp/B01C4VVN8A",
+        formato: "ebook",
+        logo: "logo-amazon.png",
+      },
     ],
   },
   {
@@ -222,7 +331,12 @@ export const libros: Libro[] = [
     portadaMini: "portada-el-arcabucero-numero-61.png",
     portada: "portada-el-arcabucero-numero-61.png",
     enlaces: [
-      { tienda: "Amazon", url: "https://www.amazon.es/El-arcabucero-Daniel-Jerez-Torns-ebook/dp/B00G2PYF76", formato: "ebook", logo: "logo-amazon.png" },
+      {
+        tienda: "Amazon",
+        url: "https://www.amazon.es/El-arcabucero-Daniel-Jerez-Torns-ebook/dp/B00G2PYF76",
+        formato: "ebook",
+        logo: "logo-amazon.png",
+      },
     ],
   },
   {
@@ -243,13 +357,19 @@ export const libros: Libro[] = [
     portadaMini: "portada-el-secreto-del-tesoro-guardado.png",
     portada: "portada-el-secreto-del-tesoro-guardado.png",
     enlaces: [
-      { tienda: "Amazon", url: "https://www.amazon.es/El-secreto-del-tesoro-guardado-ebook/dp/B0DZ5X4VY5", formato: "ebook", logo: "logo-amazon.png" },
+      {
+        tienda: "Amazon",
+        url: "https://www.amazon.es/El-secreto-del-tesoro-guardado-ebook/dp/B0DZ5X4VY5",
+        formato: "ebook",
+        logo: "logo-amazon.png",
+      },
     ],
   },
   {
     id: "el-faraon-y-el-prevencionista",
     titulo: "El Faraón y el prevencionista",
-    fraseHero: "El sol, el dios Ra, reinaba en el cielo con fuerza e intensidad",
+    fraseHero:
+      "El sol, el dios Ra, reinaba en el cielo con fuerza e intensidad",
     cita: "Con su entusiasmo inquebrantable por la seguridad laboral, Jahi revolucionará el Imperio: pausas, cascos ¡y hasta un comité de seguridad y salud!",
     ano: 2025,
     paginas: 11,
@@ -264,7 +384,12 @@ export const libros: Libro[] = [
     portadaMini: "portada-el-faraon-y-el-prevencionista.png",
     portada: "portada-el-faraon-y-el-prevencionista.png",
     enlaces: [
-      { tienda: "Amazon", url: "https://www.amazon.es/El-Fara%C3%B3n-y-el-prevencionista-ebook/dp/B0G1QSGLD4", formato: "ebook", logo: "logo-amazon.png" },
+      {
+        tienda: "Amazon",
+        url: "https://www.amazon.es/El-Fara%C3%B3n-y-el-prevencionista-ebook/dp/B0G1QSGLD4",
+        formato: "ebook",
+        logo: "logo-amazon.png",
+      },
     ],
   },
   {
@@ -285,13 +410,19 @@ export const libros: Libro[] = [
     portadaMini: "portada-el-mapa-de-la-isla-del-estres.png",
     portada: "portada-el-mapa-de-la-isla-del-estres.png",
     enlaces: [
-      { tienda: "Amazon", url: "https://www.amazon.es/El-mapa-isla-del-estr%C3%A9s-Daniel-Jerez-Torns-ebook/dp/B0FP2M68PG", formato: "ebook", logo: "logo-amazon.png" },
+      {
+        tienda: "Amazon",
+        url: "https://www.amazon.es/El-mapa-isla-del-estr%C3%A9s-Daniel-Jerez-Torns-ebook/dp/B0FP2M68PG",
+        formato: "ebook",
+        logo: "logo-amazon.png",
+      },
     ],
   },
   {
     id: "tres-en-raya",
     titulo: "Tres en raya",
-    fraseHero: "¿Y si aquello que creemos controlar no fuera realmente nuestro?",
+    fraseHero:
+      "¿Y si aquello que creemos controlar no fuera realmente nuestro?",
     cita: "¿Y si aquello que creemos controlar —la felicidad, la ideología, el destino— no fuera realmente nuestro?",
     ano: 2025,
     paginas: 50,
@@ -306,13 +437,19 @@ export const libros: Libro[] = [
     portadaMini: "portada-tres-en-raya.png",
     portada: "portada-tres-en-raya.png",
     enlaces: [
-      { tienda: "Amazon", url: "https://www.amazon.es/Tres-raya-Daniel-Jerez-Torns-ebook/dp/B0GD979Q8P", formato: "ebook", logo: "logo-amazon.png" },
+      {
+        tienda: "Amazon",
+        url: "https://www.amazon.es/Tres-raya-Daniel-Jerez-Torns-ebook/dp/B0GD979Q8P",
+        formato: "ebook",
+        logo: "logo-amazon.png",
+      },
     ],
   },
   {
     id: "los-tiburones-del-front-maritim",
     titulo: "Los tiburones del Front Marítim",
-    fraseHero: "Una emocionante aventura juvenil llena de humor, misterio y emoción",
+    fraseHero:
+      "Una emocionante aventura juvenil llena de humor, misterio y emoción",
     cita: "Porque algunos equipos duran una temporada… pero otros se quedan contigo para siempre.",
     ano: 2026,
     paginas: 36,
@@ -327,7 +464,12 @@ export const libros: Libro[] = [
     portadaMini: "portada-los-tiburones-del-front-maritim.png",
     portada: "portada-los-tiburones-del-front-maritim.png",
     enlaces: [
-      { tienda: "Amazon", url: "https://www.amazon.es/Daniel-Jerez-Torns/dp/B0H2YC9WZC", formato: "tapa-blanda", logo: "logo-amazon.png" },
+      {
+        tienda: "Amazon",
+        url: "https://www.amazon.es/Daniel-Jerez-Torns/dp/B0H2YC9WZC",
+        formato: "tapa-blanda",
+        logo: "logo-amazon.png",
+      },
     ],
   },
   {
@@ -348,8 +490,18 @@ export const libros: Libro[] = [
     portadaMini: "portada-historias-que-previenen.png",
     portada: "portada-historias-que-previenen.png",
     enlaces: [
-      { tienda: "Amazon", url: "https://www.amazon.es/dp/B0H4S5BBY1", formato: "tapa-blanda", logo: "logo-amazon.png" },
-      { tienda: "Amazon", url: "https://www.amazon.es/dp/B0GYZFGJQB", formato: "ebook", logo: "logo-amazon.png" },
+      {
+        tienda: "Amazon",
+        url: "https://www.amazon.es/dp/B0H4S5BBY1",
+        formato: "tapa-blanda",
+        logo: "logo-amazon.png",
+      },
+      {
+        tienda: "Amazon",
+        url: "https://www.amazon.es/dp/B0GYZFGJQB",
+        formato: "ebook",
+        logo: "logo-amazon.png",
+      },
     ],
   },
   {
@@ -370,8 +522,18 @@ export const libros: Libro[] = [
     portadaMini: "portada-cada-etapa-su-camino.png",
     portada: "portada-cada-etapa-su-camino.png",
     enlaces: [
-      { tienda: "Amazon", url: "https://www.amazon.es/Cada-etapa-camino-Tres-atreverse-ebook/dp/B0GL174TMW", formato: "ebook", logo: "logo-amazon.png" },
-      { tienda: "Amazon", url: "https://www.amazon.es/Cada-etapa-camino-Tres-atreverse/dp/B0GL174TMW", formato: "tapa-blanda", logo: "logo-amazon.png" },
+      {
+        tienda: "Amazon",
+        url: "https://www.amazon.es/Cada-etapa-camino-Tres-atreverse-ebook/dp/B0GL174TMW",
+        formato: "ebook",
+        logo: "logo-amazon.png",
+      },
+      {
+        tienda: "Amazon",
+        url: "https://www.amazon.es/Cada-etapa-camino-Tres-atreverse/dp/B0GL174TMW",
+        formato: "tapa-blanda",
+        logo: "logo-amazon.png",
+      },
     ],
   },
-]
+];
